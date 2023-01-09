@@ -1,0 +1,22 @@
+.logo{
+    height: 60px;
+}
+
+.Nav_bar nav{
+    background-color: #f7f7f7;
+}
+
+.Nav_bar .nav-link{
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 18px;
+    font-style: inherit;
+    color: #0F4229;
+}
+
+.Nav_bar .signin_signup{
+    /* margin-left: 20px; */
+    background-color: #348E38;
+    border-radius: 60px;
+    color: #E8F5E9;
+}
