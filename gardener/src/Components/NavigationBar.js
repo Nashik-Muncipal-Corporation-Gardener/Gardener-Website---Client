@@ -1,8 +1,20 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
+import { useNavigate } from "react-router-dom";
 import {Button, Container, Navbar, NavDropdown, Offcanvas, Nav, Image} from 'react-bootstrap';
 import '../css/header.css';
 const NavigationBar = () => {
+  
+  const navigate = useNavigate();
+  const Signin=()=>{
+    navigate('/signin')
+  }
+  const Signup=()=>{
+    navigate('/signup')
+  }
+
+  
+
   return  (
     <div className="Nav_bar">
       {['sm'].map((expand) => (
@@ -26,7 +38,8 @@ const NavigationBar = () => {
                   <Nav.Link href="#action2">About Us</Nav.Link>
                   <Nav.Link href="#action1">Gardens</Nav.Link>
                   <Nav.Link href="#action2">Contact Us</Nav.Link> 
-                  <Nav.Link className='signin_signup'><a><span style={{marginLeft:20}}></span>Sign In </a><span>|</span><a> Sign Up<span style={{marginRight:20}}></span></a></Nav.Link>
+                  <Nav.Link className='signin_signup'><a onClick={Signin}><span style={{marginLeft:20}}></span>Sign In </a><span>|</span>
+                  <a onClick={Signup}> Sign Up<span style={{marginRight:20}}></span></a></Nav.Link>
                 </Nav>
                 
               </Offcanvas.Body>
