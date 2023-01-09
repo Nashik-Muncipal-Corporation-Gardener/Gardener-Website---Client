@@ -3,10 +3,14 @@ import './App.css';
 import Navbar from './Components/NavigationBar';
 import Footer from './Components/footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Slider from './Components/Slider';
+import Services from './Components/Services';
 function App() {
   return (
     <div className="App">
       <Navbar/>
+      <Slider/>
+      <Services/> 
       <Footer/>
     </div>
   );

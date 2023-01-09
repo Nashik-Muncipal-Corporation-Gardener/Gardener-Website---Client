@@ -1,0 +1,29 @@
+.Services img{
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.Services .container{
+    padding: 2%;
+}
+
+.Services a{
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.Services h3{
+    color: #0F4229;
+}
+
+
+.Services .col{
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

@@ -3,6 +3,7 @@
 }
 
 .Nav_bar nav{
+    margin-bottom: 0 !important;
     background-color: #f7f7f7;
 }
 
