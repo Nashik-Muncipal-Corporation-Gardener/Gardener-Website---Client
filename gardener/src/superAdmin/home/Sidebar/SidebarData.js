@@ -13,95 +13,95 @@ import * as FcIcons from 'react-icons/fc';
 export const SidebarData = [
     {
         title: 'Employees',
-        path:'/employees',
+        path:'/super-admin/employees',
         icon: <BsIcons.BsFillPersonLinesFill/>,
         cName: 'nav-text'
     },
 
     {
         title: 'Organization Structure',
-        path:'/organization-structure',
+        path:'/super-admin/organization-structure',
         icon: <GiIcons.GiOrganigram/>,
         cName: 'nav-text'
     },
     {
         title: 'News',
-        path: '/news',
+        path: '/super-admin/news',
         icon: <BsIcons.BsNewspaper/>,
         cName: 'nav-text'
     },
 
     {
         title: 'Announcements',
-        path: '/announcements',
+        path: '/super-admin/announcements',
         icon: <GrIcons.GrAnnounce/>,
         cName: 'nav-text'
     },
     {
         title: 'Posters',
-        path: '/posters',
+        path: '/super-admin/posters',
         icon: <TbIcons.TbSlideshow />,
         cName: 'nav-text'
     },
     {
         title: 'Inquiries',
-        path: '/inquries',
+        path: '/super-admin/inquries',
         icon: <MdIcons.MdReportProblem />,
         cName: 'nav-text'
     },
 
     {
         title: 'Permissions',
-        path:'/permissions',
+        path:'/super-admin/permissions',
         icon: <FcIcons.FcApproval/>,
         cName: 'nav-text'
     },
 
     {
         title: 'Grievances',
-        path: '/grievances',
+        path: '/super-admin/grievances',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
     {
         title: 'Citizen Services',
-        path: '/citizenservices',
+        path: '/super-admin/citizenservices',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
     {
         title: 'Garden Details',
-        path: '/gardendetails',
+        path: '/super-admin/gardendetails',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
     {
         title: 'Waste Collection',
-        path: '/wastecollections',
+        path: '/super-admin/wastecollection',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
     {
         title: 'Acheivements',
-        path: '/acheivements',
+        path: '/super-admin/acheivements',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
     {
         title: 'Terms and Conditions',
-        path: '/termsandconditions',
+        path: '/super-admin/termsandconditions',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
     {
         title: 'Log Report',
-        path:'/log-report',
+        path:'/super-admin/logreport',
         icon: <TbIcons.TbReport/>,
         cName: 'nav-text'
     },
     {
         title: 'Log Out',
-        path:'/log-out',
+        path:'/super-admin/logout',
         icon: <BiIcons.BiLogOut/>,
         cName: 'nav-text'
     },
