@@ -11,11 +11,8 @@ import Userprofile from './Components/Userprofile';
 import Authentication from './superAdmin/Authentication';
 import SuperAdminHome from './superAdmin/home/SuperAdminHome';
 import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
-<<<<<<< HEAD
 import Editprofile from './Components/Editprofile';
-=======
 import GrievanceForm from './Components/GrievanceForm';
->>>>>>> 6fe68f077bef2803c166fe5b779d3fb7e3378ccc
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -24,13 +21,10 @@ root.render(
         <Route exact path='/signin' element={< Signin />}></Route>
         <Route exact path='/signup' element={< Signup />}></Route>
         <Route exact path='/gardens' element={< Gardens />}></Route>
-<<<<<<< HEAD
         <Route exact path='/userprofile' element={< Userprofile />}></Route>
         <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
 
-=======
         <Route exact path='/grievanceform' element={< GrievanceForm />}></Route>
->>>>>>> 6fe68f077bef2803c166fe5b779d3fb7e3378ccc
 
 
         <Route exact path='/super-admin' element={<Authentication/>}></Route>

@@ -13,11 +13,8 @@ function App() {
       <Slider/>
       <Services/> 
       <Footer/>
-<<<<<<< HEAD
       {/* <Signup/> */}
       {/* <GrievanceForm/> */}
-=======
->>>>>>> 6fe68f077bef2803c166fe5b779d3fb7e3378ccc
     </div>
   );
 }
