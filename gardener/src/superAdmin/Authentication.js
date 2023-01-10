@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Navbar from '../Components/NavigationBar';
 import {Container,Row, Col, Form, Button,Toast } from 'react-bootstrap';
 import '../css/signin.css'
+import { useNavigate } from "react-router-dom";
 // import {toast,ToastContainer} from "react-toastify"
 
 function Authentication(){
@@ -15,6 +16,8 @@ function Authentication(){
     const [name,setName] = React.useState('');
     const [contact,setContact] = React.useState('');
     const [state,setState] = React.useState('');
+
+    const navigate = useNavigate();
 
     const handleEmailInput=(event)=>{
         // console.log("Event"+event.target.value)
@@ -55,7 +58,9 @@ function Authentication(){
         setSignIn(true)
     }
 
-    function registerSuperAdmin(){
+    function registerSuperAdmin(e){
+        e.preventDefault();
+
         // alert('Registering S
         if (email === "") {
             alert("Email is empty");
@@ -71,18 +76,22 @@ function Authentication(){
         }else if(contact.length!=10 ){
             alert("Please enter 10 digit mobile number")
         }else{
-            alert("Registration successfull")
+            // alert("Registration successfull")
+            navigate("/super-admin/home")
         }
     }
 
-    function handleLogin(){
+    function handleLogin(e){
         
+        e.preventDefault();
+
         if(email===""){
             alert("Email is empty")
         }else if(password===""){
             alert("Password is empty")
         }else{
-            alert("Login successfull")
+            // alert("Login successfull")
+            navigate("/super-admin/home")
         }
 
     }
