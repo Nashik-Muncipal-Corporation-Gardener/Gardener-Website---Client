@@ -6,6 +6,7 @@ import '../css/header.css';
 const NavigationBar = () => {
   
   const navigate = useNavigate();
+  
   const Signin=()=>{
     navigate('/signin')
   }
@@ -20,7 +21,7 @@ const NavigationBar = () => {
       {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="#"><img className="logo" src = {require ('../images/logo.png')}/></Navbar.Brand>
+            <Navbar.Brand href="/"><img className="logo" src = {require ('../images/logo.png')}/></Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -34,7 +35,7 @@ const NavigationBar = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
+                  <Nav.Link href='/'>Home</Nav.Link>
                   <Nav.Link href="#action2">About Us</Nav.Link>
                   <Nav.Link href="#action1">Gardens</Nav.Link>
                   <Nav.Link href="#action2">Contact Us</Nav.Link> 

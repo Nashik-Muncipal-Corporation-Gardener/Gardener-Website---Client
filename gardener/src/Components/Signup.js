@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from './NavigationBar';
 import {Container,Row, Col, Form, Button } from 'react-bootstrap';
-import '../css/signin.css'
+import '../css/signup.css'
 function Signup() {
 
     const [startDate, setStartDate] = useState(new Date());
   
   return (
-    <div className='signin'>
+    <div className='signup'>
         <Navbar/>
         <Container>
             <Row><Col><h4>Sign Up</h4></Col></Row>
