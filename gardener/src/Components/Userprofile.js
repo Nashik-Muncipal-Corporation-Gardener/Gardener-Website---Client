@@ -1,12 +1,22 @@
-import React from 'react'
+import React ,{useState} from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import {Button,Image, Container,Row,Col} from 'react-bootstrap';
+import {Button,Image, Container,Row,Col, Modal} from 'react-bootstrap';
 import Navbar from './NavigationBar';
 import '../css/userprofile.css'
 import { Icon } from '@iconify/react';
-
+import Footer from './footer';
+import '../css/editprofile.css'
 function Userprofile() {
+
+
+    const [showEditprofile, setShowshowEditprofile] = useState(false);
+
+  const handleClose = () => setShowshowEditprofile(false);
+  const handleShow = () => setShowshowEditprofile(true);
+
+
+
   return (
     <div className='userprofile'>
         <Navbar/>
@@ -17,7 +27,7 @@ function Userprofile() {
                     <Image thumbnail className='profileimg' src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80'/>
                     </Row>
                     <Row>
-                    <Button>Edit Profile</Button>
+                    <Button onClick={handleShow}>Edit Profile</Button>
                     </Row>
                     <Row>
                     <Button>Permissions</Button>
@@ -52,6 +62,53 @@ function Userprofile() {
             </Row>
         </Container>
 
+
+
+        <Modal
+        show={showEditprofile}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <div className='editprofile'>
+        
+        <form >
+        <table>
+            <tr>
+                <td colspan="2"><input placeholder='Name' type="text" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input placeholder='Email' type="email" /></td>
+            </tr>
+            <tr>
+                <td><input placeholder='Contact' type="number" /></td>
+                <td><input placeholder='DOB' type="date" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input placeholder='Street Address' type="text" /></td>
+            </tr>
+            <tr>
+                <td><input placeholder='City' type="text" /></td>
+                <td><input placeholder='Pincode' type="number" /></td>
+            </tr>
+        </table>
+            
+         <Row> 
+            <Col></Col>
+            <Col></Col>
+            <Col>
+            <Button type='submit'>Save</Button>
+                
+            </Col>
+            <Col>
+            <Button onClick={handleClose}>Cancel</Button>
+            </Col>
+         </Row>   
+      </form>
+    </div>
+      </Modal>
+
+    <Footer/>
     </div>
   )
 }
