@@ -5,13 +5,17 @@ import Footer from './Components/footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from './Components/Slider';
 import Services from './Components/Services';
+import Signup from './Components/Signup'
+import GrievanceForm from './Components/GrievanceForm';
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Slider/>
+      {/* <Slider/>
       <Services/> 
-      <Footer/>
+      <Footer/> */}
+      {/* <Signup/> */}
+      <GrievanceForm/>
     </div>
   );
 }
