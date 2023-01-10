@@ -16,19 +16,19 @@ function Sidebar(){
     return(
         <>
       
-        <Navbar bg="dark" variant='light' expand={false}>
+        <Navbar style={{backgroundColor:'#348E38'}} variant='light' expand={false}>
           <Container fluid>
             
-            <Navbar.Toggle  />
+            <Navbar.Toggle  className="nav-toggle"/>
             <Navbar.Offcanvas
               placement="start"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title >
+              <Offcanvas.Header style={{backgroundColor:'#348E38'}} closeButton>
+                <Offcanvas.Title>
                   Super Admin Panel
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body style={{backgroundColor:'black',fontSize:'20px'}}>
+              <Offcanvas.Body style={{backgroundColor:'#E8F5E9',fontSize:'20px'}}>
                 <Nav className="justify-content-start flex-grow-1 pe-3">
 
                 {SidebarData.map((item, index) => {
