@@ -25,7 +25,7 @@ function Sidebar(){
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title >
-                  Admin Panel
+                  Super Admin Panel
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body style={{backgroundColor:'black',fontSize:'20px'}}>
