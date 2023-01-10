@@ -7,6 +7,7 @@ import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Gardens from './Components/Gardens';
+import Authentication from './superAdmin/Authentication';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -15,6 +16,8 @@ root.render(
         <Route exact path='/signin' element={< Signin />}></Route>
         <Route exact path='/signup' element={< Signup />}></Route>
         <Route exact path='/gardens' element={< Gardens />}></Route>
+
+        <Route exact path='/super-admin' element={<Authentication/>}></Route>
 
     </Routes>
     </HashRouter>
