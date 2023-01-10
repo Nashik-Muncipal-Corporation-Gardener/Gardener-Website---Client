@@ -13,6 +13,7 @@ import SuperAdminHome from './superAdmin/home/SuperAdminHome';
 import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
 import Editprofile from './Components/Editprofile';
 import GrievanceForm from './Components/GrievanceForm';
+import Grievance from './Components/Grievance';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -23,8 +24,9 @@ root.render(
         <Route exact path='/gardens' element={< Gardens />}></Route>
         <Route exact path='/userprofile' element={< Userprofile />}></Route>
         <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
+        <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
 
-        <Route exact path='/grievanceform' element={< GrievanceForm />}></Route>
+        <Route exact path='/usergrievance' element={< Grievance />}></Route>
 
 
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
