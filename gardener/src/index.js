@@ -7,6 +7,7 @@ import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Gardens from './Components/Gardens';
+import Userprofile from './Components/Userprofile';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -15,6 +16,8 @@ root.render(
         <Route exact path='/signin' element={< Signin />}></Route>
         <Route exact path='/signup' element={< Signup />}></Route>
         <Route exact path='/gardens' element={< Gardens />}></Route>
+        <Route exact path='/userprofile' element={< Userprofile />}></Route>
+
 
     </Routes>
     </BrowserRouter>
