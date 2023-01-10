@@ -1,8 +1,11 @@
 import React from "react";
+import Sidebar from "./Sidebar/Sidebar";
 
 function SuperAdminHome(){
     return(
-        <h1>Home</h1>
+        <div>
+            <Sidebar/>
+        </div>
     );
 }
 
