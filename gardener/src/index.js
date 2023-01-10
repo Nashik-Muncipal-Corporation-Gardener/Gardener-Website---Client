@@ -7,6 +7,7 @@ import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Gardens from './Components/Gardens';
+import Userprofile from './Components/Userprofile';
 import Authentication from './superAdmin/Authentication';
 import SuperAdminHome from './superAdmin/home/SuperAdminHome';
 import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
@@ -19,7 +20,8 @@ root.render(
         <Route exact path='/signin' element={< Signin />}></Route>
         <Route exact path='/signup' element={< Signup />}></Route>
         <Route exact path='/gardens' element={< Gardens />}></Route>
-        <Route exact path='/grievanceform' element={<GrievanceForm/>}></Route>
+        <Route exact path='/grievanceform' element={< GrievanceForm />}></Route>
+
 
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
         <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>
