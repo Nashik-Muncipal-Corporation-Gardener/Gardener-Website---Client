@@ -2,15 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Gardens from './Components/Gardens';
+<<<<<<< HEAD
 import Userprofile from './Components/Userprofile';
+=======
+import Authentication from './superAdmin/Authentication';
+import SuperAdminHome from './superAdmin/home/SuperAdminHome';
+import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
+>>>>>>> 5ae93d8fb76066f40f84447ff228829a153ace64
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
       <Routes>
         <Route exact path='/' element={< App />}></Route>
         <Route exact path='/signin' element={< Signin />}></Route>
@@ -19,8 +25,13 @@ root.render(
         <Route exact path='/userprofile' element={< Userprofile />}></Route>
 
 
+        <Route exact path='/super-admin' element={<Authentication/>}></Route>
+        <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>
+        <Route exact path='/super-admin/grievances' element={<GrievanceDashboard/>}></Route>
+
+
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

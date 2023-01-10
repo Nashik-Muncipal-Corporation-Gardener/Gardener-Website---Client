@@ -36,9 +36,15 @@ const NavigationBar = () => {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href='/'>Home</Nav.Link>
+<<<<<<< HEAD
                   <Nav.Link href="#action2">About Us</Nav.Link>
                   <Nav.Link href="/gardens">Gardens</Nav.Link>
                   <Nav.Link href="#action2">Contact Us</Nav.Link> 
+=======
+                  <Nav.Link href="/#/aboutus">About Us</Nav.Link>
+                  <Nav.Link href="/#/gardens">Gardens</Nav.Link>
+                  <Nav.Link href="/#/contactus">Contact Us</Nav.Link> 
+>>>>>>> 5ae93d8fb76066f40f84447ff228829a153ace64
                   <Nav.Link className='signin_signup'><a onClick={Signin}><span style={{marginLeft:20}}></span>Sign In </a><span>|</span>
                   <a onClick={Signup}> Sign Up<span style={{marginRight:20}}></span></a></Nav.Link>
                 </Nav>
