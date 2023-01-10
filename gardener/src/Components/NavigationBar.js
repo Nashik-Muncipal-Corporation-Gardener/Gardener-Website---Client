@@ -8,10 +8,10 @@ const NavigationBar = () => {
   const navigate = useNavigate();
   
   const Signin=()=>{
-    navigate('/signin')
+    navigate('/#/signin')
   }
   const Signup=()=>{
-    navigate('/signup')
+    navigate('/#/signup')
   }
 
   

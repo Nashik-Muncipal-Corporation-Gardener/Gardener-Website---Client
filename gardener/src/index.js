@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Gardens from './Components/Gardens';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
       <Routes>
         <Route exact path='/' element={< App />}></Route>
         <Route exact path='/signin' element={< Signin />}></Route>
@@ -17,7 +17,7 @@ root.render(
         <Route exact path='/gardens' element={< Gardens />}></Route>
 
     </Routes>
-    </BrowserRouter>
+    </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
