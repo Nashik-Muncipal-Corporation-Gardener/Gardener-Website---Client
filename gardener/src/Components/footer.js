@@ -10,8 +10,10 @@ function footer() {
         <Row>
             <Col md={3}>
             <h6>Our Office </h6>
-            <h7><Icon icon="material-symbols:location-on" />Nashik Municipal Corporation<br></br>
-            <Icon icon="material-symbols:phone-in-talk" />+012 345 67890<br></br>
+            <h7><Icon icon="material-symbols:location-on" />Nashik Municipal Corporation<br/>
+                Rajiv Gandhi Bhavan,<br/>
+                Sharanpur Road, Nashik<br></br>
+            <Icon icon="material-symbols:phone-in-talk" />0253 - 2575631 / 2 / 3 / 4<br></br>
             <Icon icon="material-symbols:mail" />info@example.com</h7>
             </Col>
 

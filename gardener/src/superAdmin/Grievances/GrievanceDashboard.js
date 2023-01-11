@@ -9,90 +9,80 @@ function GrievanceDashboard(){
             <br/>
             <br/>
             <Row>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
                     
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>All Grievances</Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
+                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>All Grievances</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
                     
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>Pending Grievances</Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
+                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Pending Grievances</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
-                <Col>   
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
                     
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>Resolve Grievances</Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
+                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Resolved Grievances</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
                     
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>Maximum Grievances Resolve Category</Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
+                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Maximum Grievances Resolve Category</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
                     
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>% Grievance Resolved</Card.Header>
-                    <Card.Body>
-                        <Card.Title>97.12%</Card.Title>
+                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>% Grievance Resolved</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
                     
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>Escalated Grievances</Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
+                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Escalated Grievances</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
+                
+                
                 <Col>
                     <Card
                     bg="Success"
