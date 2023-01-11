@@ -1,13 +1,14 @@
 import React from "react";
 import { Container,Card, Row, Col } from "react-bootstrap";
-
+import './GrievanceDashboard.css'
+import SuperAdminHome from '../home/SuperAdminHome'
 function GrievanceDashboard(){
     return(
         <div>
+            <SuperAdminHome/>
+
             <Container>
             <h1>Grievance Dashboard</h1>
-            <br/>
-            <br/>
             <Row>
                 <Col >
                     <Card
@@ -15,7 +16,7 @@ function GrievanceDashboard(){
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>All Grievances</Card.Header>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#337AB7"}}>All Grievances</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
@@ -27,7 +28,7 @@ function GrievanceDashboard(){
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Pending Grievances</Card.Header>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#F0AD4E"}}>Pending Grievances</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
@@ -39,7 +40,7 @@ function GrievanceDashboard(){
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Resolved Grievances</Card.Header>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#5CB85C"}}>Resolved Grievances</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
@@ -51,9 +52,24 @@ function GrievanceDashboard(){
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Maximum Grievances Resolve Category</Card.Header>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#337AB7"}}>Maximum Grievances Resolve Category</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
+                    </Card.Body>
+                    </Card>
+                </Col>
+                </Row>
+                <br/>
+                <Row>
+                <Col >
+                    <Card
+                    
+                    style={{ width: '18rem' }}
+                    className="mb-2"
+                    >
+                    <Card.Header className="cardheader" style={{backgroundColor:"#5CB85C"}}>% Grievance Resolved</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>60%</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
@@ -63,100 +79,75 @@ function GrievanceDashboard(){
                     style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>% Grievance Resolved</Card.Header>
-                    <Card.Body style={{height:80}}>
-                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
-                    </Card.Body>
-                    </Card>
-                </Col>
-                <Col >
-                    <Card
-                    
-                    style={{ width: '18rem' }}
-                    className="mb-2"
-                    >
-                    <Card.Header style={{height:80,textAlign:"center",backgroundColor:"#337AB7"}}>Escalated Grievances</Card.Header>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#D9534F"}}>Escalated Grievances</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
                     </Card.Body>
                     </Card>
                 </Col>
                 
+                <Col >
+                    <Card
+                    
+                    style={{ width: '18rem' }}
+                    className="mb-2"
+                    >
+                    <Card.Header className="cardheader" style={{backgroundColor:"#D9534F"}}>Reopen Grievances</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
+                    </Card.Body>
+                    </Card>
+                </Col>
+                <Col >
+                    <Card
+                    
+                    style={{ width: '18rem' }}
+                    className="mb-2"
+                    >
+                    <Card.Header className="cardheader" style={{backgroundColor:"#D9534F"}}>Grievances Pending greater than 7 days and less than 30 days</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>21358</Card.Title>
+                    </Card.Body>
+                    </Card>
+                </Col>
                 
-                <Col>
-                    <Card
-                    bg="Success"
-                    key="Success"
-                    
-                    style={{ width: '18rem' }}
-                    className="mb-2"
-                    >
-                    <Card.Header>Reopen Grievances</Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
-                    </Card.Body>
-                    </Card>
-                </Col>
-                <Col>
-                    <Card
-                    bg="Success"
-                    key="Success"
-                    
-                    style={{ width: '18rem' }}
-                    className="mb-2"
-                    >
-                    <Card.Header>Grievances Pending greater than 7 days and less than 30 days </Card.Header>
-                    <Card.Body>
-                        <Card.Title>21358</Card.Title>
-                    </Card.Body>
-                    </Card>
-                </Col>
             </Row>
             <br/>
             <Row>
-                <Col>
+            <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
-
-                    style={{width:"18rem"}}
+                    
+                    // style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>Citizen Satisfaction</Card.Header>
-                    <Card.Body>
-                        <Card.Title>58.23%</Card.Title>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#3399FF"}}>Citizen Satisfaction</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>58.23%</Card.Title>
                     </Card.Body>
-
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
-
-                    style={{width:"18rem"}}
+                    
+                    // style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>Average Rating</Card.Header>
-                    <Card.Body>
-                        <Card.Title>3.55</Card.Title>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#3399FF"}}>Average Rating</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>3.55</Card.Title>
                     </Card.Body>
-
                     </Card>
                 </Col>
-                <Col>
+                <Col >
                     <Card
-                    bg="Success"
-                    key="Success"
-
-                    style={{width:"18rem"}}
+                    
+                    // style={{ width: '18rem' }}
                     className="mb-2"
                     >
-                    <Card.Header>%feedback recieved</Card.Header>
-                    <Card.Body>
-                        <Card.Title>47.35%</Card.Title>
+                    <Card.Header className="cardheader" style={{backgroundColor:"#3399FF"}}>%feedback recieved</Card.Header>
+                    <Card.Body style={{height:80}}>
+                        <Card.Title style={{textAlign:"center"}}>47.35%</Card.Title>
                     </Card.Body>
-
                     </Card>
                 </Col>
             </Row>
