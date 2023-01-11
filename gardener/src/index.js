@@ -14,6 +14,7 @@ import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
 import Editprofile from './Components/Editprofile';
 import GrievanceForm from './Components/GrievanceForm';
 import Grievance from './Components/Grievance';
+import News from './Components/News';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -25,7 +26,7 @@ root.render(
         <Route exact path='/userprofile' element={< Userprofile />}></Route>
         <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
         <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
-
+        <Route exact path='/news' element={< News />}></Route>
         <Route exact path='/usergrievance' element={< Grievance />}></Route>
 
 

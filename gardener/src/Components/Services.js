@@ -1,8 +1,16 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
+import { useNavigate } from "react-router-dom";
+
 import {Container, Row, Col} from 'react-bootstrap';
 import '../css/services.css'
 function Services() {
+
+    const navigate=useNavigate()
+
+    const grievance=()=>{
+        navigate('/usergrievance')
+    }
   return (
     <div className='Services'>
         <Container>
@@ -11,8 +19,8 @@ function Services() {
             </Row>
             <Row>
                 <Col>
-                    <Row><img src = {require ('../images/Grievance.png')}/></Row>
-                    <Row><a>Grievance</a></Row>   
+                    <Row><img onClick={grievance} src = {require ('../images/Grievance.png')}/></Row>
+                    <Row><a onClick={grievance} >Grievance</a></Row>   
                 </Col>
                 <Col>
                     <Row><img src = {require ('../images/Permission.png')}/></Row>
