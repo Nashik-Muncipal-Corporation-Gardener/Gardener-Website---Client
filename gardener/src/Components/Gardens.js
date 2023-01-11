@@ -30,7 +30,7 @@ function Gardens() {
                                         Read More
                                     </button>
                                 </figcaption>
-                            </figure>
+                    </figure>
                     )
                 })
             }
