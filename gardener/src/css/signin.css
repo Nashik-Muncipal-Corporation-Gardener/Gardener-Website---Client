@@ -1,67 +1,43 @@
 .signin .container{
-    margin-top: 3%;
-    width: 35%;
-    padding: 3%;
-    border: 2px solid;
-    border-color: #0F4229;
+    padding: 2% !important;
+    width: 35% !important;
     border-radius: 10px;
-    background-color: #F7F7F7;
+    background-color: whitesmoke;
 }
 
+.signin .nav-pills .nav-link.active{
+    color: aliceblue !important;
+    background-color: #207fb0;
+}
+
+.signin .nav-justified .nav-item .nav-link{
+    color: #207fb0;
+}
+
+.signin .nav-pills{
+    margin-bottom: 30px !important;
+}
 .signin form{
     width: 100%;
 }
 
 .signin .form-control{
-    margin-top: 20px;
-    background-color: #E8F5E9 !important;
     border: 2px solid;
-    border-color: #348E38;
+    border-color: #207fb0;
 }
 
-.signin .btn_signin{
-    margin-top: 20px;
+.signin .btn{
     width: 100%;
-    color: #E8F5E9;
-    background: #348E38;
+    color: aliceblue;
+    background: #207fb0;
     border: 0;
     font-size: 18px;
     margin-bottom: 10px;
     font-weight: 500;
 }
 
-.signin .btn_signup{
-    width: 100%;
-    color: #0F4229;
-    background: #E8F5E9;
-    border: 2px solid;
-    border-color: #348E38;
-    /* font-size: 18px; */
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.signin .btn_signup:hover{
-    width: 100%;
-    color: #E8F5E9;
-    background: #348E38;
-    border: 2px solid;
-    border-color: #348E38;
-    /* font-size: 18px; */
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.signin h7{
-    color: #348E38;
-    cursor: pointer;
-}
-.signin .col{
-    padding: 1%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+.signin a{
+    color: #207fb0;
 }
 
 
@@ -84,7 +60,7 @@
     color: #0F4229;
     background: #E8F5E9;
     border: 2px solid;
-    border-color: #348E38;
+    border-color: #207fb0;
     /* font-size: 18px; */
     margin-bottom: 10px;
     font-weight: 500;

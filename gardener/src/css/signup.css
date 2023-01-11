@@ -16,14 +16,14 @@
     margin-top: 20px;
     background-color: #E8F5E9 !important;
     border: 2px solid;
-    border-color: #348E38;
+    border-color: #207fb0;
 }
 
 .signup .btn_signup{
     /* margin-top: 20px; */
     width: 100%;
     color: #E8F5E9;
-    background: #348E38;
+    background: #207fb0;
     border: 0;
     font-size: 18px;
     margin-bottom: 10px;
@@ -36,7 +36,7 @@
     color: #0F4229;
     background: #E8F5E9;
     border: 2px solid;
-    border-color: #348E38;
+    border-color: #207fb0;
     /* font-size: 18px; */
     margin-bottom: 10px;
     font-weight: 500;
@@ -45,16 +45,16 @@
 .signup .btn_signup:hover{
     width: 100%;
     color: #E8F5E9;
-    background: #348E38;
+    background: #207fb0;
     border: 2px solid;
-    border-color: #348E38;
+    border-color: #207fb0;
     /* font-size: 18px; */
     margin-bottom: 10px;
     font-weight: 500;
 }
 
 .signup h7{
-    color: #348E38;
+    color: #207fb0;
     cursor: pointer;
 }
 .signup .col{
@@ -85,7 +85,7 @@
     color: #0F4229;
     background: #E8F5E9;
     border: 2px solid;
-    border-color: #348E38;
+    border-color: #207fb0;
     /* font-size: 18px; */
     margin-bottom: 10px;
     font-weight: 500;
