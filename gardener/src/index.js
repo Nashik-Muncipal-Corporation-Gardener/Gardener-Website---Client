@@ -19,6 +19,7 @@ import Permissions from './Components/Permissions';
 import Permissionform from './Components/Permissionform';
 import Userpermissions from './Components/Userpermissions';
 import Pdfreader from './Components/Pdfreader';
+import AddNews from './superAdmin/news/AddNews';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -41,6 +42,8 @@ root.render(
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
         <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>
         <Route exact path='/super-admin/grievances' element={<GrievanceDashboard/>}></Route>
+        <Route exact path='/super-admin/addnews' element={<AddNews/>}></Route>
+
 
     </Routes>
     </HashRouter>
