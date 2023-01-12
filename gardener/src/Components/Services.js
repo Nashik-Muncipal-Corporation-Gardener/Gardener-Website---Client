@@ -11,6 +11,10 @@ function Services() {
     const grievance=()=>{
         navigate('/usergrievance')
     }
+
+    const permissions=()=>{
+        navigate('/permissions')
+    }
   return (
     <div className='Services'>
         <Container>
@@ -23,8 +27,8 @@ function Services() {
                     <Row><a onClick={grievance} >Grievance</a></Row>   
                 </Col>
                 <Col>
-                    <Row><img src = {require ('../images/Permission.png')}/></Row>
-                    <Row><a>Permission</a></Row>   
+                    <Row><img onClick={permissions} src = {require ('../images/Permission.png')}/></Row>
+                    <Row><a onClick={permissions} >Permission</a></Row>   
                 </Col>
                 <Col>
                     <Row><img src = {require ('../images/Volunteer.png')}/></Row>

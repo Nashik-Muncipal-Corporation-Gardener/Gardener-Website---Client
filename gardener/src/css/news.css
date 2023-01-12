@@ -1,0 +1,12 @@
+.news .container{
+    padding: 2%;
+}
+
+.news .row{
+    margin-bottom: 20px;
+    background-color: aliceblue;
+}
+
+.news .row .col{
+    padding: 2%;
+}

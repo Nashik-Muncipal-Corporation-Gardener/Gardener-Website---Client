@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import '../css/gardens.css'
 import Navbar from './NavigationBar';
-import { Container, Modal, Button } from 'react-bootstrap';
+import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
 import Footer from './footer'
+import '../css/news.css'
 function News() {
     const gardens=[1,2,3,4]
     const [show, setShow] = useState(false);
@@ -10,30 +10,25 @@ function News() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-      <div className='gardens'>
+      <div className='news'>
           <Navbar/>
-          <div className='startdiv' >
-          <h1>Nashik Muncipal Corporation</h1>
-          </div>
-          <br></br><br></br>
+          
           <h1 style={{ color: '#0F4229',display: 'flex',justifyContent: 'center'}}>News</h1>
           <Container >
               {
                   gardens.map(g=>{
                       return(
-                      <figure class="image-block">
-                                  {/* <img src="http://www.marathwadafriendcircle.com/img/slide1.jpeg" alt="" /> */}
-                                  <figcaption>
-                                      <h6>
-                                      Indonesia president supports plan to scale back
-                                      </h6>
-                                      {/* set 6 line limit */}
-                                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam expedita deserunt voluptatem ad, adipisci omnis nostrum eius dicta aspernatur quae, dignissimos iusto commodi cupiditate beatae praesentium laudantium rerum eos inci.</p>
-                                      <button onClick={handleShow}>
-                                          Read More
-                                      </button>
-                                  </figcaption>
-                              </figure>
+                            <Row>
+                              <Col style={{padding:'1%'}} sm={2}>
+                              <img src="http://cdn.shopify.com/s/files/1/0047/9730/0847/articles/nurserylive-a-lush-green-garden-for-a-sunny-balcony8.jpg?v=1617211451" style={{height:'100%',width:'100%'}}/>
+                              </Col>
+                              <Col style={{padding:'1%'}} sm={10}>
+                              <h3>News Title</h3>
+                              <h6>Description</h6>
+                              <Button style={{marginTop:'1%'}} lg='sm' variant='outline-success'>Read More</Button>
+                              </Col>
+                            </Row>
+                        
                       )
                   })
               }

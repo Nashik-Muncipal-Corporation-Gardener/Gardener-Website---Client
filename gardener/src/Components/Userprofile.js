@@ -9,12 +9,15 @@ import Footer from './footer';
 import '../css/editprofile.css'
 function Userprofile() {
 
-
+const navigate =useNavigate()
     const [showEditprofile, setShowshowEditprofile] = useState(false);
 
   const handleClose = () => setShowshowEditprofile(false);
   const handleShow = () => setShowshowEditprofile(true);
 
+  const userpermissions=()=>{
+    navigate('/userpermissions')
+  }
 
 
   return (
@@ -30,7 +33,7 @@ function Userprofile() {
                     <Button onClick={handleShow}>Edit Profile</Button>
                     </Row>
                     <Row>
-                    <Button>Permissions</Button>
+                    <Button onClick={userpermissions}>Permissions</Button>
                     </Row>
                     <Row>
                     <Button>Grievances</Button>
