@@ -77,7 +77,7 @@ figure {
     width: 100%;
     margin: 0;
     padding: 15px;
-    background-color: #E8F5E9;
+    background-color: aliceblue;
     box-shadow: 0 0 20px #e8f5e9;
     color: #0f4229;
     line-height: 1;
@@ -98,7 +98,7 @@ figure {
     justify-content: center;
     margin: 10px 0 0;
     padding: 10px 30px;
-    background-color: #348e38;
+    background-color: #207fb0;
     border: none;
     border-radius: 5px;
     color: #e8f5e9;
