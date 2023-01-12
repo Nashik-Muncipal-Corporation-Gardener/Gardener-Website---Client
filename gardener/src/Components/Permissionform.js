@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Navbar from './NavigationBar'
 import { Container,ListGroup,Card,Button, Dropdown,DropdownButton} from 'react-bootstrap';
+import translate from 'google-translate-api-x';
 import '../css/permissions.css'
-// import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import {
     MDBFile,
     MDBInput,
@@ -21,12 +21,30 @@ function Permissionform() {
         setValuetype(e)
       }
 
+      const fetchData = async () => {
+        const response = await translate('Ik spreek Engels', {to: 'en'});
+        if (!response.ok) {
+          console.log('hiiiiii')
+        } else {
+          return response.json()
+        }
+      }
+      useEffect(() => {
+        fetchData()
+          .then((res) => {
+            alert(res.text); //=> I speak English
+          })
+          .catch((e) => {
+            console.log(e.message)
+          })
+      }, [])
   
 
   return (
     <div className='permissionsform'>
         <Navbar/>
         <Container>
+          <Button>Click</Button>
         <Card>
         <ListGroup variant="flush">
             <ListGroup.Item>Personal Information</ListGroup.Item>

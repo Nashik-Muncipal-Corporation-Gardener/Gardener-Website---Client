@@ -3,6 +3,8 @@
 }
 
 .news .newsrow{
+    border-radius: 5px;
+    box-shadow: 2px 2px #207fb033 !important;
     margin-bottom: 20px;
     background-color: aliceblue;
 }
