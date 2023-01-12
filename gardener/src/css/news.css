@@ -2,11 +2,11 @@
     padding: 2%;
 }
 
-.news .row{
+.news .newsrow{
     margin-bottom: 20px;
     background-color: aliceblue;
 }
 
-.news .row .col{
+.news .newsrow .col{
     padding: 2%;
 }

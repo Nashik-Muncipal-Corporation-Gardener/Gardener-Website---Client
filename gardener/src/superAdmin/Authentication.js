@@ -1,12 +1,38 @@
-import React from "react";
+import React, { useState } from 'react';
+import {
+  MDBContainer,
+  MDBTabs,
+  MDBTabsItem,
+  MDBTabsLink,
+  MDBTabsContent,
+  MDBTabsPane,
+  MDBBtn,
+  MDBIcon,
+  MDBInput,
+  MDBCheckbox,
+  MDBRow, MDBCol
+}
+from 'mdb-react-ui-kit';
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from '../Components/NavigationBar';
 import {Container,Row, Col, Form, Button,Toast } from 'react-bootstrap';
 import '../css/signin.css'
 import { useNavigate } from "react-router-dom";
+import '../css/signin.css'
 // import {toast,ToastContainer} from "react-toastify"
 
 function Authentication(){
+
+    const [justifyActive, setJustifyActive] = useState('tab1');;
+
+  const handleJustifyClick = (value) => {
+    if (value === justifyActive) {
+      return;
+    }
+
+    setJustifyActive(value);
+  };
+
 
     const [signIn, setSignIn] = React.useState(true);
 
@@ -97,12 +123,77 @@ function Authentication(){
     }
 
     return(
-        <div>
-            {
+        <div className='signin'>
+            <Navbar/>
+            <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+
+            <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
+            <MDBTabsItem>
+                <MDBTabsLink onClick={() => handleJustifyClick('tab1')} active={justifyActive === 'tab1'}>
+                Login
+                </MDBTabsLink>
+            </MDBTabsItem>
+            <MDBTabsItem>
+                <MDBTabsLink onClick={() => handleJustifyClick('tab2')} active={justifyActive === 'tab2'}>
+                Register
+                </MDBTabsLink>
+            </MDBTabsItem>
+            </MDBTabs>
+
+            <MDBTabsContent>
+
+            <MDBTabsPane show={justifyActive === 'tab1'}>
+
+
+                <MDBInput wrapperClass='mb-4' placeholder='Email address' id='form1' type='email' onChange={handleEmailInput}/>
+                <MDBInput wrapperClass='mb-4' placeholder='Password' id='form2' type='password' onChange={handlePassword}/>
+
+                <div className="d-flex justify-content-between mx-4 mb-4">
+                <a href="!#">Forgot password?</a>
+                </div>
+
+                <MDBBtn className="mb-4 w-100" onClick={handleLogin}>Sign in</MDBBtn>
+                <p className="text-center">Not a member? <a onClick={() => handleJustifyClick('tab2')} >Register</a></p>
+
+            </MDBTabsPane>
+
+            <MDBTabsPane show={justifyActive === 'tab2'}>
+                <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email' onChange={handleEmailInput}/>
+                <MDBRow>
+                <MDBCol md='6'>
+                <MDBInput wrapperClass='mb-4' placeholder='Password' id='form1' type='password' onChange={handlePassword}/>
+                </MDBCol>
+                <MDBCol md='6'>
+                <MDBInput wrapperClass='mb-4' placeholder='Confirm Password' id='form1' type='password' onChange={handleConfirmmPassword}/>
+
+                </MDBCol>
+                
+                </MDBRow>
+
+            
+                <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text' onChange={handleName}/>
+
+                <MDBInput wrapperClass='mb-4' placeholder='Contact' id='form1' type='number' onChange={handleContact}/>
+                <MDBInput wrapperClass='mb-4' placeholder='City' id='form1' type='text'/>
+                <MDBInput wrapperClass='mb-4' placeholder='State' id='form1' type='text'/>
+
+
+                <div className='d-flex justify-content-center mb-4'>
+                <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
+                </div>
+
+                <MDBBtn className="mb-4 w-100" onClick={registerSuperAdmin} >Sign up</MDBBtn>
+
+            </MDBTabsPane>
+
+            </MDBTabsContent>
+
+            </MDBContainer>
+            {/* {
             (signIn==true)?(
-                    <div className='signin'>
+                    <div className='signin'> */}
                         {/* <ToastContainer position="top-center"/> */}
-                        <Navbar/>
+                        {/* <Navbar/>
                         <Container>
                             <Row><Col><h4>Sign In</h4></Col></Row>
                             <Row>
@@ -176,7 +267,7 @@ function Authentication(){
                 </Container>
             </div>
             )
-            }
+            } */}
         </div>
         
     )
