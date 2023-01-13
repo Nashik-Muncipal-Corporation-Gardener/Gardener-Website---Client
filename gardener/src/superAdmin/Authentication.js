@@ -124,7 +124,7 @@ function Authentication(){
 
     return(
         <div className='signin'>
-            <Navbar/>
+            {/* <Navbar/> */}
             <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
             <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>

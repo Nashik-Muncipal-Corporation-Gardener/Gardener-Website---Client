@@ -26,7 +26,7 @@ export const SidebarData = [
     },
     {
         title: 'News',
-        path: '/super-admin/news',
+        path: '/super-admin/addnews',
         icon: <BsIcons.BsNewspaper/>,
         cName: 'nav-text'
     },
