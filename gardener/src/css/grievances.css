@@ -2,24 +2,21 @@
     margin-top: 20px;
 }
 
-.mygrievances table,th, td{
-    border: 5px solid rgb(255, 255, 255);
-    border-collapse: collapse;
-    border-radius: 10px;
+.mygrievances th{
+    background-color: #207fb0;
+    color: aliceblue !important;
 }
 
-.mygrievances table{
-    width: 80%;
-}
-.mygrievances td,th{
-    /* width: 100%; */
-    height: 50px;
-    padding-left: 20px;
-    background-color: #FDFFC2;
+.grievance .nav-tabs .nav-link.active{
+    background-color: #207fb0;
+    color: aliceblue;
 }
 
+.grievance .nav-tabs .nav-link {
+    color: #207fb0;
+}
 .mygrievances .container{
-    padding: 3%;
+    /* padding: 3%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +24,7 @@
 
 .registergrievance .container{
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: auto;
     justify-content: center;
 }
@@ -42,24 +39,14 @@
 
 .registergrievance table{
    
-    width: 100%;
+    /* width: 100%; */
 }
 
-.registergrievance input, textarea{
-    height: 50px;
-    width: 100%;
-    border: 1px solid;
-    border-radius: 5px;
-    border-color: #207fb0;
-    padding-left: 10px;
-    width: 100%;
-}
 
-.registergrievance textarea{
-    height: 90px;
-}
+
+
 .registergrievance .btn{
-    height: 50px;
+    /* height: 50px; */
     width: 100%;
     border: 1px solid;
     border-radius: 5px;
@@ -68,12 +55,17 @@
     background-color: white;
     color: gray;
     width: 100%;
+
 }
 
 .registergrievance .registergrievancebtn{
-    height: 35px;
+    /* height: 35px; */
     margin-top: 20px;
     background-color: #207fb0;
     color: aliceblue;
     width: 40%;
+}
+
+.registergrievance .form-control{
+    border-color: #207fb0;
 }

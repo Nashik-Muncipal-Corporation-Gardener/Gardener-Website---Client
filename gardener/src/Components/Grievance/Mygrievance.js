@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button,Image, Container,Row,Col, Modal} from 'react-bootstrap';
+import {Button,Image, Container,Row,Col, Modal, Table} from 'react-bootstrap';
 import '../../css/grievances.css'
 function Mygrievance() {
 
@@ -8,15 +8,15 @@ function Mygrievance() {
   return (
     <div className='mygrievances'>
         <Container>
-            {/* <h3>My Grievances</h3> */}
-            <table>
-                <tr>
+
+        <Table striped bordered hover size="sm">
+                    <tbody>
+                    <tr>
                     <th>Grievance ID</th>
                     <th>Grievance Date</th>
                     <th>Grievance Type</th>
                     <th>Grievance Status</th>
                 </tr>
-
                 {
                     grievances.map(g=>{
                         return(
@@ -29,8 +29,11 @@ function Mygrievance() {
                         )
                     })
                 }
-                
-            </table>
+                        
+                    </tbody>
+                    </Table>
+            {/* <h3>My Grievances</h3> */}
+            
         </Container>
     </div>
   )

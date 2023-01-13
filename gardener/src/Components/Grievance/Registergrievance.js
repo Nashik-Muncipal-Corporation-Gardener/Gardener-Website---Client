@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import "bootstrap/dist/css/bootstrap.css";
-import { MDBSelect } from 'mdb-react-ui-kit';
-import {Row,Dropdown,DropdownButton, Col,Container , Button} from 'react-bootstrap'
+import { MDBSelect,MDBInput, MDBCol,MDBRow,MDBFile, MDBBtn} from 'mdb-react-ui-kit';
+import {Row,Dropdown,DropdownButton, Col,Container , Button,Card,ListGroup} from 'react-bootstrap'
 import '../../css/grievances.css'
 function Registergrievance() {
 
@@ -15,11 +15,13 @@ function Registergrievance() {
   return (
     <div className='registergrievance'>
         <Container>
-        <form >
-        <table>
-            <tr>
-                <td colspan="2">
-                <DropdownButton
+            
+        <Card style={{width:'100%'}}>
+        <ListGroup variant="flush">
+            <ListGroup.Item style={{backgroundColor:'#207fb0',color:'aliceblue'}}>Grievance Form</ListGroup.Item>
+            <ListGroup.Item style={{padding:'5%'}} >
+            <MDBRow>
+            <DropdownButton
                     alignRight
                     title={value_type}
                     id="dropdown-menu-align-right"
@@ -33,15 +35,16 @@ function Registergrievance() {
                                 })
                             }
                     </DropdownButton>
-            </td>
-            </tr>
-            <tr>
-                <td colspan="2"><textarea placeholder='Grievance Description' name="description" ></textarea></td>
-            </tr>
-            <tr>
-                <td><DropdownButton
+          </MDBRow>
+          <br></br>
+          <MDBRow>
+          <MDBInput wrapperClass='mb-4' placeholder='Grievance Description' id='form1' type='textarea'/>
+          </MDBRow>
+          <MDBRow>
+            <MDBCol>
+            <DropdownButton
                     alignRight
-                    title='Division'
+                    title={value_type}
                     id="dropdown-menu-align-right"
                     onSelect={handleSelect}
                         >
@@ -52,10 +55,12 @@ function Registergrievance() {
                                     )
                                 })
                             }
-                    </DropdownButton></td>
-                <td><DropdownButton
+                    </DropdownButton>
+            </MDBCol>
+            <MDBCol>
+            <DropdownButton
                     alignRight
-                    title='Prabhag'
+                    title={value_type}
                     id="dropdown-menu-align-right"
                     onSelect={handleSelect}
                         >
@@ -66,23 +71,36 @@ function Registergrievance() {
                                     )
                                 })
                             }
-                    </DropdownButton></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input placeholder='Street Address' type="text" /></td>
-            </tr>
-            <tr>
-                <td><input placeholder='Lankmark' type="text" /></td>
-                <td><input placeholder='Area' type="text" /></td>
-            </tr>
-            <tr>
-                <td><input placeholder='Pincode' type="number" /></td>
-                <td><input placeholder='File' type="file" /></td>
-            </tr>
-        </table>
-            
-        <Button className='registergrievancebtn'>Submit</Button>
-      </form>
+                    </DropdownButton>
+            </MDBCol>
+          </MDBRow>
+          <br></br>
+          <MDBRow>
+          <MDBInput wrapperClass='mb-4' placeholder='Street Address' id='form1' type='text'/>
+          </MDBRow>
+          <MDBRow>
+            <MDBCol>
+            <MDBInput wrapperClass='mb-4' placeholder='Landmark' id='form1' type='text'/>
+            </MDBCol>
+            <MDBCol>
+            <MDBInput wrapperClass='mb-4' placeholder='Area' id='form1' type='text'/>
+        </MDBCol>
+          </MDBRow>
+          <MDBRow>
+            <MDBCol>
+            <MDBInput wrapperClass='mb-4' placeholder='Pincode' id='form1' type='number'/>
+            </MDBCol>
+            <MDBCol>
+            <MDBFile id='customFile' />
+        </MDBCol>
+          </MDBRow>
+          <MDBRow>
+        <center><MDBBtn className='registergrievancebtn'>Submit</MDBBtn></center>
+          </MDBRow>
+        </ListGroup.Item>
+        </ListGroup>
+        </Card>
+        
       </Container>
     </div>
   )
