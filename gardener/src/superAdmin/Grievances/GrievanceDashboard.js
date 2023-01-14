@@ -1,11 +1,13 @@
 import React from "react";
-import { Container,Card, Row, Col } from "react-bootstrap";
+import { Container,Card, Row, Col, Button } from "react-bootstrap";
 import './GrievanceDashboard.css'
 import SuperAdminHome from '../home/SuperAdminHome'
 function GrievanceDashboard(){
+    
     return(
         <div>
             <SuperAdminHome/>
+            <Button>Marathi</Button>
 
             <Container>
             <h1>Grievance Dashboard</h1>
