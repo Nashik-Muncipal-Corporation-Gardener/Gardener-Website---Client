@@ -22,6 +22,8 @@ import Pdfreader from './Components/Pdfreader';
 import Posters from './superAdmin/Posters';
 import Announcements from './superAdmin/Announcements';
 import AddNews from './superAdmin/news/AddNews';
+import AdminHome from './admin/home/AdminHome';
+import GrievanceDashboardAdmin from './admin/Grievances/GrievanceDashboard';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -47,6 +49,9 @@ root.render(
         <Route exact path='/super-admin/posters' element={<Posters/>}></Route>
         <Route exact path='/super-admin/announcements' element={<Announcements/>}></Route>
         <Route exact path='/super-admin/addnews' element={<AddNews/>}></Route>
+
+        <Route exact path='/admin/home' element={<AdminHome/>}></Route>
+        <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
 
 
 
