@@ -141,7 +141,7 @@ function Authentication(){
                 if(response.status==201){
                     console.log("Inside successfull response")
 
-                    localStorage.setItem("token",response.data.token);
+                    localStorage.setItem("jwtTokenSuperAdmin",response.data.token);
                     alert("Super Admin registered successfully!!");
                     navigate("/super-admin/home");
 
@@ -166,7 +166,31 @@ function Authentication(){
             alert("Password is empty")
         }else{
             // alert("Login successfull")
-            navigate("/super-admin/home")
+
+            var form_data_body = {
+                "email" : email,
+                "password": password
+            };
+
+            axios.post(url+"/super-admin/login",form_data_body,{
+                headers:{
+                    "Content-Type":"multipart/form-data",
+                },
+            }).then(function(response){
+                console.log("Response",response.data);
+                if(response.status==200){
+                    console.log("Response:",response);
+                    localStorage.setItem("jwtTokenSuperAdmin",response.data.message);
+                    alert("Super Admin Login successfully!!");
+                    navigate("/super-admin/home");
+                }else{
+                    alert(response.data.message);
+                }
+            }).catch(function(error){
+                console.log("Error",error);
+            })
+
+            // navigate("/super-admin/home")
         }
 
     }
