@@ -108,35 +108,35 @@ function Authentication(){
             alert("Please enter 10 digit mobile number")
         }else{
           
-            // var form_data_body = {
-            //     "email":email,
-            //     "name":name,
-            //     "dateOfBirth":"null",
-            //     "phoneNos":contact,
-            //     "address":"null",
-            //     "city":"Nashik",
-            //     "state":"Maharashtra",
-            //     "password":password,
-            // }
+            var form_data_body = {
+                "email":email,
+                "name":name,
+                "dateOfBirth":"null",
+                "phoneNos":contact,
+                "address":"null",
+                "city":"Nashik",
+                "state":"Maharashtra",
+                "password":password,
+            }
 
-            // axios.post(url+"/super-admin/register",form_data_body,{
-            //     headers:{
-            //         "Content-Type":"multipart/form-data",
-            //     },
-            // }).then(function(response){
-            //     if(response.status==200){
-            //         console.log("Inside successfull response")
+            axios.post(url+"/super-admin/register",form_data_body,{
+                headers:{
+                    "Content-Type":"multipart/form-data",
+                },
+            }).then(function(response){
+                if(response.status==201){
+                    console.log("Inside successfull response")
 
-            //         localStorage.setItem("token",response.data.message);
-            //         alert(response.data.message);
-            //         navigate("/super-admin/home");
+                    localStorage.setItem("token",response.data.token);
+                    alert(response.data.token);
+                    navigate("/super-admin/home");
 
-            //     }else{
-            //         alert(response.data.message);
-            //     }
-            // }).catch(function(error){
-            //     console.log("Error",error);
-            // })
+                }else{
+                    alert("Inside else")
+                }
+            }).catch(function(error){
+                console.log("Error",error);
+            })
 
         }
     }
