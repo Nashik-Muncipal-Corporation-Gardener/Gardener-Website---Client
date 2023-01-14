@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import url from '../Uri';
+import axios from 'axios';
+
+
+
 import {
   MDBContainer,
   MDBTabs,
@@ -84,7 +89,7 @@ function Authentication(){
         setSignIn(true)
     }
 
-    function registerSuperAdmin(e){
+    async function registerSuperAdmin(e){
         e.preventDefault();
 
         // alert('Registering S
@@ -102,8 +107,37 @@ function Authentication(){
         }else if(contact.length!=10 ){
             alert("Please enter 10 digit mobile number")
         }else{
-            // alert("Registration successfull")
-            navigate("/super-admin/home")
+          
+            // var form_data_body = {
+            //     "email":email,
+            //     "name":name,
+            //     "dateOfBirth":"null",
+            //     "phoneNos":contact,
+            //     "address":"null",
+            //     "city":"Nashik",
+            //     "state":"Maharashtra",
+            //     "password":password,
+            // }
+
+            // axios.post(url+"/super-admin/register",form_data_body,{
+            //     headers:{
+            //         "Content-Type":"multipart/form-data",
+            //     },
+            // }).then(function(response){
+            //     if(response.status==200){
+            //         console.log("Inside successfull response")
+
+            //         localStorage.setItem("token",response.data.message);
+            //         alert(response.data.message);
+            //         navigate("/super-admin/home");
+
+            //     }else{
+            //         alert(response.data.message);
+            //     }
+            // }).catch(function(error){
+            //     console.log("Error",error);
+            // })
+
         }
     }
 
