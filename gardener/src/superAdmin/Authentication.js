@@ -47,6 +47,7 @@ function Authentication(){
     const [name,setName] = React.useState('');
     const [contact,setContact] = React.useState('');
     const [state,setState] = React.useState('');
+    const [checkBox,setCheckBox] = React.useState(false);
 
     const navigate = useNavigate();
 
@@ -89,6 +90,16 @@ function Authentication(){
         setSignIn(true)
     }
 
+
+    function checkboxStatus(){
+        // e.preventDefault();
+        if(checkBox==true){
+            setCheckBox(false)
+        }else{
+            setCheckBox(true)
+        }
+    }
+
     async function registerSuperAdmin(e){
         e.preventDefault();
 
@@ -106,8 +117,11 @@ function Authentication(){
             alert("Name is empty")
         }else if(contact.length!=10 ){
             alert("Please enter 10 digit mobile number")
+        }else if(checkBox==false){
+            alert("Please agree to checkbox!!")
         }else{
-          
+            console.log("Checkbox",""+document.getElementById("flexCheckDefaultSuperAdmin"));
+
             var form_data_body = {
                 "email":email,
                 "name":name,
@@ -128,8 +142,9 @@ function Authentication(){
                     console.log("Inside successfull response")
 
                     localStorage.setItem("token",response.data.token);
-                    alert(response.data.token);
+                    alert("Super Admin registered successfully!!");
                     navigate("/super-admin/home");
+
 
                 }else{
                     alert("Inside else")
@@ -213,7 +228,7 @@ function Authentication(){
 
 
                 <div className='d-flex justify-content-center mb-4'>
-                <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
+                <MDBCheckbox name='flexCheck' id='flexCheckDefaultSuperAdmin' label='I have read and agree to the terms' onChange={checkboxStatus}/>
                 </div>
 
                 <MDBBtn className="mb-4 w-100" onClick={registerSuperAdmin} >Sign up</MDBBtn>
