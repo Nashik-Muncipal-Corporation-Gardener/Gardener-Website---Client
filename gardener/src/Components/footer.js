@@ -21,7 +21,7 @@ function footer() {
                 <h6>Quick Links</h6>
                 <h7>About Us</h7><br></br>
                 <h7>Contact Us</h7><br></br>
-                <h7>Our Services</h7><br></br>
+                <h7>Civic Services</h7><br></br>
                 <h7>Support</h7><br></br>
                 <h7>Terms & Conditions</h7><br></br>
             </Col>

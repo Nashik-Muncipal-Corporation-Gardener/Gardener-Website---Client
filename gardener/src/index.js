@@ -24,6 +24,7 @@ import Announcements from './superAdmin/Announcements';
 import AddNews from './superAdmin/news/AddNews';
 import AdminHome from './admin/home/AdminHome';
 import GrievanceDashboardAdmin from './admin/Grievances/GrievanceDashboard';
+import SuperAdminPermissions from './superAdmin/Permissions/SuperAdminPermissions';
 import AdminAuthentication from './admin/Authentication';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -39,7 +40,7 @@ root.render(
         <Route exact path='/news' element={< News />}></Route>
         <Route exact path='/usergrievance' element={< Grievance />}></Route>
         <Route exact path='/permissions' element={< Permissions />}></Route>
-        <Route exact path='/permissionform' element={< Permissionform />}></Route>
+        <Route exact path='/permissionform/:title' element={< Permissionform />}></Route>
         <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
         <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
 
@@ -50,6 +51,7 @@ root.render(
         <Route exact path='/super-admin/posters' element={<Posters/>}></Route>
         <Route exact path='/super-admin/announcements' element={<Announcements/>}></Route>
         <Route exact path='/super-admin/addnews' element={<AddNews/>}></Route>
+        <Route exact path='/super-admin/permissions' element={<SuperAdminPermissions/>}></Route>
 
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
