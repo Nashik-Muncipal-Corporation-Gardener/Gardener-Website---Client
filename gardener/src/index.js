@@ -39,7 +39,7 @@ root.render(
         <Route exact path='/news' element={< News />}></Route>
         <Route exact path='/usergrievance' element={< Grievance />}></Route>
         <Route exact path='/permissions' element={< Permissions />}></Route>
-        <Route exact path='/permissionform' element={< Permissionform />}></Route>
+        <Route exact path='/permissionform/:title' element={< Permissionform />}></Route>
         <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
         <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
 

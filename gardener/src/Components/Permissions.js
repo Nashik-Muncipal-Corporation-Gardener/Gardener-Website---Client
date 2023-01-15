@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Icon } from '@iconify/react';
 import '../css/permissions.css'
 import Navbar from './NavigationBar'
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import url from '../Uri';
 
@@ -29,8 +29,9 @@ function Permissions() {
         })
     })
 
-    const permissionform=()=>{
-        navigate('/permissionform')
+    const permissionform=(item)=>{
+        navigate('/permissionform/'+item.title)
+        localStorage.setItem('permission',JSON.stringify(item))
     }
 
   return (
@@ -50,7 +51,7 @@ function Permissions() {
                         <a>{item.title}</a>
                             
                         </ListGroup.Item>
-                        <ListGroup.Item style={{padding:'0'}}><Button onClick={permissionform} >Apply Now <Icon icon="ri:external-link-line"  style={{color:'aliceblue'}} /></Button></ListGroup.Item>
+                        <ListGroup.Item style={{padding:'0'}}><Button onClick={()=>permissionform(item)} >Apply Now <Icon icon="ri:external-link-line"  style={{color:'aliceblue'}} /></Button></ListGroup.Item>
                     </ListGroup>
                     </Card>
                 );
