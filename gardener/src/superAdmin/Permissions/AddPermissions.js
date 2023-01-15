@@ -3,6 +3,7 @@ import axios from "axios";
 import { MDBCardText, MDBCardTitle, MDBCol, MDBFile, MDBInput, MDBRow } from "mdb-react-ui-kit";
 import React, { useState } from "react";
 import { Button, Card, Container, DropdownButton, ListGroup, Navbar } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import url from "../../Uri";
 
 
@@ -12,7 +13,11 @@ function AddPermissions(){
 
     const [questions,setQuestions] = useState([]);
 
+    console.log(questions.type)
+
     const [currentQuestion,setCurrentQuestion] = useState("");
+
+    const navigate = useNavigate();
 
 
     function handleNameChange(event){
@@ -21,26 +26,59 @@ function AddPermissions(){
     }
 
     function savePermission(){
-        alert(name+"\n"+questions+"\n"+document.getElementById("permissionIcon").files[0].name);
+        // alert(name+"\n"+questions+"\n"+document.getElementById("permissionIcon").files[0].name);
 
-        axios.post(url+"/permission",{
+        if(name===""){
+            alert("Please enter name of permission")
+            return;
+        }
+        if(questions.length===0){
+            alert("Please enter atleast one question");
+            return;
+        }
+
+        if(document.getElementById("permissionIcon").files.length===0){
+            alert("Please select an icon");
+            return;
+        }
+
+        // var str = questions;
+
+        var arr = "";
+
+        for(var i=0;i<questions.length;i++){
+            arr = arr+ questions[i]+ "#";
+        }
+
+        // console.log(questions);
+
+        var form_data_body = {
             "title":name,
-            "questions":questions,
-            "icon":document.getElementById("permission")
-        },{
+            "questions":arr,
+            "icon":document.getElementById("permissionIcon").files[0]
+        };
+
+        console.log(form_data_body);
+
+
+
+        axios.post(url+"/permission",form_data_body,{
             headers:{
                 "Content-Type":"multipart/form-data",
                 "Authorization":"Bearer "+localStorage.getItem("jwtTokenSuperAdmin")
+                // "Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGl2YW12ZXJtYXN2M…DYwfQ.NlezN48dWVuEaIaCQtxMuJVXunqhUT-hK5WxZmIW1Zo"
             }
         }).then(res=>{
             console.log(res);
             if(res.status==200){
                 alert("Permission Added Successfully");
+                window.location.reload();
             }else{
                 alert("Error in adding permission");
             }
         }).catch(err=>{
             console.log(err);
+            navigate("/super-admin")  
         })
 
         
