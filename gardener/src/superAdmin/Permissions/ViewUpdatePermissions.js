@@ -73,7 +73,7 @@ function ViewUpdatePermissions(){
                             <a>{item.title}</a>
                                 
                             </ListGroup.Item>
-                            <ListGroup.Item style={{padding:'0'}}><Button  >Apply Now <Icon icon="ri:external-link-line"  style={{color:'aliceblue'}} /></Button></ListGroup.Item>
+                            {/* <ListGroup.Item style={{padding:'0'}}><Button  >Apply Now <Icon icon="ri:external-link-line"  style={{color:'aliceblue'}} /></Button></ListGroup.Item> */}
                         </ListGroup>
                         </Card>
                     );
