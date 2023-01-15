@@ -45,13 +45,13 @@ function SuperAdminPermissions(){
               </MDBTabsItem>
               <MDBTabsItem>
                 <MDBTabsLink onClick={() => handleVerticalClick('tab2')} active={verticalActive === 'tab2'}>
-                Update Permissions
+                Add Permissions
                   
                 </MDBTabsLink>
               </MDBTabsItem>
               <MDBTabsItem>
                 <MDBTabsLink onClick={() => handleVerticalClick('tab3')} active={verticalActive === 'tab3'}>
-                Add Permission
+                View Permission
                 </MDBTabsLink>
               </MDBTabsItem>
             </MDBTabs>
@@ -59,8 +59,8 @@ function SuperAdminPermissions(){
           <MDBCol size='9'>
             <MDBTabsContent>
               <MDBTabsPane show={verticalActive === 'tab1'}><PermissionsDashboard/></MDBTabsPane>
-              <MDBTabsPane show={verticalActive === 'tab2'}><ViewUpdatePermissions/></MDBTabsPane>
-              <MDBTabsPane show={verticalActive === 'tab3'}><AddPermissions/></MDBTabsPane>
+              <MDBTabsPane show={verticalActive === 'tab2'}><AddPermissions/></MDBTabsPane>
+              <MDBTabsPane show={verticalActive === 'tab3'}><ViewUpdatePermissions/></MDBTabsPane>
             </MDBTabsContent>
           </MDBCol>
         </MDBRow>

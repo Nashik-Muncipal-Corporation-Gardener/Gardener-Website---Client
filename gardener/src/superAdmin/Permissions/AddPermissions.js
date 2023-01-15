@@ -6,6 +6,7 @@ function AddPermissions(){
     return(
         <div>
             <h1>Add Permissions</h1>
+            
         </div>
     );
 
