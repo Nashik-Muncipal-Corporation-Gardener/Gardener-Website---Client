@@ -19,7 +19,7 @@ function Services() {
     <div className='Services'>
         <Container>
             <Row>
-                <Col><h3>Our Services</h3></Col>   
+                <Col><h3>Civic Services</h3></Col>   
             </Row>
             <Row>
                 <Col>
