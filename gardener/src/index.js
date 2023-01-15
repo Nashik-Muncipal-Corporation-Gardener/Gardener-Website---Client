@@ -24,6 +24,7 @@ import Announcements from './superAdmin/Announcements';
 import AddNews from './superAdmin/news/AddNews';
 import AdminHome from './admin/home/AdminHome';
 import GrievanceDashboardAdmin from './admin/Grievances/GrievanceDashboard';
+import AdminAuthentication from './admin/Authentication';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -52,7 +53,7 @@ root.render(
 
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
-
+        <Route exact path='/admin' element={<AdminAuthentication/>}></Route>
 
 
 
