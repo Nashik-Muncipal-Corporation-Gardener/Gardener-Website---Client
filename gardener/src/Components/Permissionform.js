@@ -52,30 +52,22 @@ function Permissionform() {
             <ListGroup.Item>Personal Information</ListGroup.Item>
             <ListGroup.Item >
             <MDBRow>
-          <MDBCol md='4'>
+          <MDBCol >
             <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text'/>
             </MDBCol>
-            <MDBCol md='4'>
-              <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text'/>
-              </MDBCol>
-              <MDBCol md='4'>
-              <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text'/>
-              </MDBCol>
-              <MDBCol md='4'>
-              <MDBInput wrapperClass='mb-4' placeholder='Contact' id='form1' type='number'/>
+              <MDBCol>
+              <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email'/>
               </MDBCol>
               
             </MDBRow>
             <MDBRow>
-            <MDBCol md='4'>
-              <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email'/>
+            <MDBCol>
+            <MDBInput wrapperClass='mb-4' placeholder='Contact' id='form1' type='number'/>
               </MDBCol>
-              <MDBCol md='4'>
+              <MDBCol >
               <MDBInput wrapperClass='mb-4' placeholder='Address Line 1' id='form1' type='text'/>
               </MDBCol>
-              <MDBCol md='4'>
-              <MDBInput wrapperClass='mb-4' placeholder='Address Line 2' id='form1' type='number'/>
-              </MDBCol>
+            
             </MDBRow>
           </ListGroup.Item>
           </ListGroup>

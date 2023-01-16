@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import "bootstrap/dist/css/bootstrap.css";
-
+import Grievancedetails from './Grievancedetails';
 import { MDBSelect,MDBInput, MDBCol,MDBRow,MDBFile, MDBBtn} from 'mdb-react-ui-kit';
 import {Row,Dropdown,DropdownButton, Col,Container , Button,Card,ListGroup,Modal,Table} from 'react-bootstrap'
 import '../../css/grievances.css'
@@ -28,29 +28,14 @@ function Trackgrievance() {
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
-            <Container>
-        <Table striped bordered hover size="sm">
-      <thead>
-        <tr>
-          <th>Grievance ID</th>
-          <th>Status</th>
-          <th>Review</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr >
-          <td>1</td>
-          <td>In Review</td>
-          <td>abc</td>
-        </tr> 
-      </tbody>
-    </Table>
-    </Container>
+          <Container>
+            <Grievancedetails/>
+          </Container>
         </Modal.Body>
        
       </Modal>
 
+    
       
     </div>
   )

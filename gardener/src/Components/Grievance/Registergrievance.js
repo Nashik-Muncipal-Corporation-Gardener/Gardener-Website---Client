@@ -12,13 +12,35 @@ function Registergrievance() {
         console.log(e);
         setValuetype(e)
       }
+
+    
   return (
     <div className='registergrievance'>
         <Container>
-            
+        
         <Card style={{width:'100%'}}>
         <ListGroup variant="flush">
+            
             <ListGroup.Item style={{backgroundColor:'#207fb0',color:'aliceblue'}}>Grievance Form</ListGroup.Item>
+            <ListGroup.Item>
+                <MDBRow>
+                    {
+                        grievance_types.map(gt=>{
+                            return(
+                                <Card style={{ width: '10rem', marginLeft:'10px' }}>
+                                <Card.Img variant="top"style={{height:'100%', width:'100%'}} src="https://static.thenounproject.com/png/3306974-200.png" />
+                                <Card.Body>
+                                    <Card.Text>
+                                        Garden Waste Not Collected
+                                    </Card.Text>
+                                </Card.Body>
+                                </Card>
+                            )
+                        })
+                    }
+               
+                </MDBRow>
+            </ListGroup.Item>
             <ListGroup.Item style={{padding:'5%'}} >
             <MDBRow>
             <DropdownButton
