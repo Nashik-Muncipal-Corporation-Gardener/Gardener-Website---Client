@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState, useEffect} from 'react';
 import Navbar from './NavigationBar'
 import { Container,ListGroup,Card,Button, Dropdown,DropdownButton} from 'react-bootstrap';
 import translate from 'google-translate-api-x';
@@ -45,7 +45,6 @@ function Permissionform() {
 
   return (
     <div className='permissionsform'>
-        <Navbar/>
         <Container>
           {/* <Button>Click</Button> */}
         <Card>
