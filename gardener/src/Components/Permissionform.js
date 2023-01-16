@@ -44,7 +44,7 @@ function Permissionform() {
     <div className='permissionsform'>
         <Navbar/>
         <Container>
-          <Button>Click</Button>
+          {/* <Button>Click</Button> */}
         <Card>
         <ListGroup variant="flush">
             <ListGroup.Item>Personal Information</ListGroup.Item>
