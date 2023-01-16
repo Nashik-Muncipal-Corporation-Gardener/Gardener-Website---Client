@@ -26,7 +26,7 @@ import { useNavigate } from "react-router-dom";
 import '../css/signin.css'
 // import {toast,ToastContainer} from "react-toastify"
 
-function Authentication(){
+function AdminAuthentication(){
 
     const [justifyActive, setJustifyActive] = useState('tab1');;
 
@@ -47,7 +47,6 @@ function Authentication(){
     const [name,setName] = React.useState('');
     const [contact,setContact] = React.useState('');
     const [state,setState] = React.useState('');
-    const [checkBox,setCheckBox] = React.useState(false);
 
     const navigate = useNavigate();
 
@@ -90,16 +89,6 @@ function Authentication(){
         setSignIn(true)
     }
 
-
-    function checkboxStatus(){
-        // e.preventDefault();
-        if(checkBox==true){
-            setCheckBox(false)
-        }else{
-            setCheckBox(true)
-        }
-    }
-
     async function registerSuperAdmin(e){
         e.preventDefault();
 
@@ -117,41 +106,37 @@ function Authentication(){
             alert("Name is empty")
         }else if(contact.length!=10 ){
             alert("Please enter 10 digit mobile number")
-        }else if(checkBox==false){
-            alert("Please agree to checkbox!!")
         }else{
-            console.log("Checkbox",""+document.getElementById("flexCheckDefaultSuperAdmin"));
+          
+            // var form_data_body = {
+            //     "email":email,
+            //     "name":name,
+            //     "dateOfBirth":"null",
+            //     "phoneNos":contact,
+            //     "address":"null",
+            //     "city":"Nashik",
+            //     "state":"Maharashtra",
+            //     "password":password,
+            // }
 
-            var form_data_body = {
-                "email":email,
-                "name":name,
-                "dateOfBirth":"null",
-                "phoneNos":contact,
-                "address":"null",
-                "city":"Nashik",
-                "state":"Maharashtra",
-                "password":password,
-            }
+            // axios.post(url+"/super-admin/register",form_data_body,{
+            //     headers:{
+            //         "Content-Type":"multipart/form-data",
+            //     },
+            // }).then(function(response){
+            //     if(response.status==200){
+            //         console.log("Inside successfull response")
 
-            axios.post(url+"/super-admin/register",form_data_body,{
-                headers:{
-                    "Content-Type":"multipart/form-data",
-                },
-            }).then(function(response){
-                if(response.status==201){
-                    console.log("Inside successfull response")
+            //         localStorage.setItem("token",response.data.message);
+            //         alert(response.data.message);
+            //         navigate("/super-admin/home");
 
-                    localStorage.setItem("jwtTokenSuperAdmin",response.data.token);
-                    alert("Super Admin registered successfully!!");
-                    navigate("/super-admin/home");
-
-
-                }else{
-                    alert("Inside else")
-                }
-            }).catch(function(error){
-                console.log("Error",error);
-            })
+            //     }else{
+            //         alert(response.data.message);
+            //     }
+            // }).catch(function(error){
+            //     console.log("Error",error);
+            // })
 
         }
     }
@@ -166,31 +151,7 @@ function Authentication(){
             alert("Password is empty")
         }else{
             // alert("Login successfull")
-
-            var form_data_body = {
-                "email" : email,
-                "password": password
-            };
-
-            axios.post(url+"/super-admin/login",form_data_body,{
-                headers:{
-                    "Content-Type":"multipart/form-data",
-                },
-            }).then(function(response){
-                console.log("Response",response.data);
-                if(response.status==200){
-                    console.log("Response:",response);
-                    localStorage.setItem("jwtTokenSuperAdmin",response.data.message);
-                    alert("Super Admin Login successfully!!");
-                    navigate("/super-admin/home");
-                }else{
-                    alert(response.data.message);
-                }
-            }).catch(function(error){
-                console.log("Error",error);
-            })
-
-            // navigate("/super-admin/home")
+            navigate("/super-admin/home")
         }
 
     }
@@ -252,7 +213,7 @@ function Authentication(){
 
 
                 <div className='d-flex justify-content-center mb-4'>
-                <MDBCheckbox name='flexCheck' id='flexCheckDefaultSuperAdmin' label='I have read and agree to the terms' onChange={checkboxStatus}/>
+                <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
                 </div>
 
                 <MDBBtn className="mb-4 w-100" onClick={registerSuperAdmin} >Sign up</MDBBtn>
@@ -346,4 +307,4 @@ function Authentication(){
     )
 }
 
-export default Authentication;
+export default AdminAuthentication;

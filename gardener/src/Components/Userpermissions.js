@@ -18,7 +18,6 @@ function Userpermissions() {
     const handleAlert = () => setAlert(true);
   return (
     <div className='userpermissions'>
-        <Navbar/>
         <Container>
         <Table striped bordered hover size="sm">
       <thead>
@@ -36,7 +35,7 @@ function Userpermissions() {
           <td>PER65489</td>
           <td>Trimming of Trees</td>
           <td>12/12/2022</td>
-          <td><Button onClick={() => handleShow(true)} variant="success" size="sm">Track</Button></td>
+          <td><Button style={{backgroundColor:'success'}} onClick={() => handleShow(true)} variant="success" size="sm">Track</Button></td>
           <td ><Button onClick={() => handleAlert(true)} style={{marginLeft:'10px'}} variant="danger" size="sm">Withdraw</Button></td>
 
         </tr> 

@@ -4,7 +4,7 @@
     align-items: center;
 }
 
-.permissions .btn{
+.permissions .applybtn{
     width: 100%;
     background-color: #207FB0;
     border-top-left-radius: 0;
@@ -49,4 +49,13 @@
 
 .permissionsform .container{
     padding:2%
+}
+
+.permissions .nav-tabs .nav-link.active {
+    background-color: #207fb0;
+    color: aliceblue;
+}
+
+.permissions .nav-tabs .nav-link {
+    color: #207fb0;
 }

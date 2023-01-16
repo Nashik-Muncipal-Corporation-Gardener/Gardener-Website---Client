@@ -1,17 +1,11 @@
 import React from "react";
-import { Container,Card, Row, Col, Button } from "react-bootstrap";
+import { Container,Card, Row, Col } from "react-bootstrap";
 import './GrievanceDashboard.css'
-import SuperAdminHome from '../home/SuperAdminHome'
+import AdminHome from '../home/AdminHome'
 function GrievanceDashboard(){
-    
-
-    
-
-
     return(
         <div>
-            <SuperAdminHome/>
-            <Button>Marathi</Button>
+            <AdminHome/>
 
             <Container>
             <h1>Grievance Dashboard</h1>
