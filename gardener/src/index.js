@@ -27,6 +27,8 @@ import GrievanceDashboardAdmin from './admin/Grievances/GrievanceDashboard';
 import SuperAdminPermissions from './superAdmin/Permissions/SuperAdminPermissions';
 import AdminAuthentication from './admin/Authentication';
 import Panchanamaform from './superAdmin/Permissions/Panchanamaform';
+import Allpermissions from './superAdmin/Permissions/Allpermissions';
+import Pendingpermissions from './superAdmin/Permissions/Pendingpermissions';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -55,6 +57,10 @@ root.render(
         <Route exact path='/super-admin/addnews' element={<AddNews/>}></Route>
         <Route exact path='/super-admin/permissions' element={<SuperAdminPermissions/>}></Route>
         <Route exact path='/super-admin/panchanamaform' element={<Panchanamaform/>}></Route>
+
+        <Route exact path='/super-admin/allpermissions' element={<Allpermissions/>}></Route>
+        <Route exact path='/super-admin/pendingpermissions' element={<Pendingpermissions/>}></Route>
+
 
 
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
