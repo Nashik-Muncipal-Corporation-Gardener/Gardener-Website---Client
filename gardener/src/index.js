@@ -52,8 +52,6 @@ root.render(
         <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
         <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
 
-
-
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
         <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>
         <Route exact path='/super-admin/grievances' element={<GrievanceDashboard/>}></Route>

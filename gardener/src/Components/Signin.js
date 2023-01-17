@@ -140,7 +140,7 @@ function checkboxStatus(){
                 console.log("Inside successfull response")
                 localStorage.setItem("jwtTokenUser",response.data.token);
                 alert("User registered successfully!!");
-                navigate("/signin");
+                navigate("/");
             }else{
                 alert("Inside else")
             }
