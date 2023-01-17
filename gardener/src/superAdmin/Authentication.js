@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import url from '../Uri';
 import axios from 'axios';
-
-
-
 import {
   MDBContainer,
   MDBTabs,
@@ -29,6 +26,7 @@ import '../css/signin.css'
 function Authentication(){
 
     const [justifyActive, setJustifyActive] = useState('tab1');;
+
 
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
@@ -109,30 +107,28 @@ function Authentication(){
             // console.log("Email is empty");
             // toast.error(<b>Please enter email</b>)
             return;
-        }else if(password.length<6){
-            alert("Password must be atleast of 6 characters")
-        }else if(password!==confirmPassword){
-            alert("Password and confirm password must be same")
-        }else if(name===""){
-            alert("Name is empty")
-        }else if(contact.length!=10 ){
-            alert("Please enter 10 digit mobile number")
-        }else if(checkBox==false){
-            alert("Please agree to checkbox!!")
-        }else{
-            console.log("Checkbox",""+document.getElementById("flexCheckDefaultSuperAdmin"));
-
-            var form_data_body = {
-                "email":email,
-                "name":name,
-                "dateOfBirth":"null",
-                "phoneNos":contact,
-                "address":"null",
-                "city":"Nashik",
-                "state":"Maharashtra",
-                "password":password,
-            }
-
+            }else if(password.length<6){
+                alert("Password must be atleast of 6 characters")
+            }else if(password!==confirmPassword){
+                alert("Password and confirm password must be same")
+            }else if(name===""){
+                alert("Name is empty")
+            }else if(contact.length!=10 ){
+                alert("Please enter 10 digit mobile number")
+            }else if(checkBox==false){
+                alert("Please agree to checkbox!!")
+            }else{
+                console.log("Checkbox",""+document.getElementById("flexCheckDefaultSuperAdmin"));
+                var form_data_body = {
+                    "email":email,
+                    "name":name,
+                    "dateOfBirth":"null",
+                    "phoneNos":contact,
+                    "address":"null",
+                    "city":"Nashik",
+                    "state":"Maharashtra",
+                    "password":password,
+                }
             axios.post(url+"/super-admin/register",form_data_body,{
                 headers:{
                     "Content-Type":"multipart/form-data",
@@ -140,12 +136,9 @@ function Authentication(){
             }).then(function(response){
                 if(response.status==201){
                     console.log("Inside successfull response")
-
                     localStorage.setItem("jwtTokenSuperAdmin",response.data.token);
                     alert("Super Admin registered successfully!!");
                     navigate("/super-admin/home");
-
-
                 }else{
                     alert("Inside else")
                 }
