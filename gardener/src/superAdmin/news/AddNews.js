@@ -17,6 +17,7 @@ import {
 from 'mdb-react-ui-kit';
 import SuperAdminHome from '../home/SuperAdminHome'
 
+
 function AddNews() {
     
   return (
@@ -26,7 +27,7 @@ function AddNews() {
     <h1 style={{fontSize:30}}>Add News</h1>
     <form>
       <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' />
-      <MDBTextArea style={{marginBottom:20}} placeholder='Discription' rows={4} />
+      <MDBTextArea style={{marginBottom:20}} placeholder='Description' rows={4} />
       <MDBFile style={{marginBottom:20}} label='Add news pdf' id='customFile' />
 
       <MDBBtn type='submit' className='mb-4' block>

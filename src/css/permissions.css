@@ -1,0 +1,61 @@
+.permissions .list-group-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.permissions .applybtn{
+    width: 100%;
+    background-color: #207FB0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    color: aliceblue;
+}
+
+.permissions .card{
+    border-color: #207FB0;
+    width: 13rem;
+    margin-left: 15px;
+}
+
+.permissions .container{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.permissionsform .btn{
+    display: flex;
+    color: gray;
+    background-color: white;
+    width: 100%;
+    /* display: unset; */
+    flex-direction: row;
+    border-color: lightgray;
+    justify-content: space-between;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: white; 
+    --bs-btn-active-border-color: lightgray;
+}
+
+.permissionsform .list-group-item:first-child {
+    color: aliceblue;
+    background-color: #207fb0;
+}
+
+.permissionsform .card{
+    margin-top: 20px;
+}
+
+.permissionsform .container{
+    padding:2%
+}
+
+.permissions .nav-tabs .nav-link.active {
+    background-color: #207fb0;
+    color: aliceblue;
+}
+
+.permissions .nav-tabs .nav-link {
+    color: #207fb0;
+}

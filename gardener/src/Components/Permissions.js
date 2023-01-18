@@ -54,6 +54,10 @@ function Permissions() {
 
   return (
     <div className='permissions'>
+<<<<<<< HEAD
+=======
+        <Navbar/>
+>>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
         <MDBRow>
         <MDBCol size='3'>
           <MDBTabs className='flex-column text-center'>
