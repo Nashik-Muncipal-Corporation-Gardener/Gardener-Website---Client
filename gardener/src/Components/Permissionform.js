@@ -161,7 +161,7 @@ function Permissionform() {
     axios.post(url+"/permission-form",formData,{
       headers: {
         "Content-Type": "multipart/form-data",
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGIuYyIsImV4cCI6MTY3NDE0OTYzOSwiaWF0IjoxNjc0MDQ5NjM5fQ.u9wx9UzY1GdtfgZSuXejA26Z-bLmcdMJvE79Qr4aipc'
+        'Authorization': 'Bearer '+localStorage.getItem("jwtTokenUser")
       }
     }).then(function(response){
       if(response.status==200){
