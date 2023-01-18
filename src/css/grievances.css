@@ -1,0 +1,71 @@
+.grievance .container{
+    margin-top: 20px;
+}
+
+.mygrievances th{
+    background-color: #207fb0;
+    color: aliceblue !important;
+}
+
+.grievance .nav-tabs .nav-link.active{
+    background-color: #207fb0;
+    color: aliceblue;
+}
+
+.grievance .nav-tabs .nav-link {
+    color: #207fb0;
+}
+.mygrievances .container{
+    /* padding: 3%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registergrievance .container{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.registergrievance form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+
+}
+
+.registergrievance table{
+   
+    /* width: 100%; */
+}
+
+
+
+
+.registergrievance .btn{
+    /* height: 50px; */
+    width: 100%;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #207fb0;
+    padding-left: 10px;
+    background-color: white;
+    color: gray;
+    width: 100%;
+
+}
+
+.registergrievance .registergrievancebtn{
+    /* height: 35px; */
+    margin-top: 20px;
+    background-color: #207fb0;
+    color: aliceblue;
+    width: 40%;
+}
+
+.registergrievance .form-control{
+    border-color: #207fb0;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route, HashRouter } from "react-router-dom";
 import App from './App';
@@ -29,11 +31,7 @@ import AdminAuthentication from './admin/Authentication';
 import Panchanamaform from './superAdmin/Permissions/Panchanamaform';
 import Allpermissions from './superAdmin/Permissions/Allpermissions';
 import Pendingpermissions from './superAdmin/Permissions/Pendingpermissions';
-import Addgardens from './superAdmin/Addgardens';
-import Wastecollection from './superAdmin/Wastecollection';
-import Termsandconditions from './superAdmin/Termsandconditions';
-import Gardendetals from './superAdmin/Gardendetals';
-import Services from './superAdmin/Services';
+import Gardendetails from './superAdmin/Gardendetals'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -60,13 +58,11 @@ root.render(
         <Route exact path='/super-admin/addnews' element={<AddNews/>}></Route>
         <Route exact path='/super-admin/permissions' element={<SuperAdminPermissions/>}></Route>
         <Route exact path='/super-admin/panchanamaform' element={<Panchanamaform/>}></Route>
-        <Route exact path='/super-admin/gardendetails' element={<Gardendetals/>}></Route>
-        <Route exact path='/super-admin/wastecollection' element={<Wastecollection/>}></Route>
-        <Route exact path='/super-admin/termsandconditions' element={<Termsandconditions/>}></Route>
-        <Route exact path='/super-admin/citizenservices' element={<Services/>}></Route>
+
         <Route exact path='/super-admin/allpermissions' element={<Allpermissions/>}></Route>
         <Route exact path='/super-admin/pendingpermissions' element={<Pendingpermissions/>}></Route>
-        
+        <Route exact path='/super-admin/gardendetails' element={<Gardendetails/>}></Route>
+
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
         <Route exact path='/admin' element={<AdminAuthentication/>}></Route>

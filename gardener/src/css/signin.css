@@ -73,3 +73,12 @@
     height: 100%;
     border-color: #348E38;
 } */
+
+.addgarden_container{
+    margin: auto;
+    width: 70% !important;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    padding: 2% !important;
+
+}

@@ -1,0 +1,18 @@
+.nav{
+  background-color: #F7F7F7;
+  display: flex;
+  justify-content:flex-end;
+}
+.right-nav{
+  display: flex;
+  /* padding: 10px; */
+}
+.signinbtn{
+  margin: 10px;
+}
+.navlink{
+  color: #0F4229;
+  text-decoration: none;
+  margin: 15px;
+  font-weight: 600;
+}
