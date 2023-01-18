@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import {Button,Image, Container,Row,Col} from 'react-bootstrap';
 import '../css/editprofile.css'
 import { Icon } from '@iconify/react';
-import Footer from './footer.js'
 function Editprofile() {
   return (
     <div className='editprofile'>
@@ -44,7 +43,6 @@ function Editprofile() {
          </Row>   
       </form>
       </Container>
-      <Footer/>
     </div>
   )
 }

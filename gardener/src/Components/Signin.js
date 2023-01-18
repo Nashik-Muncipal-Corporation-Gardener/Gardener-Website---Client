@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {
   MDBContainer,
   MDBTabs,
@@ -27,6 +27,9 @@ function Signin() {
     const [justifyActive, setJustifyActive] = useState('tab1');;
 
     const [email,setEmail] = React.useState('');
+    const [emailID,setEmailID] =useState('');
+    const [otp,setOtp] = useState();
+    const [sentotp,setSentOtp] = useState();
     const [password,setPassword] = React.useState('');
     const [confirmPassword,setConfirmPassword] = React.useState('');
     const [name,setName] = React.useState('');
@@ -36,11 +39,29 @@ function Signin() {
     const [address,setAddress] = React.useState('');
     const [city,setCity] = React.useState('');
     const [checkBox,setCheckBox] = React.useState(false);
-
+    const [verified,setVerified] = useState(false);
     const handleEmailInput=(event)=>{
       // console.log("Event"+event.target.value)
       setEmail(event.target.value)
       // email = event.target.value
+    }
+    const sendOtp=()=>{
+      setEmailID(email);
+    }
+
+    const handleOtpInput=(event)=>{
+      setOtp(event.target.value)
+    }
+
+    const verifyOtp=()=>{
+      // console.log(otp);
+      // console.log(sentotp)
+      if(sentotp == otp){
+        setVerified(true);
+      }
+      else{
+        alert('Incorrect OTP');
+      }
     }
 
     const handlePassword = (event)=>{
@@ -90,6 +111,24 @@ function checkboxStatus(){
 
     setJustifyActive(value);
   };
+
+  
+  useEffect(()=>{
+    if(emailID === ""){
+
+    }
+    else{
+    axios.get(url+"/verifyEmail/"+emailID).then((res)=>{
+        if(res.status==200){    
+            setSentOtp(res.data.message);
+        }else{
+            alert("Please enter correct email address")
+        }
+    }).catch(err=>{
+        console.log(err);
+        alert("Please enter correct email address")
+    })}
+},[emailID]);
 
 
   async function registerUser(e){
@@ -152,7 +191,7 @@ function checkboxStatus(){
 
   return (
     <div className='signin'>
-    <Navbar/>
+    {/* <Navbar/> */}
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
       <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
@@ -186,18 +225,29 @@ function checkboxStatus(){
         </MDBTabsPane>
 
         <MDBTabsPane show={justifyActive === 'tab2'}>
-          <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email' onChange={handleEmailInput}/>
+          
           <MDBRow>
-          <MDBCol md='9'>
-            <MDBInput wrapperClass='mb-4' placeholder='OTP' id='form1' type='number'  />
+          <MDBCol md='8'>
+          <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email' onChange={handleEmailInput}/>
             </MDBCol>
-            <MDBCol md='3'>
-            <MDBBtn className="mb-4 w-100" >Verify</MDBBtn>
+            <MDBCol md='4'>
+            <MDBBtn className="mb-4 w-100" onClick={sendOtp}>Send OTP</MDBBtn>
+            </MDBCol>
+            
+          </MDBRow>
+
+          <MDBRow>
+          <MDBCol md='8'>
+            <MDBInput wrapperClass='mb-4' placeholder='OTP' id='form1' type='number' onChange={handleOtpInput} />
+            </MDBCol>
+            <MDBCol md='4'>
+            <MDBBtn className="mb-4 w-100" onClick={verifyOtp}>Verify</MDBBtn>
             </MDBCol>
             
           </MDBRow>
           <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text' onChange={handleName}/>
 
+        
           <MDBRow>
             <MDBCol md='3'>
             <MDBBtn className="mb-4 w-100" disabled >DOB</MDBBtn>
@@ -217,8 +267,8 @@ function checkboxStatus(){
           <div className='d-flex justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' onChange={checkboxStatus} />
           </div>
-
-          <MDBBtn className="mb-4 w-100" onClick={registerUser}>Sign up</MDBBtn>
+          {(verified && <MDBBtn  className="mb-4 w-100" onClick={registerUser}>Sign up</MDBBtn>) || <MDBBtn  className="mb-4 w-100" onClick={registerUser} disabled>Sign up</MDBBtn> }
+          
 
         </MDBTabsPane>
 

@@ -3,7 +3,6 @@ import { Icon } from '@iconify/react';
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, ListGroup } from 'react-bootstrap';
 import '../css/footer.css'
-import { Divider } from '@mui/material';
 function Footer() {
   return (
     <div className='footer'>
