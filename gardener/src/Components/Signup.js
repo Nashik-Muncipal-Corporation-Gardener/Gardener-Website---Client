@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import axios from "axios";
 import {Container,Row, Col, Form, Button } from 'react-bootstrap';
 import '../css/signup.css'
+// import url from "../../Uri";
 function Signup() {
 
     const [startDate, setStartDate] = useState(new Date());
+    const [otp,setOtp] = useState();
+    // useEffect(() => {
+    //     axios.get(url+'verifyEmail',{}).then((res))
+    //     return () => {
+    //         cleanup
+    //     };
+    // }, [input]);
   
   return (
     <div className='signup'>
