@@ -13,20 +13,14 @@ import {
   MDBRow, MDBCol
 }
 from 'mdb-react-ui-kit';
-<<<<<<< HEAD
-=======
 import url from '../Uri';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from './NavigationBar';
 import {Container,Row, Col, Form, Button } from 'react-bootstrap';
 // import '../css/signin.css'
 function Signin() {
-<<<<<<< HEAD
-    const [justifyActive, setJustifyActive] = useState('tab1');;
-=======
 
   const navigate = useNavigate();
 
@@ -88,7 +82,6 @@ function checkboxStatus(){
       setCheckBox(true)
   }
 }
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
 
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
@@ -98,10 +91,6 @@ function checkboxStatus(){
     setJustifyActive(value);
   };
 
-<<<<<<< HEAD
-  return (
-    <div className='signin'>
-=======
 
   async function registerUser(e){
     e.preventDefault();
@@ -164,7 +153,6 @@ function checkboxStatus(){
   return (
     <div className='signin'>
     <Navbar/>
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
       <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
@@ -198,48 +186,16 @@ function checkboxStatus(){
         </MDBTabsPane>
 
         <MDBTabsPane show={justifyActive === 'tab2'}>
-<<<<<<< HEAD
-          <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email'/>
-          <MDBRow>
-          <MDBCol md='9'>
-            <MDBInput wrapperClass='mb-4' placeholder='OTP' id='form1' type='number'/>
-=======
           <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email' onChange={handleEmailInput}/>
           <MDBRow>
           <MDBCol md='9'>
             <MDBInput wrapperClass='mb-4' placeholder='OTP' id='form1' type='number'  />
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
             </MDBCol>
             <MDBCol md='3'>
             <MDBBtn className="mb-4 w-100" >Verify</MDBBtn>
             </MDBCol>
             
           </MDBRow>
-<<<<<<< HEAD
-          <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text'/>
-
-          <MDBRow>
-            <MDBCol md='3'>
-            <MDBBtn className="mb-4 w-100" disabled>DOB</MDBBtn>
-            </MDBCol>
-            <MDBCol md='9'>
-            <MDBInput wrapperClass='mb-4' placeholder='DOB' id='form1' type='date'/>
-            </MDBCol>
-          </MDBRow>
-          <MDBInput wrapperClass='mb-4' placeholder='Contact' id='form1' type='number'/>
-          <MDBInput wrapperClass='mb-4' placeholder='Street' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' placeholder='City' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' placeholder='State' id='form1' type='text'/>
-          <MDBInput wrapperClass='mb-4' placeholder='Password' id='form1' type='password'/>
-          <MDBInput wrapperClass='mb-4' placeholder='Confirm Password' id='form1' type='password'/>
-
-
-          <div className='d-flex justify-content-center mb-4'>
-            <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' />
-          </div>
-
-          <MDBBtn className="mb-4 w-100">Sign up</MDBBtn>
-=======
           <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text' onChange={handleName}/>
 
           <MDBRow>
@@ -263,7 +219,6 @@ function checkboxStatus(){
           </div>
 
           <MDBBtn className="mb-4 w-100" onClick={registerUser}>Sign up</MDBBtn>
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
 
         </MDBTabsPane>
 

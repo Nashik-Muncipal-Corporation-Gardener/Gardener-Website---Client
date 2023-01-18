@@ -5,7 +5,7 @@ import {Button,Image, Container,Row,Col, Modal} from 'react-bootstrap';
 import Navbar from './NavigationBar';
 import '../css/userprofile.css'
 import { Icon } from '@iconify/react';
-import Footer from './Footer';
+import Footer from './footer.js';
 import '../css/editprofile.css'
 function Userprofile() {
 

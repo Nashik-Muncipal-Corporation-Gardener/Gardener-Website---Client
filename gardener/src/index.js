@@ -12,7 +12,7 @@ import Gardens from './Components/Gardens';
 import Garden from './Components/garden/Garden';
 import About from './Components/About';
 import Contact from './Components/Contact';
-import Footer from './Components/Footer';
+import Footer from './Components/footer.js';
 import Userprofile from './Components/Userprofile';
 import ScrollToTop from './Components/scrollToTop';
 import Authentication from './superAdmin/Authentication';
@@ -37,12 +37,9 @@ import AdminAuthentication from './admin/Authentication';
 import Panchanamaform from './superAdmin/Permissions/Panchanamaform';
 import Allpermissions from './superAdmin/Permissions/Allpermissions';
 import Pendingpermissions from './superAdmin/Permissions/Pendingpermissions';
-<<<<<<< HEAD
-=======
 import Gardendetails from './superAdmin/Gardendetals'
 import Services from './superAdmin/Services';
 import Acheivements from './superAdmin/Acheivements';
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -67,27 +64,6 @@ root.render(
       <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
       <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
 
-<<<<<<< HEAD
-
-
-      <Route exact path='/super-admin' element={<Authentication />}></Route>
-      <Route exact path='/super-admin/home' element={<SuperAdminHome />}></Route>
-      <Route exact path='/super-admin/grievances' element={<GrievanceDashboard />}></Route>
-      <Route exact path='/super-admin/posters' element={<Posters />}></Route>
-      <Route exact path='/super-admin/announcements' element={<Announcements />}></Route>
-      <Route exact path='/super-admin/addnews' element={<AddNews />}></Route>
-      <Route exact path='/super-admin/permissions' element={<SuperAdminPermissions />}></Route>
-      <Route exact path='/super-admin/panchanamaform' element={<Panchanamaform />}></Route>
-
-      <Route exact path='/super-admin/allpermissions' element={<Allpermissions />}></Route>
-      <Route exact path='/super-admin/pendingpermissions' element={<Pendingpermissions />}></Route>
-
-
-
-      <Route exact path='/admin/home' element={<AdminHome />}></Route>
-      <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin />}></Route>
-      <Route exact path='/admin' element={<AdminAuthentication />}></Route>
-=======
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
         <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>
         <Route exact path='/super-admin/grievances' element={<GrievanceDashboard/>}></Route>
@@ -104,7 +80,6 @@ root.render(
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
         <Route exact path='/admin' element={<AdminAuthentication/>}></Route>
->>>>>>> 6b4a87f00ed4c19d52056d68045c07fd4cc8947e
 
 
 
