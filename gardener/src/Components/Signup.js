@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Navbar from './NavigationBar';
 import {Container,Row, Col, Form, Button } from 'react-bootstrap';
 import '../css/signup.css'
 function Signup() {
@@ -9,7 +8,6 @@ function Signup() {
   
   return (
     <div className='signup'>
-        <Navbar/>
         <Container>
             <Row><Col><h4>Sign Up</h4></Col></Row>
             <Row>

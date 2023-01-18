@@ -1,50 +1,56 @@
 import React from 'react'
-import "bootstrap/dist/css/bootstrap.css";
-import {Container,Carousel} from 'react-bootstrap';
+
 import '../css/slider.css'
 function Slider() {
   return (
-    <div className='slider'>
-        <Carousel fade>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="http://www.marathwadafriendcircle.com/img/slide1.jpeg"
-          alt="First slide"
-          
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://images.pexels.com/photos/158028/bellingrath-gardens-alabama-landscape-scenic-158028.jpeg?cs=srgb&dl=pexels-pixabay-158028.jpg&fm=jpg"
-          alt="Second slide"
-        />
+    <div className="container-width-auto">
+      {/* <!-- Carousel Start --> */}
+      <div className="container-fluid p-0">
+        <div id="header-carousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active" data-bs-interval="2000">
+              <img className="w-100 " src="/images/carousel1.jpg" alt="Image" />
+              <div className="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                <div className="text-start p-5" style={{ maxWidth: "900px;" }}>
+                  <h1 className="text-white ">Garden a way to feel happy </h1>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item" data-bs-interval="2000">
+              <img className="w-100 " src="/images/carousel2.jpg" alt="Image" />
+              <div className="carousel-caption top-0 bottom-0  start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                <div className="text-start p-5" style={{ maxWidth: "900px;" }}>
+                  <h1 className="text-white">Welcome to my website</h1>
 
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://img.freepik.com/free-photo/garden-flowers-mae-fah-luang-garden-locate-doi-tung-chiang-rai-thailand_335224-968.jpg?w=2000"
-          alt="Third slide"
-        />
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item" data-bs-interval="2000">
+              <img className="w-100 " src="/images/carousel3.jpg" alt="Image" />
+              <div className="carousel-caption top-0 bottom-0 start-0 end-0 d-flex flex-column align-items-center justify-content-center">
+                <div className="text-start p-5" style={{ maxWidth: "900px;" }}>
+                  <h1 className="text-white">Welcome to my website</h1>
 
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+                </div>
+              </div>
+            </div>
+
+
+            <button className="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+              data-bs-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button className="carousel-control-next" type="button" data-bs-target="#header-carousel"
+              data-bs-slide="next">
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        {/* <!-- Carousel End --> */}
+
+      </div>
     </div>
   )
 }

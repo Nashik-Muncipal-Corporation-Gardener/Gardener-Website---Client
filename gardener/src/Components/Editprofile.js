@@ -2,14 +2,12 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import {Button,Image, Container,Row,Col} from 'react-bootstrap';
-import Navbar from './NavigationBar';
 import '../css/editprofile.css'
 import { Icon } from '@iconify/react';
-import Footer from './footer'
+import Footer from './Footer'
 function Editprofile() {
   return (
     <div className='editprofile'>
-        <Navbar/>
         <Container>
 
         <form >

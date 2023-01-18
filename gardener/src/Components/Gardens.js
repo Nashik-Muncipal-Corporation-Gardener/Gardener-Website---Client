@@ -1,14 +1,12 @@
 import React from 'react'
 import '../css/gardens.css'
-import Navbar from './NavigationBar';
+import NavigationBar from './NavigationBar';
 import { Container } from 'react-bootstrap';
-import Footer from './footer'
 function Gardens() {
 
     const gardens=[1,2,3,4]
   return (
     <div className='gardens'>
-        <Navbar/>
         {/* <div className='startdiv' >
         <h1>Nashik Muncipal Corporation</h1>
         </div>
@@ -37,7 +35,6 @@ function Gardens() {
         
        
         </Container>
-        <Footer/>
         
     </div>
   )
