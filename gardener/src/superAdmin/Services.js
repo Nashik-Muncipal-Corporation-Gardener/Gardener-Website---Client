@@ -15,11 +15,11 @@ import {
   MDBTextArea
 }
 from 'mdb-react-ui-kit';
-// import SuperAdminHome from '../home/SuperAdminHome'
+import SuperAdminHome from './home/SuperAdminHome';
 function Services() {
   return (
     <div className='signin'>
-    {/* <SuperAdminHome/> */}
+    <SuperAdminHome/>
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
     <h1 style={{fontSize:30}}>Add New Service</h1>
     <form>

@@ -59,7 +59,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#337AB7"}}>All Grievances</Card.Header>
@@ -71,7 +71,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#F0AD4E"}}>Pending Grievances</Card.Header>
@@ -83,7 +83,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#5CB85C"}}>Resolved Grievances</Card.Header>
@@ -95,10 +95,10 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
-                    <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#337AB7"}}>Maximum Grievances Resolve Category</Card.Header>
+                    <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#337AB7",fontSize:'12px'}}>Maximum Grievances Resolve Category</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title className="fontstyle">21358</Card.Title>
                     </Card.Body>
@@ -110,7 +110,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#5CB85C"}}>% Grievance Resolved</Card.Header>
@@ -122,7 +122,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#D9534F"}}>Escalated Grievances</Card.Header>
@@ -135,7 +135,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#D9534F"}}>Reopen Grievances</Card.Header>
@@ -147,10 +147,10 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    style={{ width: '18rem' }}
+                    style={{ width: '12rem' }}
                     className="mb-2"
                     >
-                    <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#D9534F"}}>Grievances Pending greater than 7 days and less than 30 days</Card.Header>
+                    <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#D9534F", fontSize:'12px'}}>Grievances Pending greater than 7 days and less than 30 days</Card.Header>
                     <Card.Body style={{height:80}}>
                         <Card.Title className="fontstyle">21358</Card.Title>
                     </Card.Body>
@@ -163,7 +163,7 @@ function GrievanceDashboard(){
             <Col >
                     <Card
                     
-                    // style={{ width: '18rem' }}
+                    // style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#3399FF"}}>Citizen Satisfaction</Card.Header>
@@ -175,7 +175,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    // style={{ width: '18rem' }}
+                    // style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#3399FF"}}>Average Rating</Card.Header>
@@ -187,7 +187,7 @@ function GrievanceDashboard(){
                 <Col >
                     <Card
                     
-                    // style={{ width: '18rem' }}
+                    // style={{ width: '12rem' }}
                     className="mb-2"
                     >
                     <Card.Header className="cardheader fontstyle" style={{backgroundColor:"#3399FF"}}>%feedback recieved</Card.Header>

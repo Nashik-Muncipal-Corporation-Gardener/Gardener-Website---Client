@@ -32,6 +32,8 @@ import Panchanamaform from './superAdmin/Permissions/Panchanamaform';
 import Allpermissions from './superAdmin/Permissions/Allpermissions';
 import Pendingpermissions from './superAdmin/Permissions/Pendingpermissions';
 import Gardendetails from './superAdmin/Gardendetals'
+import Services from './superAdmin/Services';
+import Acheivements from './superAdmin/Acheivements';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -58,11 +60,11 @@ root.render(
         <Route exact path='/super-admin/addnews' element={<AddNews/>}></Route>
         <Route exact path='/super-admin/permissions' element={<SuperAdminPermissions/>}></Route>
         <Route exact path='/super-admin/panchanamaform' element={<Panchanamaform/>}></Route>
-
+        <Route exact path='/super-admin/citizenservices' element={<Services/>}></Route>
         <Route exact path='/super-admin/allpermissions' element={<Allpermissions/>}></Route>
         <Route exact path='/super-admin/pendingpermissions' element={<Pendingpermissions/>}></Route>
         <Route exact path='/super-admin/gardendetails' element={<Gardendetails/>}></Route>
-
+        <Route exact path='/super-admin/acheivements' element={<Acheivements/>}></Route>
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
         <Route exact path='/admin' element={<AdminAuthentication/>}></Route>

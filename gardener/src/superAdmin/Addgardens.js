@@ -1,17 +1,7 @@
 import {
-  MDBContainer,
-  MDBTabs,
-  MDBTabsItem,
-  MDBTabsLink,
-  MDBTabsContent,
-  MDBTabsPane,
   MDBBtn,
-  MDBIcon,
   MDBInput,
-  MDBCheckbox,
-  MDBRow, MDBCol,
-  MDBFile,
-  MDBTextArea
+  MDBFile
 }
 from 'mdb-react-ui-kit';
 import React, { useState } from "react";
@@ -39,8 +29,7 @@ function Addgardens() {
 
           <MDBBtn type='submit' className='mb-4' block>
             Submit
-          </MDBBtn>
-    
+          </MDBBtn> 
         </form>
         </div>
         </div>
