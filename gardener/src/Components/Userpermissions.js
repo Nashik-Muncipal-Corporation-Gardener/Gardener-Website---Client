@@ -34,19 +34,18 @@ function Userpermissions() {
         if(response.status==200){
           console.log(response.data)
           setPermissions(response.data)
+          setIsPermissionsFetched(true);
         }else{
           alert("Something went wrong")
         }
       }).catch(function(error){
         console.log(error)
       })
-
-      setIsPermissionsFetched(true)
     }   
-    
   })
-  
-
+  // if(isPermissionsFetched){
+  //   console.log(permissions);
+  // }
   return (
     <div className='userpermissions'>
       <Container>
@@ -66,10 +65,10 @@ function Userpermissions() {
               permissions.map((permission)=>{
                 return(
                   <tr>
-                    <td>PER65489</td>
-                    <td>Trimming of Trees</td>
-                    <td>12/12/2022</td>
-                    <td><Button style={{ backgroundColor: 'success' }} onClick={() => handleShow(true)} variant="success" size="sm">Track</Button></td>
+                    <td>{permission.id}</td>
+                    <td>{permission.title}</td>
+                    <td>{permission.createdAt}</td>
+                    <td><Button style={{ backgroundColor: 'success' }} onClick={() => handleShow(true)} variant="success" size="sm">{permission.status}</Button></td>
                     <td ><Button onClick={() => handleAlert(true)} style={{ marginLeft: '10px' }} variant="danger" size="sm">Withdraw</Button></td>
 
                   </tr>

@@ -262,6 +262,7 @@ function Permissionform() {
                 permission.questions.map((d, pos) => {
                   return (
                     <MDBRow>
+                      <h2>{d}</h2>
                       <MDBCol md='6'>
                         <input type="file" label={d} id={pos}  />
                       </MDBCol>
