@@ -1,8 +1,11 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Container,Table,Button, Modal,Col,Row,Card, ListGroup} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import '../../css/userpermissions.css'
 import { Icon } from '@iconify/react';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import url from "../../Uri";
 import {
     
     MDBFile
@@ -12,15 +15,39 @@ import {
 function Allpermissions() {
     const [alert, setAlert] = useState(false);
     const [show, setShow] = useState(false);
+    const [showform,setShowForm] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
+    const [permissiondata,setPermissionData] = useState();
+    const [isPermissionsFetched,setIsPermissionsFetched] = useState();
+    useEffect(() => {
+     if(!isPermissionsFetched) {
+      axios.get(url+"/permission-form",{headers:{
+        "Content-Type":"multipart/form-data",
+        "Authorization":"Bearer "+localStorage.getItem("jwtTokenSuperAdmin")
+        // "Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGl2YW12ZXJtYXN2M…DYwfQ.NlezN48dWVuEaIaCQtxMuJVXunqhUT-hK5WxZmIW1Zo"
+    }}).then((res)=>{
+        setPermissionData(res.data);
+        setIsPermissionsFetched(true);
+        
+    }).catch(err=>{
+        console.log(err);
+    })
+     }
+    });
     function handleShow(breakpoint) {
         setFullscreen(breakpoint);
         setShow(true);
       }
-
+      function handleShowForm(breakpoint){
+        console.log(breakpoint);
+        setFullscreen(breakpoint);
+        setShowForm(true);
+      }
     const handleClose = () => setAlert(false);
     const handleAlert = () => setAlert(true);
-
+      if(isPermissionsFetched){
+        console.log(permissiondata);
+      }
   return (
     <div>
         <Container style={{padding:'2%'}}>
@@ -39,21 +66,50 @@ function Allpermissions() {
     
             </tr>
           </thead>
+          {isPermissionsFetched &&
           <tbody>
-            <tr>
-              <td>PER65489</td>
-              <td>Trimming of Trees</td>
-              <td>12/12/2022</td>
-              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+            
+            {permissiondata.map((permission)=>{return<tr>
+              <td>{permission.id}</td>
+              <td>{permission.title}</td>
+              <td>{permission.createdAt}</td>
+              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm" onClick={handleShowForm}>View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td ><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>Update Status</Button></td>
               <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="danger" size="sm" onClick={handleAlert}>Decline</Button></td>
 
-            </tr> 
-          </tbody>
+            </tr>})}
+             
+          </tbody>}
         </Table>
        
+
+        <Modal show={showform} fullscreen={fullscreen} onHide={() => setShowForm(false)}>
+            <Modal.Header closeButton>
+            </Modal.Header>
+            <Modal.Body>
+                <Container>
+            <Row>
+                <MDBFile style={{marginBottom:20}} label='Add panchanama pdf' accept="application/pdf" id='customFile' />    
+            </Row>
+            <Row>
+            <Button style={{width:'10%'}}>HI</Button>
+            </Row>
+                <hr></hr>
+            <Row>
+                <MDBFile style={{marginBottom:20}} label='Add advertisement pdf' accept="application/pdf" id='customFile' />    
+            </Row>
+            <Row>
+            <Button style={{width:'10%'}}>Submit</Button>
+            </Row>
+
+
+        </Container>
+            </Modal.Body>
+           
+          </Modal>
+
         <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
             <Modal.Header closeButton>
             </Modal.Header>

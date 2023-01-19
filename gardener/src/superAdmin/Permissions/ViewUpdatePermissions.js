@@ -33,13 +33,15 @@ function ViewUpdatePermissions(){
         //     setArr(newArr);
             
         // }
+        // console.log(item.title);
         
-        axios.delete(url+"/permission/",{
+        axios.delete(url+"/permission",{
             "title":item.title
         },{
-            "headers":{
+            headers:{
                 "Content-Type":"multipart/form-data",
                 "Authorization":"Bearer "+localStorage.getItem("jwtTokenSuperAdmin")
+                // "Authorization":"Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGl2YW12ZXJtYXN2M…DYwfQ.NlezN48dWVuEaIaCQtxMuJVXunqhUT-hK5WxZmIW1Zo"
             }
         }).then((res)=>{
             alert("Permission deleted successfully");
@@ -48,7 +50,7 @@ function ViewUpdatePermissions(){
             console.log(err);
             alert("Error occured while deleting permission")
 
-            navigate("/super-admin")
+            navigate("/super-admin/permissions")
         
         })
 
