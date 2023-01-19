@@ -1,22 +1,19 @@
 import React,{useState} from 'react'
-import { Document, Page } from 'react-pdf';
+import Viewer, { Worker } from '@phuocng/react-pdf-viewer';
+import '@phuocng/react-pdf-viewer/cjs/react-pdf-viewer.css';
 
 function Pdfreader() {
-    const [numPages, setNumPages] = useState(null);
-    const [pageNumber, setPageNumber] = useState(1);
-
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
+  
   return (
     <div>
-      <Document file="https://arxiv.org/pdf/quant-ph/0410100.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-        <Page pageNumber={pageNumber} />
-      </Document>
-      <p>
-        Page {pageNumber} of {numPages}
-      </p>
+		 <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.5.207/build/pdf.worker.min.js">
+    <div id="pdfviewer">
+        <Viewer fileUrl="https://cors-anywhere.herokuapp.com/https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" /> 
     </div>
+	</Worker>
+			
+			
+		</div>
   )
 }
 

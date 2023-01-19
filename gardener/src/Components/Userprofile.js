@@ -33,10 +33,10 @@ const navigate =useNavigate()
                     <Button onClick={handleShow}>Edit Profile</Button>
                     </Row>
                     <Row>
-                    <Button onClick={userpermissions}>Permissions</Button>
+                    <Button onClick={userpermissions}>My Permissions</Button>
                     </Row>
                     <Row>
-                    <Button>Grievances</Button>
+                    <Button>My Grievances</Button>
                     </Row>
                 </Col>
                 <Col md={9}>

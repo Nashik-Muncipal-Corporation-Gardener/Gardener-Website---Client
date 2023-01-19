@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@phuocng/react-pdf-viewer": "^1.7.0",
+    "@react-pdf-viewer/core": "^3.10.0",
+    "@react-pdf-viewer/default-layout": "^3.10.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,6 +16,7 @@
     "google-translate-api-x": "^10.5.2",
     "mdb-react-ui-kit": "^5.1.0",
     "pdf-viewer-reactjs": "^2.2.3",
+    "pdfjs-dist": "^3.2.146",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-bootstrap-date-picker": "^5.1.0",
