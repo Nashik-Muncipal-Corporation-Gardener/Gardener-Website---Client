@@ -15,6 +15,7 @@ import {
   MDBTextArea
 }
 from 'mdb-react-ui-kit';
+import {Button} from 'react-bootstrap';
 import SuperAdminHome from '../home/SuperAdminHome'
 
 
@@ -30,9 +31,9 @@ function AddNews() {
       <MDBTextArea style={{marginBottom:20}} placeholder='Description' rows={4} />
       <MDBFile style={{marginBottom:20}} label='Add news pdf' id='customFile' />
 
-      <MDBBtn type='submit' className='mb-4' block>
+      <Button type='submit' className='mb-4' block>
         Add News
-      </MDBBtn>
+      </Button>
 
     </form>
     </MDBContainer>

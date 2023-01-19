@@ -84,9 +84,9 @@ function Acheivements() {
           <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' />
           <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Description' />
           <MDBFile style={{marginBottom:20}} label='Add Image' id='customFile' />
-          <MDBBtn type='submit' className='mb-4' block>
+          <Button type='submit' className='mb-4' block>
             Submit
-          </MDBBtn> 
+          </Button> 
         </form>
         </div>
         </div>
