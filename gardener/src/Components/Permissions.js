@@ -3,7 +3,6 @@ import { Container,ListGroup,Card,Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import { Icon } from '@iconify/react';
 import '../css/permissions.css'
-import Navbar from './NavigationBar'
 import { json, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import url from '../Uri';
@@ -55,7 +54,7 @@ function Permissions() {
 
   return (
     <div className='permissions'>
-        <Navbar/>
+        {/* <Navbar/> */}
         <MDBRow>
         <MDBCol size='3'>
           <MDBTabs className='flex-column text-center'>

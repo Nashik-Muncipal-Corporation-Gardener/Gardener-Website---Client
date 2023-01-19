@@ -2,11 +2,9 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import {Container,Row, Col, Form, Button } from 'react-bootstrap';
 import '../css/grievanceform.css'
-import Navbar from './NavigationBar'
 const GrievanceForm = () => {
   return (
     <div className='grievanceform'>
-        <Navbar/>
         <Container style={{margin:0}}>
             <Row >
                 <Col md={4}></Col>

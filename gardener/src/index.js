@@ -9,11 +9,17 @@ import App from './App';
 import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import Gardens from './Components/Gardens';
+import Garden from './Components/garden/Garden';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Footer from './Components/footer.js';
 import Userprofile from './Components/Userprofile';
+import ScrollToTop from './Components/scrollToTop';
 import Authentication from './superAdmin/Authentication';
 import SuperAdminHome from './superAdmin/home/SuperAdminHome';
 import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
 import Editprofile from './Components/Editprofile';
+import NavigationBar from './Components/NavigationBar';
 import GrievanceForm from './Components/GrievanceForm';
 import Grievance from './Components/Grievance';
 import News from './Components/News';
@@ -39,20 +45,26 @@ import Wastecollection from './superAdmin/Wastecollection';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
-      <Routes>
-        <Route exact path='/' element={< App />}></Route>
-        <Route exact path='/signin' element={< Signin />}></Route>
-        <Route exact path='/signup' element={< Signup />}></Route>
-        <Route exact path='/gardens' element={< Gardens />}></Route>
-        <Route exact path='/userprofile' element={< Userprofile />}></Route>
-        <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
-        <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
-        <Route exact path='/news' element={< News />}></Route>
-        <Route exact path='/usergrievance' element={< Grievance />}></Route>
-        <Route exact path='/permissions' element={< Permissions />}></Route>
-        <Route exact path='/permissionform/:title' element={< Permissionform />}></Route>
-        <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
-        <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
+    <NavigationBar />
+    <ScrollToTop/>
+    <Routes>
+      <Route exact path='/' element={< App />}></Route>
+      <Route exact path='/signin' element={< Signin />}></Route>
+      <Route exact path='/signup' element={< Signup />}></Route>
+      <Route exact path='/gardens' element={< Gardens />}></Route>
+      <Route exact path='/aboutus' element={< About />}></Route>
+      <Route exact path='/contact' element={< Contact />}></Route>
+      <Route exact path='/garden' element={< Garden />}></Route>
+
+      <Route exact path='/userprofile' element={< Userprofile />}></Route>
+      <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
+      <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
+      <Route exact path='/news' element={< News />}></Route>
+      <Route exact path='/usergrievance' element={< Grievance />}></Route>
+      <Route exact path='/permissions' element={< Permissions />}></Route>
+      <Route exact path='/permissionform/:title' element={< Permissionform />}></Route>
+      <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
+      <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
 
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
         <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>
@@ -78,7 +90,8 @@ root.render(
 
 
     </Routes>
-    </HashRouter>
+    <Footer/>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

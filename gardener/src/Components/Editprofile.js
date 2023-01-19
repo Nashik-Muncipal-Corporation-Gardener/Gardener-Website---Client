@@ -2,14 +2,11 @@ import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import {Button,Image, Container,Row,Col} from 'react-bootstrap';
-import Navbar from './NavigationBar';
 import '../css/editprofile.css'
 import { Icon } from '@iconify/react';
-import Footer from './footer'
 function Editprofile() {
   return (
     <div className='editprofile'>
-        <Navbar/>
         <Container>
 
         <form >
@@ -46,7 +43,6 @@ function Editprofile() {
          </Row>   
       </form>
       </Container>
-      <Footer/>
     </div>
   )
 }

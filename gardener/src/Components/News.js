@@ -1,8 +1,6 @@
-import React, {useState} from 'react'
-import Navbar from './NavigationBar';
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
-import Footer from './footer'
 import '../css/news.css'
 // Core viewer
 
@@ -12,12 +10,12 @@ import '../css/news.css'
 
 function News() {
 
-  const navigate=useNavigate()
-    const gardens=[1,2,3,4]
-    
+  const navigate = useNavigate()
+  const gardens = [1, 2, 3, 4]
 
-  const readpdf=()=>{
-    return(
+
+  const readpdf = () => {
+    return (
       navigate('/pdfreader')
     )
   }

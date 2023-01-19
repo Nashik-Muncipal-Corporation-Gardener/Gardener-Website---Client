@@ -5,7 +5,6 @@ import {Button,Image, Container,Row,Col, Modal} from 'react-bootstrap';
 import Navbar from './NavigationBar';
 import '../css/userprofile.css'
 import { Icon } from '@iconify/react';
-import Footer from './footer';
 import '../css/editprofile.css'
 function Userprofile() {
 
@@ -22,7 +21,6 @@ const navigate =useNavigate()
 
   return (
     <div className='userprofile'>
-        <Navbar/>
         <Container>
             <Row className='profilesection'>
                 <Col md={3}>
@@ -111,7 +109,6 @@ const navigate =useNavigate()
     </div>
       </Modal>
 
-    <Footer/>
     </div>
   )
 }

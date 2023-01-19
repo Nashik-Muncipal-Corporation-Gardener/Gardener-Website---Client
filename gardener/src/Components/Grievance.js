@@ -13,8 +13,6 @@ import {
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import {Container, Tab, Tabs} from 'react-bootstrap';
-import Navbar from './NavigationBar';
-import Footer from './footer';
 import Mygrievance from './Grievance/Mygrievance';
 import Registergrievance from './Grievance/Registergrievance';
 import Trackgrievance from './Grievance/Trackgrievance';
@@ -32,7 +30,6 @@ function Grievance() {
 
   return (
     <div className='grievance'>
-        <Navbar/>
         {/* <Container> */}
         <MDBRow>
         <MDBCol size='3'>

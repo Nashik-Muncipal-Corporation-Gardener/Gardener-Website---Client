@@ -1,4 +1,4 @@
 
-var url = "http://3.110.194.27:8080";
+var url = "http://52.66.202.167:8080";
 
 export default url;
