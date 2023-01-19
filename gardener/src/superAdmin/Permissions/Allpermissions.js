@@ -84,7 +84,7 @@ function Allpermissions() {
           </tbody>}
         </Table>
        
-
+ 
         <Modal show={showform} fullscreen={fullscreen} onHide={() => setShowForm(false)}>
             <Modal.Header closeButton>
             </Modal.Header>
