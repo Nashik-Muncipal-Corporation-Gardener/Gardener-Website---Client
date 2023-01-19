@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
 import '../css/news.css'
+import NavigationBar from './NavigationBar';
+import Footer from './footer';
 // Core viewer
 
 // Plugins
@@ -21,7 +23,7 @@ function News() {
   }
     return (
       <div className='news'>
-          <Navbar/>
+          <NavigationBar/>
           
           <h1 style={{ color: '#0F4229',display: 'flex',justifyContent: 'center'}}>News</h1>
           <Container >
