@@ -19,6 +19,10 @@ function Allpermissions() {
     const [fullscreen, setFullscreen] = useState(true);
     const [permissiondata,setPermissionData] = useState();
     const [isPermissionsFetched,setIsPermissionsFetched] = useState();
+
+
+    const navigate = useNavigate();
+
     useEffect(() => {
      if(!isPermissionsFetched) {
       axios.get(url+"/permission-form",{headers:{
@@ -38,10 +42,12 @@ function Allpermissions() {
         setFullscreen(breakpoint);
         setShow(true);
       }
-      function handleShowForm(breakpoint){
-        console.log(breakpoint);
-        setFullscreen(breakpoint);
-        setShowForm(true);
+      function handleShowForm(permission){
+        // console.log(breakpoint);
+        // setFullscreen(breakpoint);
+        // setShowForm(true);
+        localStorage.setItem("permission",JSON.stringify(permission));
+        navigate("/super-admin/appliedpermission");
       }
     const handleClose = () => setAlert(false);
     const handleAlert = () => setAlert(true);
@@ -73,7 +79,7 @@ function Allpermissions() {
               <td>{permission.id}</td>
               <td>{permission.title}</td>
               <td>{permission.createdAt}</td>
-              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm" onClick={handleShowForm}>View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm" onClick={()=>handleShowForm(permission)}>View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td ><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>Update Status</Button></td>
