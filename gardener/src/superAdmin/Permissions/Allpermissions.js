@@ -80,13 +80,46 @@ function Allpermissions() {
               <td>{permission.title}</td>
               <td>{permission.createdAt}</td>
               <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm" onClick={()=>handleShowForm(permission)}>View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
-              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
-              <td ><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
-              <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>Update Status</Button></td>
-              <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="danger" size="sm" onClick={handleAlert}>Decline</Button></td>
+              
+              {
+                (permission.status=="In Review")?(
+                  
+                    <>
+                    <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">Upload Panchanama</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+                    </>
+                  
+                ):(
+                  
+                    <>
+                    <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+                    {/* <td><p style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td> */}
+                    </>
+                  )
+                
+              }
 
-            </tr>})}
-             
+              {
+                (permission.status=="Panchama processed")?(
+                  
+                  <>
+                  <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+                  </>
+                
+              ):(
+                
+                  <>
+                  <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">Upload Advertisement</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+                  {/* <td><p style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td> */}
+                  </>
+                )
+
+              }
+
+              <td><p style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td>
+              
+              <td><Button style={{backgroundColor:'success',width:'100%'}} variant="danger" size="sm" onClick={handleAlert}>Decline</Button></td>
+
+            </tr>})} 
           </tbody>}
         </Table>
        
