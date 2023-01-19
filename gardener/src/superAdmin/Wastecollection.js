@@ -11,7 +11,7 @@ function Wastecollection() {
 <div className='userpermissions'>
 <Sidebar/>
 
-            <Container style={{display:'flex'}}>
+            {/* <Container style={{display:'flex'}}>
             <Card style={{ width: '12rem', marginLeft:'10px' }}>
             <Card.Body>
             <ListGroup  variant="flush">
@@ -30,7 +30,8 @@ function Wastecollection() {
             </Card.Body>
             </Card>
            
-        </Container>
+        </Container> */}
+        <h7>coming soon</h7>
         </div>
    
   )

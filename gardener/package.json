@@ -16,6 +16,7 @@
     "google-translate-api-x": "^10.5.2",
     "mdb-react-ui-kit": "^5.1.0",
     "pdf-viewer-reactjs": "^2.2.3",
+    "pdfjs-dist": "^3.2.146",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-bootstrap-date-picker": "^5.1.0",

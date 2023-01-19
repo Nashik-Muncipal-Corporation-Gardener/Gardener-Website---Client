@@ -40,6 +40,8 @@ import Pendingpermissions from './superAdmin/Permissions/Pendingpermissions';
 import Gardendetails from './superAdmin/Gardendetals'
 import Services from './superAdmin/Services';
 import Acheivements from './superAdmin/Acheivements';
+import Termsandconditions from './superAdmin/Termsandconditions';
+import Wastecollection from './superAdmin/Wastecollection';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -77,6 +79,10 @@ root.render(
         <Route exact path='/super-admin/pendingpermissions' element={<Pendingpermissions/>}></Route>
         <Route exact path='/super-admin/gardendetails' element={<Gardendetails/>}></Route>
         <Route exact path='/super-admin/acheivements' element={<Acheivements/>}></Route>
+        <Route exact path='/super-admin/termsandconditions' element={<Termsandconditions/>}></Route>
+        <Route exact path='/super-admin/wastecollection' element={<Wastecollection/>}></Route>
+
+
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
         <Route exact path='/admin' element={<AdminAuthentication/>}></Route>
