@@ -2,6 +2,7 @@ import React from 'react'
 import '../css/gardens.css'
 import NavigationBar from './NavigationBar';
 import { Container } from 'react-bootstrap';
+import Footer from './footer';
 function Gardens() {
 
     //     const gardens=[1,2,3,4]
@@ -42,10 +43,10 @@ function Gardens() {
     return (
         <>
             {/* <!-- Service Start --> */}
-            <div className="container-xxl py-5">
+            <NavigationBar/>
                 <div className="container">
-                    <div className="text-center mx-auto" style={{ maxWidth: "300px;" }}>
-                        <h1 className="display-5 mb-5 text-success">Our Gardens</h1>
+                    <div style={{ maxWidth: "300px;", padding:'2%'}}>
+                        <h1>Our Gardens</h1>
                     </div>
                     <div className="row g-4">
                         <div className="col-lg-4 col-md-6 wow fadeInUp" >
@@ -143,8 +144,8 @@ function Gardens() {
                         </div>
                     </div>
                 </div>
-            </div>
             {/* <!-- Service End --> */}
+            <Footer/>
         </>
     )
 }
