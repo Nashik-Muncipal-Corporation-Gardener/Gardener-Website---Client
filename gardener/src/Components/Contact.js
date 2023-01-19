@@ -1,6 +1,6 @@
 import React from 'react'
 import "../css/contact.css"
-import { TextField, Button } from '@mui/material'
+import { TextField, Button } from 'react-bootstrap'
 
 
 const Contact = () => {
@@ -30,10 +30,10 @@ const Contact = () => {
                     </div>
                     <div className="col-md-6">
                         <form >
-                            <TextField name="name" margin='normal' type="text" placeholder='Lorem Ipsum' variant='outlined' label="Full Name" fullWidth required></TextField>
-                            <TextField name="mail" margin='normal' type="email" placeholder='loremipsum@abc.com' variant='outlined' label="Email" fullWidth required></TextField>
-                            <TextField name="mobileNo" margin='normal' type="number" placeholder='+91 6666678321' variant='outlined' label="Contact No" fullWidth required></TextField>
-                            <TextField name="message" margin='normal' type="text" placeholder='Your meesage' variant='outlined' label="Message" minRows={4} multiline fullWidth required></TextField>
+                            <input name="name" margin='normal' type="text" placeholder='Lorem Ipsum' variant='outlined' label="Full Name" fullWidth required />
+                            <input name="mail" margin='normal' type="email" placeholder='loremipsum@abc.com' variant='outlined' label="Email" fullWidth required />
+                            <input name="mobileNo" margin='normal' type="number" placeholder='+91 6666678321' variant='outlined' label="Contact No" fullWidth required />
+                            <input name="message" margin='normal' type="text" placeholder='Your meesage' variant='outlined' label="Message" minRows={4} multiline fullWidth required />
                             <Button onClick={submit} type="submit" className='px-3 my-2 bg-info text-white submit' variant='contained'>Send Message</Button>
                         </form>
                     </div>

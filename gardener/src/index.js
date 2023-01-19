@@ -14,7 +14,6 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Footer from './Components/footer.js';
 import Userprofile from './Components/Userprofile';
-import ScrollToTop from './Components/scrollToTop';
 import Authentication from './superAdmin/Authentication';
 import SuperAdminHome from './superAdmin/home/SuperAdminHome';
 import GrievanceDashboard from './superAdmin/Grievances/GrievanceDashboard';
@@ -45,8 +44,7 @@ import Wastecollection from './superAdmin/Wastecollection';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
-    <NavigationBar />
-    <ScrollToTop/>
+    
     <Routes>
       <Route exact path='/' element={< App />}></Route>
       <Route exact path='/signin' element={< Signin />}></Route>
@@ -90,7 +88,6 @@ root.render(
 
 
     </Routes>
-    <Footer/>
   </HashRouter>
 );
 

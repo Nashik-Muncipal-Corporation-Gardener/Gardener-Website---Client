@@ -7,6 +7,7 @@ import { json, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import url from '../Uri';
 import Userpermissions from './Userpermissions';
+import NavigationBar from './NavigationBar';
 import {
     MDBTabs,
     MDBTabsItem,
@@ -16,6 +17,8 @@ import {
     MDBRow,
     MDBCol
   } from 'mdb-react-ui-kit';
+
+import Footer from './footer';
 function Permissions() {
 
     const [verticalActive, setVerticalActive] = useState('tab1');
@@ -48,13 +51,21 @@ function Permissions() {
     })
 
     const permissionform=(item)=>{
-        navigate('/permissionform/'+item.title)
-        localStorage.setItem('permission',JSON.stringify(item))
+
+        if (localStorage.getItem("islogin")){
+          navigate('/permissionform/'+item.title)
+          localStorage.setItem('permission',JSON.stringify(item))
+        }
+        else{
+          alert("Please Login First")
+          navigate('/signin')
+        }
+        
     }
 
   return (
     <div className='permissions'>
-        {/* <Navbar/> */}
+        <NavigationBar/>
         <MDBRow>
         <MDBCol size='3'>
           <MDBTabs className='flex-column text-center'>
@@ -102,7 +113,9 @@ function Permissions() {
           </MDBTabsContent>
         </MDBCol>
       </MDBRow>
-       
+      <div>
+       <Footer/>
+       </div>
     </div>
   )
 }

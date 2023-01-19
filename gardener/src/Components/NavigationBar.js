@@ -17,6 +17,18 @@ const NavigationBar = () => {
   }
 
 
+  function loginbtn(){
+    if(localStorage.getItem("islogin")){
+      return(
+        <NavLink className='bg-top nav-link text-white rounded-5' to="/userprofile" style={{ marginLeft: 20, paddingLeft: 30, paddingRight: 30,backgroundColor:'#207FB0'}}><a><span ></span>View Profile</a></NavLink>
+      )
+    }
+    else{
+      return(
+        <NavLink className='bg-top nav-link text-white rounded-5' to="/signin" style={{ marginLeft: 20, paddingLeft: 30, paddingRight: 30,backgroundColor:'#207FB0'}}><a><span ></span>Sign In </a></NavLink>
+      )
+    }
+  }
 
   return (
     // <div className='Nav_bar'>
@@ -79,7 +91,10 @@ const NavigationBar = () => {
                   {/* <NavLink to="/#/contactus">Contact Us</NavLink>  */}
                   <NavLink className="nav-link" to="/news">News</NavLink>
                   <NavLink className="nav-link" to="/contact">Contact</NavLink>
-                  <NavLink className='bg-top nav-link text-white rounded-5' to="/signin" style={{ marginLeft: 20, paddingLeft: 30, paddingRight: 30,backgroundColor:'#207FB0'}}><a><span ></span>Sign In </a></NavLink>
+
+                  {
+                    loginbtn()
+                  }
                 </Nav>
 
               </Offcanvas.Body>

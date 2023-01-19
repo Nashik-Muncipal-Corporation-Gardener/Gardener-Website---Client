@@ -58,6 +58,7 @@ function Signin() {
       // console.log(sentotp)
       if(sentotp == otp){
         setVerified(true);
+        alert("Correct OTP")
       }
       else{
         alert('Incorrect OTP');
@@ -119,7 +120,8 @@ function checkboxStatus(){
     }
     else{
     axios.get(url+"/verifyEmail/"+emailID).then((res)=>{
-        if(res.status==200){    
+        if(res.status==200){
+            alert("OTP sent successfully !")    
             setSentOtp(res.data.message);
         }else{
             alert("Please enter correct email address")
@@ -135,6 +137,7 @@ function checkboxStatus(){
     e.preventDefault();
 
     // alert('Registering S
+    
     if (email === "") {
         alert("Email is empty");
         // console.log("Email is empty");
@@ -189,9 +192,49 @@ function checkboxStatus(){
     }
 }
 
+function handleLogin(e){
+        
+  e.preventDefault();
+
+  if(email===""){
+      alert("Email is empty")
+  }else if(password===""){
+      alert("Password is empty")
+  }else{
+      // alert("Login successfull")
+
+      var form_data_body = {
+          "email" : email,
+          "password": password
+      };
+
+      axios.post(url+"/citizen/login",form_data_body,{
+          headers:{
+              "Content-Type":"multipart/form-data",
+          },
+      }).then(function(response){
+          console.log("Response",response.data);
+          if(response.status==200){
+              console.log("Response:",response);
+              localStorage.setItem("jwtTokenUser",response.data.message);
+              localStorage.setItem("islogin",true)
+              alert("Login successfully!!");
+              navigate("/");
+          }else{
+              alert(response.data.message);
+          }
+      }).catch(function(error){
+          console.log("Error",error);
+      })
+
+      // navigate("/super-admin/home")
+  }
+
+}
+
   return (
     <div className='signin'>
-    {/* <Navbar/> */}
+    <Navbar/>
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
 
       <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
@@ -212,14 +255,14 @@ function checkboxStatus(){
         <MDBTabsPane show={justifyActive === 'tab1'}>
 
 
-          <MDBInput wrapperClass='mb-4' placeholder='Email address' id='form1' type='email'/>
-          <MDBInput wrapperClass='mb-4' placeholder='Password' id='form2' type='password'/>
+          <MDBInput wrapperClass='mb-4' placeholder='Email address' id='form1' type='email' onChange={handleEmailInput} />
+          <MDBInput wrapperClass='mb-4' placeholder='Password' id='form2' type='password' onChange={handlePassword} />
 
           <div className="d-flex justify-content-between mx-4 mb-4">
             <a href="!#">Forgot password?</a>
           </div>
 
-          <MDBBtn className="mb-4 w-100">Sign in</MDBBtn>
+          <Button className="mb-4 w-100" onClick={handleLogin}>Sign in</Button>
           <p className="text-center">Not a member? <a onClick={() => handleJustifyClick('tab2')} >Register</a></p>
 
         </MDBTabsPane>
@@ -231,7 +274,7 @@ function checkboxStatus(){
           <MDBInput wrapperClass='mb-4' placeholder='Email' id='form1' type='email' onChange={handleEmailInput}/>
             </MDBCol>
             <MDBCol md='4'>
-            <MDBBtn className="mb-4 w-100" onClick={sendOtp}>Send OTP</MDBBtn>
+            <Button className="mb-4 w-100" onClick={sendOtp}>Send OTP</Button>
             </MDBCol>
             
           </MDBRow>
@@ -241,16 +284,16 @@ function checkboxStatus(){
             <MDBInput wrapperClass='mb-4' placeholder='OTP' id='form1' type='number' onChange={handleOtpInput} />
             </MDBCol>
             <MDBCol md='4'>
-            <MDBBtn className="mb-4 w-100" onClick={verifyOtp}>Verify</MDBBtn>
+            <Button className="mb-4 w-100" onClick={verifyOtp}>Verify</Button>
             </MDBCol>
-            
+
           </MDBRow>
           <MDBInput wrapperClass='mb-4' placeholder='Name' id='form1' type='text' onChange={handleName}/>
 
         
           <MDBRow>
             <MDBCol md='3'>
-            <MDBBtn className="mb-4 w-100" disabled >DOB</MDBBtn>
+            <Button className="mb-4 w-100" disabled >DOB</Button>
             </MDBCol>
             <MDBCol md='9'>
             <MDBInput wrapperClass='mb-4' placeholder='DOB' id='form1' type='date' onChange={handleDOB}/>
@@ -267,7 +310,7 @@ function checkboxStatus(){
           <div className='d-flex justify-content-center mb-4'>
             <MDBCheckbox name='flexCheck' id='flexCheckDefault' label='I have read and agree to the terms' onChange={checkboxStatus} />
           </div>
-          {(verified && <MDBBtn  className="mb-4 w-100" onClick={registerUser}>Sign up</MDBBtn>) || <MDBBtn  className="mb-4 w-100" onClick={registerUser} disabled>Sign up</MDBBtn> }
+          {(verified && <Button  className="mb-4 w-100" onClick={registerUser}>Sign up</Button>) || <Button  className="mb-4 w-100" onClick={registerUser} disabled>Sign up</Button> }
           
 
         </MDBTabsPane>
