@@ -7,6 +7,7 @@ import '../css/userpermissions.css'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import url from '../Uri';
+import NavigationBar from './NavigationBar';
 function Userpermissions() {
   const [alert, setAlert] = useState(false);
   const [show, setShow] = useState(false);
@@ -47,7 +48,9 @@ function Userpermissions() {
   //   console.log(permissions);
   // }
   return (
+    <>
     <div className='userpermissions'>
+      
       <Container>
         <Table striped bordered hover size="sm">
           <thead>
@@ -56,7 +59,6 @@ function Userpermissions() {
               <th>Permission Type</th>
               <th>Applied On</th>
               <th>Status</th>
-              <th></th>
 
             </tr>
           </thead>
@@ -68,9 +70,7 @@ function Userpermissions() {
                     <td>{permission.id}</td>
                     <td>{permission.title}</td>
                     <td>{permission.createdAt}</td>
-                    <td><Button style={{ backgroundColor: 'success' }} onClick={() => handleShow(true)} variant="success" size="sm">{permission.status}</Button></td>
-                    <td ><Button onClick={() => handleAlert(true)} style={{ marginLeft: '10px' }} variant="danger" size="sm">Withdraw</Button></td>
-
+                    <td>{permission.status}</td>
                   </tr>
                 )
               })
@@ -125,6 +125,8 @@ function Userpermissions() {
 
       </Container>
     </div>
+    </>
+
   )
 }
 

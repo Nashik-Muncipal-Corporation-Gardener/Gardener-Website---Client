@@ -1,6 +1,7 @@
 import React from 'react'
 import '../css/gardens.css'
 import NavigationBar from './NavigationBar';
+import Footer from './Footer';
 import { Container } from 'react-bootstrap';
 function Gardens() {
 
@@ -43,7 +44,7 @@ function Gardens() {
         <>
             {/* <!-- Service Start --> */}
             <NavigationBar/>
-                <div className="container">
+                <div className="container" style={{padding:'2%'}}>
                     <div className=" container text-start ">
                         <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
                             Our Gardens
@@ -147,6 +148,7 @@ function Gardens() {
                     </div>
                 </div>
             {/* <!-- Service End --> */}
+            <Footer/>
         </>
     )
 }
