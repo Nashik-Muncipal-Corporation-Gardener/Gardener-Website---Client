@@ -57,32 +57,12 @@ function Allpermissions() {
     localStorage.setItem("permission", JSON.stringify(permission));
     navigate("/super-admin/appliedpermission");
   }
+
   if (isPermissionsFetched) {
     console.log(permissiondata);
   }
 
-  function updateStatus(status){
-
-    var formData = new FormData();
-    formData.append("status",status);
-    axios.post(url+"/permission-form",formData,{
-      headers: {
-        "Content-Type": "multipart/form-data",
-        'Authorization': 'Bearer '+localStorage.getItem("jwtTokenUser")
-      }
-    }).then(function(response){
-      if(response.status==200){
-        console.log("Status Updated successfully")
-        window.location.reload();
-      }else{
-        console.log("Something went wrong")
-        console.log(response)
-      }
-    }).catch(function(error){
-      console.log(error)
-      console.log("Something went wrong")
-    })
-  }
+  
 
   function handleAdvertisementUpload(id){
     // e.preventDefault();
@@ -119,49 +99,45 @@ function Allpermissions() {
   }
   
   function handlePanchamaUpload(id){
-
-    updateStatus("Panchanama processed")
     // e.preventDefault();
-    // setPanchanamafile(document.getElementById("panchanamafile").files[0])
-    // console.log("file: "+panchanamafile)  
-    // if (panchanamafile === null) {
-    //     alert("Select File");
-    //     return;
-    // }else{
-    //   var formData = new FormData();
-    //   formData.append("file",panchanamafile);
-    //   formData.append("id",id);
+    setPanchanamafile(document.getElementById("panchanamafile").files[0])
+    console.log("file: "+panchanamafile)  
+    if (panchanamafile === null) {
+        alert("Select File");
+        return;
+    }else{
+      var formData = new FormData();
+      formData.append("file",panchanamafile);
+      formData.append("id",id);
 
-    //   console.log("form data: "+formData)
+      console.log("form data: "+formData)
        
-    //   axios.post(url+"/permission-form/upload-panchama",formData,{
-    //     headers: {
-    //       "Content-Type": "multipart/form-data",
-    //       'Authorization': 'Bearer '+localStorage.getItem("jwtTokenSuperAdmin")
-    //     }
-    //   }).then(function(response){
-    //     if(response.status==200){
-    //       console.log("Panchanama Uploaded successfully")
-    //       window.location.reload();
-    //     }else{
-    //       console.log("Something went wrong")
-    //       console.log(response)
-    //     }
-    //   }).catch(function(error){
-    //     console.log(error)
-    //     console.log("Something went wrong")
-    //   })
-    // }
+      axios.post(url+"/permission-form/upload-panchama",formData,{
+        headers: {
+          "Content-Type": "multipart/form-data",
+          'Authorization': 'Bearer '+localStorage.getItem("jwtTokenSuperAdmin")
+        }
+      }).then(function(response){
+        if(response.status==200){
+          console.log("Panchanama Uploaded successfully")
+          window.location.reload();
+        }else{
+          console.log("Something went wrong")
+          console.log(response)
+        }
+      }).catch(function(error){
+        console.log(error)
+        console.log("Something went wrong")
+      })
+    }
   }
 
   function declinePermission(){
     // e.preventDefault();
    const id= localStorage.getItem("currentID")
     // alert("Are you sure you want to decline the permission")
-    
       var formData = new FormData();
       formData.append("id",id);
-
       console.log("form data: "+formData)
        
       axios.post(url+"/permission-form/declineApproval",formData,{
@@ -266,7 +242,7 @@ function Allpermissions() {
                   }
 
                   {
-                    (permission.status == "Panchanama processed") ? (
+                    (permission.status == "Panchama processed") ? (
 
                       <>
                         <td><Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
