@@ -13,7 +13,7 @@ import {
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import url from '../Uri';
-
+import NavigationBar from './NavigationBar'
 function Permissionform() {
 
 
@@ -181,6 +181,7 @@ function Permissionform() {
 
   return (
     <div className='permissionsform'>
+      <NavigationBar/>
       <Container>
         {/* <Button>Click</Button> */}
         <Card>

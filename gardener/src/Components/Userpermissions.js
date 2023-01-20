@@ -41,6 +41,7 @@ function Userpermissions() {
         console.log(error)
       })
 
+      console.log("per: "+permissions)
       setIsPermissionsFetched(true)
     }   
     
@@ -66,11 +67,11 @@ function Userpermissions() {
               permissions.map((permission)=>{
                 return(
                   <tr>
-                    <td>PER65489</td>
-                    <td>Trimming of Trees</td>
-                    <td>12/12/2022</td>
-                    <td><Button style={{ backgroundColor: 'success' }} onClick={() => handleShow(true)} variant="success" size="sm">Track</Button></td>
-                    <td ><Button onClick={() => handleAlert(true)} style={{ marginLeft: '10px' }} variant="danger" size="sm">Withdraw</Button></td>
+                    <td>{permission.id}</td>
+                    <td>{permission.title}</td>
+                    <td>{permission.createdAt}</td>
+                    <td>{permission.status}</td>
+                    <td ></td>
 
                   </tr>
                 )

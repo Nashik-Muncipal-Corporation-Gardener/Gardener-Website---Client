@@ -99,11 +99,16 @@
 /* ipads and tablets */
 @media screen and (min-width: 481px) and (max-width:768px)
 {
-
+    .signin .container{
+        width: 60% !important;
+    }
 }
 
 /* laplops and small screens */
 @media screen and (min-width: 769px) and (max-width:1024px)
 {
+    .signin .container{
+        width: 60% !important;
+    }
     
 }

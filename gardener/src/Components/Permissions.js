@@ -52,7 +52,9 @@ function Permissions() {
 
     const permissionform=(item)=>{
 
-        if (localStorage.getItem("islogin")){
+      console.log("token "+localStorage.getItem("jwtTokenUser"))
+
+        if (localStorage.getItem("islogin")==="true"){
           navigate('/permissionform/'+item.title)
           localStorage.setItem('permission',JSON.stringify(item))
         }

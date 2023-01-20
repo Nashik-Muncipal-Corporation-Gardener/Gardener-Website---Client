@@ -27,7 +27,11 @@ const handleLogout=()=>{
   }
 
   return (
+    <>
+    <Navbar/>
+   
     <div className='userprofile'>
+        
         <Container>
             <Row className='profilesection'>
                 <Col md={3}>
@@ -115,6 +119,7 @@ const handleLogout=()=>{
       </Modal>
 
     </div>
+    </>
   )
 }
 

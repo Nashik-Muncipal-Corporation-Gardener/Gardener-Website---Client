@@ -15,7 +15,7 @@ import { Navbar } from "react-bootstrap";
 import AddPermissions from "./AddPermissions";
 import ViewUpdatePermissions from "./ViewUpdatePermissions";
 import PermissionsDashboard from "./PermissionsDashboard";
-
+import SuperAdminHome from "../home/SuperAdminHome";
 
 function SuperAdminPermissions(){
 
@@ -33,7 +33,7 @@ function SuperAdminPermissions(){
   
     return (
       <div className='grievance'>
-          <Navbar/>
+          <SuperAdminHome/>
           {/* <Container> */}
           <MDBRow>
           <MDBCol size='3'>

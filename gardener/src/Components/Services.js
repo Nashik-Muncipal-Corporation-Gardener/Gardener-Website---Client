@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col ,Card,ListGroup} from 'react-bootstrap';
 import '../css/services.css'
 function Services() {
 
@@ -16,58 +16,55 @@ function Services() {
     }
     return (
         <>
-            <div className=' container-fluid bg-secondary text-white p-1'>
+ <div className=' container-fluid bg-secondary text-white p-1'>
                 <marquee>
                     <p>t was the great apostle of peace Mahatma Gandhi, who gave a clarion call of ‘Be the change’. Today, when the world is besieged by war and civil strife</p>
                 </marquee>
             </div>
+            <Container className='middle_sec'>
+        <Row >
+        <Col xs={6} md={8} >
+        <Card style={{height:'100%'}}>
+        <ListGroup variant="flush">
+        <ListGroup.Item>Announcements</ListGroup.Item>
+            <ListGroup.Item>
+            <ul >
+                <marquee  direction="up"  scrollamount="2">
+                    <li>Announcement 2</li>
+                    <li>Announcement 3</li>
+                    <li>Announcement 4</li>
+                    <li>Announcement 5</li>
 
-            <div className='container mt-4  text-center'>
-                <div className='row  text-start'>
-                    <div className='col-md-3 border border-secondary'>
-                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'> NEWS AND ANNOUNCEMENTS</p>
-                        <div className='py-2 overflow-auto'>
-                            {/* Scrolling Announcements */}
-                            <ul className=' mt-3' list-style="">
-                                <marquee width="60%" direction="up" height="100px" scrollamount="2">
-                                    <li>Announcement 2</li>
-                                    <li>Announcement 3</li>
-                                    <li>Announcement 4</li>
-                                    <li>Announcement 5</li>
+                </marquee>
+            </ul>
+            </ListGroup.Item>   
+        </ListGroup>
+        </Card>   
+        </Col>
 
-                                </marquee>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-auto ">
-                    </div>
+        <Col xs={6} md={4} >
+        <Card >
+      <ListGroup variant="flush">
+        <ListGroup.Item>Commissioner</ListGroup.Item>
+        <ListGroup.Item><img src='https://nmc.gov.in/assets/img/commi_cpulkundvar.jpg' thumbnail style={{height:'200px'}} />
+                        
+                        </ListGroup.Item>
+                        <ListGroup.Item>
+                        <p className='text-center'>डॉ. चंद्रकांत पुलकुंडवार, भा. प्र. से.<br></br>
+                        आयुक्त तथा प्रशासक</p>
+                        </ListGroup.Item>
+        
+      </ListGroup>
+    </Card>
+        </Col>
+        
+      </Row>
+      </Container>
 
-                    <div className="col-md-5 about  border border-secondary text-dark  rounded-4">
-                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'>ABOUT NMC</p>
-
-                        <div className='  px-4 mb-4 mt-4'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
-                            point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as oposed to using 'Content here,
-                            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem
-                            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                            versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                            Contrary to popular belief, Lorem Ipsum is not simply random text.
-                        </div>
-                    </div>
-                    <div className="col-md-auto ">
-                    </div>
-
-                    <div className="col-md-3  border border-secondary rounded-4">
-                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'>Commissioner</p>
-                        <img src='https://nmc.gov.in/assets/img/commi_cpulkundvar.jpg' className='img-fluid' />
-                        <p className='text-center'>डॉ. चंद्रकांत पुलकुंडवार, भा. प्र. से.</p >
-                        <p className='text-center'>आयुक्त तथा प्रशासक</p>
-                    </div>
-                </div>
-            </div>
-
+            
 
             {/* <!-- About Start --> */}
-            <div className="container-fluid p-4 bg-light">
+            <Container className='middle_sec'>
                 <div className="row ">
                     <div className="col-lg-3 col-md-5 " >
                         <img className="img-fluid rounded" src="/images/75.jfif" />
@@ -97,7 +94,8 @@ function Services() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
+            <hr></hr>
             {/* <!-- About End --> */}
             <div className='Services'>
                 {/* <!--Icons section--> */}
@@ -107,28 +105,28 @@ function Services() {
                             {/* <h1 className="display-5 mb-5 text-success">Citizens Services</h1> */}
                         </div>
                         <Col className=' p-2 citizen_icon'>
-                            <img src="/images/1.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Achievement</p>
+                            <img style={{cursor:'pointer'}} src="/images/1.png" width="100" height="100" alt="" />
+                            <p style={{cursor:'pointer'}} className="text-dark text-center">Achievement</p>
                         </Col>
                         <Col onClick={grievance} className="col-md-3 col-lg-2 text-white p-2 citizen_icon">
-                            <img src="/images/Grievance.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Greviance</p>
+                            <img style={{cursor:'pointer'}} src="/images/Grievance.png" width="100" height="100" alt="" />
+                            <p style={{cursor:'pointer'}} className="text-dark text-center">Greviance</p>
                         </Col>
                         <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
-                            <img src="/images/permission.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Permission</p>
+                            <img style={{cursor:'pointer'}} src="/images/permission.png" width="100" height="100" alt="" />
+                            <p style={{cursor:'pointer'}} className="text-dark text-center">Permission</p>
                         </Col>
                         <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
-                            <img src="/images/6.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Waste Collection</p>
+                            <img style={{cursor:'pointer'}} src="/images/6.png" width="100" height="100" alt="" />
+                            <p style={{cursor:'pointer'}} className="text-dark text-center">Waste Collection</p>
                         </Col>
                         <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img src="/images/volunteer.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Volunteers</p>
+                            <img style={{cursor:'pointer'}} src="/images/volunteer.png" width="100" height="100" alt="" />
+                            <p style={{cursor:'pointer'}} className="text-dark text-center">Volunteers</p>
                         </Col>
                         <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img src="/images/4.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Gallery</p>
+                            <img style={{cursor:'pointer'}} src="/images/4.png" width="100" height="100" alt="" />
+                            <p style={{cursor:'pointer'}} className="text-dark text-center">Gallery</p>
                         </Col>
                     </div>
 
@@ -159,8 +157,7 @@ function Services() {
 
 
                     {/* <!-- Service Start --> */}
-                    <div className="container-xxl py-5">
-                        <div className="container">
+                    < Container className='middle_sec'>
                             <div className="text-center mx-auto" style={{ maxWidth: "300px;" }}>
                                 <h1 className="display-5 mb-5 text-success">Our Gardens</h1>
                             </div>
@@ -254,8 +251,7 @@ function Services() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                    </Container>
                     {/* <!-- Service End --> */}
                 </div>
             </div>

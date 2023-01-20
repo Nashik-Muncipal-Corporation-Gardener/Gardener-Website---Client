@@ -74,3 +74,16 @@
 .service-item:hover .service-text .btn {
     width: 112px;
 }
+
+.middle_sec{
+    padding: 2%;
+}
+
+.middle_sec .list-group{
+    width: 100%;
+}
+
+.middle_sec .list-group-item{
+    display: flex;
+    justify-content: center;
+}

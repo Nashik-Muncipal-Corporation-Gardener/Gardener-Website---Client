@@ -34,21 +34,27 @@ function ViewUpdatePermissions(){
             
         // }
         
-        axios.delete(url+"/permission/",{
-            "title":item.title
-        },{
+        var form_data_body = {
+            "title":item.title,
+        };
+
+        axios.delete(url+"/permission/",form_data_body,{
             "headers":{
                 "Content-Type":"multipart/form-data",
                 "Authorization":"Bearer "+localStorage.getItem("jwtTokenSuperAdmin")
             }
         }).then((res)=>{
-            alert("Permission deleted successfully");
-            window.location.reload();
+         
+            if(res.status==200){
+                alert("Permission deleted successfully");
+                window.location.reload();
+            }
+            
         }).catch(err=>{
             console.log(err);
             alert("Error occured while deleting permission")
 
-            navigate("/super-admin")
+            // navigate("/super-admin")
         
         })
 

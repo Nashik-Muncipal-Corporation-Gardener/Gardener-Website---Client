@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Container,Table,Button, Modal,Col,Row,Card, ListGroup} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css";
 import '../../css/userpermissions.css'
@@ -8,18 +8,55 @@ import {
     MDBFile
   }
   from 'mdb-react-ui-kit';
-
+  import axios from 'axios';
+import url from '../../Uri.js';
 function Allpermissions() {
     const [alert, setAlert] = useState(false);
     const [show, setShow] = useState(false);
     const [fullscreen, setFullscreen] = useState(true);
+    const [permissionform, setPermissionform]=useState([])
     function handleShow(breakpoint) {
         setFullscreen(breakpoint);
         setShow(true);
       }
 
+    const [showPermission, setshowPermission] = useState(false);
+    const [fulls, setFulls] = useState(true);
+    function handlePermissionform(breakpoint,p) {
+      setPermissionform(p)
+      setFulls(breakpoint);
+      setshowPermission(true);
+      }
+
     const handleClose = () => setAlert(false);
     const handleAlert = () => setAlert(true);
+
+    console.log("Token: "+ localStorage.getItem("jwtTokenSuperAdmin"))
+    const[permissions,setPermissions] = useState([]);
+    const[isPermissionsFetched,setIsPermissionsFetched] = useState(false);
+
+    useEffect(()=>{
+      if(!isPermissionsFetched){
+        axios.get(url+"/permission-form",{
+          "headers":{
+            "Authorization": "Bearer "+localStorage.getItem("jwtTokenSuperAdmin")
+          }
+        }).then(function(response){
+          if(response.status==200){
+            console.log(response.data)
+            setPermissions(response.data)
+          }else{
+            alert("Something went wrong")
+          }
+        }).catch(function(error){
+          console.log(error)
+        })
+  
+        console.log("per: "+permissions)
+        setIsPermissionsFetched(true)
+      }   
+      
+    })
 
   return (
     <div>
@@ -40,17 +77,25 @@ function Allpermissions() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>PER65489</td>
-              <td>Trimming of Trees</td>
-              <td>12/12/2022</td>
-              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
+
+            {
+              permissions.map(p=>{
+                return(
+              <tr>
+              <td>{p.id}</td>
+              <td>{p.title}</td>
+              <td>{p.createdAt}</td>
+              <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm" >View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td ><Button style={{backgroundColor:'success',width:'50%'}} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{color: "#51907b", width:"30", height:"100%",marginLeft:'10px'}} /></td>
               <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>Update Status</Button></td>
               <td ><Button style={{backgroundColor:'success',width:'100%'}} variant="danger" size="sm" onClick={handleAlert}>Decline</Button></td>
 
             </tr> 
+                )
+              })
+            }
+            
           </tbody>
         </Table>
        
@@ -72,13 +117,20 @@ function Allpermissions() {
             <Row>
             <Button style={{width:'10%'}}>Submit</Button>
             </Row>
-
-
         </Container>
-            </Modal.Body>
-           
+        </Modal.Body>  
           </Modal>
-    
+
+          <Modal show={showPermission} fullscreen={fulls} onHide={() => setshowPermission(false)}>
+            <Modal.Header closeButton>
+            </Modal.Header>
+            <Modal.Body>
+                <Container>
+            {permissionform}
+        </Container>
+        </Modal.Body>  
+          </Modal>
+
           <Modal show={alert} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>Are you sure you want to decline the permission</Modal.Title>
