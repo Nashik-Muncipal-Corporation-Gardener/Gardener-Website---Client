@@ -2,6 +2,7 @@
   "name": "gardener",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://awww.api.com",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",

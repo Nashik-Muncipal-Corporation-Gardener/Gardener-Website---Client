@@ -34,20 +34,18 @@ function Userpermissions() {
         if(response.status==200){
           console.log(response.data)
           setPermissions(response.data)
+          setIsPermissionsFetched(true);
         }else{
           alert("Something went wrong")
         }
       }).catch(function(error){
         console.log(error)
       })
-
-      console.log("per: "+permissions)
-      setIsPermissionsFetched(true)
     }   
-    
   })
-  
-
+  // if(isPermissionsFetched){
+  //   console.log(permissions);
+  // }
   return (
     <div className='userpermissions'>
       <Container>
@@ -70,8 +68,8 @@ function Userpermissions() {
                     <td>{permission.id}</td>
                     <td>{permission.title}</td>
                     <td>{permission.createdAt}</td>
-                    <td>{permission.status}</td>
-                    <td ></td>
+                    <td><Button style={{ backgroundColor: 'success' }} onClick={() => handleShow(true)} variant="success" size="sm">{permission.status}</Button></td>
+                    <td ><Button onClick={() => handleAlert(true)} style={{ marginLeft: '10px' }} variant="danger" size="sm">Withdraw</Button></td>
 
                   </tr>
                 )
