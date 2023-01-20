@@ -74,3 +74,12 @@
 .service-item:hover .service-text .btn {
     width: 112px;
 }
+.about{
+    text-align: justify!important;
+    background-color: rgb(166, 216, 243)!important;
+}
+.citizen_icon:hover{
+   background-color: rgb(117, 202, 248);
+   border-radius: 2rem;
+   
+}

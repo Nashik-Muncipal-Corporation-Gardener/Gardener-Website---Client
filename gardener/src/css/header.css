@@ -1,7 +1,9 @@
 .logo{
     height: 60px;
 }
-
+.bg-top{
+    background-color: #207FB0!important;
+}
 .Nav_bar nav{
     margin-bottom: 0 !important;
     background-color: #f7f7f7;

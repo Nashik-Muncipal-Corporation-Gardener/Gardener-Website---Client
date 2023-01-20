@@ -17,24 +17,11 @@ const NavigationBar = () => {
   }
 
 
-  function loginbtn(){
-    if(localStorage.getItem("islogin")){
-      return(
-        <NavLink className='bg-top nav-link text-white rounded-5' to="/userprofile" style={{ marginLeft: 20, paddingLeft: 30, paddingRight: 30,backgroundColor:'#207FB0'}}><a><span ></span>View Profile</a></NavLink>
-      )
-    }
-    else{
-      return(
-        <NavLink className='bg-top nav-link text-white rounded-5' to="/signin" style={{ marginLeft: 20, paddingLeft: 30, paddingRight: 30,backgroundColor:'#207FB0'}}><a><span ></span>Sign In </a></NavLink>
-      )
-    }
-  }
 
   return (
-    // <div className='Nav_bar'>
     <div className="Nav_bar sticky-top">
       {/* <!-- Topbar Start --> */}
-      <div className="container-fluid bg-top  pe-0 " style={{backgroundColor:'#207FB0'}}>
+      <div className="container-fluid bg-top  pe-0 ">
         <div className="row gx-0">
           <div className="col-md-6 text-center text-lg-start mt-2 mb-lg-0">
             <div class="d-inline-flex align-items-center">
@@ -90,11 +77,10 @@ const NavigationBar = () => {
                   <NavLink className="nav-link" to="/gardens">Gardens</NavLink>
                   {/* <NavLink to="/#/contactus">Contact Us</NavLink>  */}
                   <NavLink className="nav-link" to="/news">News</NavLink>
-                  <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                  <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
+                  <NavLink className='bg-top nav-link text-white rounded-5' to="/signin" style={{ marginLeft: 20, paddingLeft: 30, paddingRight: 30 }}><a><span ></span>Sign In </a></NavLink>
 
-                  {
-                    loginbtn()
-                  }
+
                 </Nav>
 
               </Offcanvas.Body>

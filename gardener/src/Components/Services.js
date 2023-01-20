@@ -17,12 +17,23 @@ function Services() {
     return (
         <>
             <div className=' container-fluid bg-secondary text-white p-1'>
-                <marquee>
-                    <p>t was the great apostle of peace Mahatma Gandhi, who gave a clarion call of ‘Be the change’. Today, when the world is besieged by war and civil strife</p>
-                </marquee>
+                <div className='row'>
+                    <div className='col-md-2 text-center fw-bold text-danger'>
+                       <p>Announcements</p>
+                    </div>
+                    <div className='col-md-8'>
+                        <marquee>
+                            <p>t was the great apostle of peace Mahatma Gandhi, who gave a clarion call of ‘Be the change’. Today, when the world is besieged by war and civil strife</p>
+                        </marquee>
+                    </div>
+                    <div className='col-md-2'>
+                      <button className='btn text-white bg-top'>Gardens</button>
+                    </div>
+                </div>
+
             </div>
 
-            <div className='container mt-4  text-center'>
+            <div className='container-fluid mt-4 justify-content-center text-center'>
                 <div className='row  text-start'>
                     <div className='col-md-3 border border-secondary'>
                         <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'> NEWS AND ANNOUNCEMENTS</p>
@@ -34,7 +45,6 @@ function Services() {
                                     <li>Announcement 3</li>
                                     <li>Announcement 4</li>
                                     <li>Announcement 5</li>
-
                                 </marquee>
                             </ul>
                         </div>
@@ -48,9 +58,7 @@ function Services() {
                         <div className='  px-4 mb-4 mt-4'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
                             point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as oposed to using 'Content here,
                             content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem
-                            Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-                            versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                            Contrary to popular belief, Lorem Ipsum is not simply random text.
+                            Ipsum as their default model text,
                         </div>
                     </div>
                     <div className="col-md-auto ">
@@ -69,35 +77,33 @@ function Services() {
             {/* <!-- About Start --> */}
             <div className="container-fluid p-4 bg-light">
                 <div className="row ">
-                    <div className="col-lg-3 col-md-5 " >
-                        <img className="img-fluid rounded" src="/images/75.jfif" />
+                    <div className=" col-md-3" >
+                        <img className="img-fluid rounded" src="/images/75.jpg" />
                     </div>
-                    <div className="col-lg-5 col-md-7 ">
+                    <div className=" col-md-5">
                         <h1 className="display-1 ">75</h1>
                         <p className="  text-center">Year of Freedom</p>
                         <h1 className="display-5">Azadi Ka Amrit Mahotsav</h1>
                         <p className="mb-4">75 years of Indian Independence celebrated Azadi ka Amrit Mahotsav.There are five themes of the 'Azadi Ka Amrit Mahotsav</p>
                     </div>
 
-                    <div className="col-lg-4 col-md-12 " data-wow-delay="0.5s">
-                        <div className="col-12 col-sm-6 col-lg-12">
+                    <div className="col-md-4" data-wow-delay="0.5s">
+                        <div className="col-md-12">
                             <div className="border-start ps-4">
                                 <video className='img-fluid ' width="890" height="400" controls>
                                     <source src="/images/front_video.mp4" type="video/mp4" />
                                 </video>
                             </div>
-                            <div className="col-12 col-sm-6 col-lg-12">
-                                <div className="border-start ps-4">
-                                    <video className='img-fluid ' width="890" height="400" controls>
-                                        <source src="/images/front_video.mp4" type="video/mp4" />
-                                    </video>
-
-                                </div>
+                            <div className="border-start ps-4">
+                                <video className='img-fluid ' width="890" height="400" controls>
+                                    <source src="/images/front_video.mp4" type="video/mp4" />
+                                </video>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             {/* <!-- About End --> */}
             <div className='Services'>
                 {/* <!--Icons section--> */}
@@ -115,7 +121,7 @@ function Services() {
                             <p className="text-dark text-center">Greviance</p>
                         </Col>
                         <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
-                            <img src="/images/permission.png" width="100" height="100" alt="" />
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3I2yi1g6DJgjuDUkwtwH2Hr0boSpDEsvuUA&usqp=CAU" width="100" height="100" alt="" />
                             <p className="text-dark text-center">Permission</p>
                         </Col>
                         <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
@@ -123,7 +129,7 @@ function Services() {
                             <p className="text-dark text-center">Waste Collection</p>
                         </Col>
                         <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img src="/images/volunteer.png" width="100" height="100" alt="" />
+                            <img src="https://www.pngitem.com/pimgs/m/320-3204940_volunteer-icon-png-transparent-png.png" width="100" height="100" alt="" />
                             <p className="text-dark text-center">Volunteers</p>
                         </Col>
                         <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">

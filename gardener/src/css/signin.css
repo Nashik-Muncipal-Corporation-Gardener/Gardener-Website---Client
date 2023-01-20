@@ -35,11 +35,6 @@
     margin-bottom: 10px;
     font-weight: 500;
 }
-.signin .btn:active{
-   
-    background: #207fb0;
-    
-}
 
 .signin a{
     color: #207fb0;
@@ -86,4 +81,9 @@
     background-color: whitesmoke;
     padding: 2% !important;
 
+}
+@media screen and(max-width: 600px) {
+    .signin .container{
+        width: 100%!important;
+    }
 }

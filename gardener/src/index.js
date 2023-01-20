@@ -12,7 +12,7 @@ import Gardens from './Components/Gardens';
 import Garden from './Components/garden/Garden';
 import About from './Components/About';
 import Contact from './Components/Contact';
-import Footer from './Components/footer.js';
+import Footer from './Components/Footer.js';
 import Userprofile from './Components/Userprofile';
 import Authentication from './superAdmin/Authentication';
 import SuperAdminHome from './superAdmin/home/SuperAdminHome';
@@ -27,6 +27,7 @@ import Permissionform from './Components/Permissionform';
 import Userpermissions from './Components/Userpermissions';
 import Pdfreader from './Components/Pdfreader';
 import Posters from './superAdmin/Posters';
+import Gallery from './Components/Gallery';
 import Announcements from './superAdmin/Announcements';
 import AddNews from './superAdmin/news/AddNews';
 import AdminHome from './admin/home/AdminHome';
@@ -41,10 +42,12 @@ import Services from './superAdmin/Services';
 import Acheivements from './superAdmin/Acheivements';
 import Termsandconditions from './superAdmin/Termsandconditions';
 import Wastecollection from './superAdmin/Wastecollection';
+import ScrollToTop from './Components/scrollToTop';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
-    
+    <NavigationBar/>
+    <ScrollToTop/>
     <Routes>
       <Route exact path='/' element={< App />}></Route>
       <Route exact path='/signin' element={< Signin />}></Route>
@@ -53,6 +56,7 @@ root.render(
       <Route exact path='/aboutus' element={< About />}></Route>
       <Route exact path='/contact' element={< Contact />}></Route>
       <Route exact path='/garden' element={< Garden />}></Route>
+      <Route exact path='/gallery' element={< Gallery />}></Route>
 
       <Route exact path='/userprofile' element={< Userprofile />}></Route>
       <Route exact path='/edituserprofile' element={< Editprofile />}></Route>
@@ -88,6 +92,7 @@ root.render(
 
 
     </Routes>
+    <Footer/>
   </HashRouter>
 );
 
