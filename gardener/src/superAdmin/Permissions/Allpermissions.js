@@ -93,7 +93,7 @@ function Allpermissions() {
                     (permission.status == "In Review") ? (
 
                       <>
-                        <td><Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm" onClick={handlePanchamaUpload}>Upload</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
+                        <td><Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm">Upload</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
                       </>
 
                     ) : (
