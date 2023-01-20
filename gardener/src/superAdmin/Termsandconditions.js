@@ -2,7 +2,7 @@ import { Icon } from "@iconify/react";
 import axios from "axios";
 import { MDBTextArea , MDBRow} from 'mdb-react-ui-kit';
 import React, { useState } from "react";
-import { Button, Card, Container, DropdownButton, ListGroup} from "react-bootstrap";
+import { Button, Card,Container, DropdownButton, ListGroup} from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Sidebar from "./home/Sidebar/Sidebar";
 function Termsandconditions() {

@@ -1,11 +1,12 @@
 import React from 'react'
-import Garden_data from './GardenData'
+import NavigationBar from '../NavigationBar'
 
 const Garden = () => {
 
 
     return (
         <>
+        <NavigationBar/>
          <div className='container col-md-12 float p-3'>
                 <select className="form-select  w-25" aria-label="Default select example">
                     <option selected>Area Wise</option>

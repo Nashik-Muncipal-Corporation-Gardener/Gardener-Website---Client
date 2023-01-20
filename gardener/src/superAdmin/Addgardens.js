@@ -27,9 +27,9 @@ function Addgardens() {
           <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Garden Closing Time' />
           <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Garden Location (add google map link)' />
 
-          <MDBBtn type='submit' className='mb-4' block>
+          <Button type='submit' className='mb-4' block>
             Submit
-          </MDBBtn> 
+          </Button> 
         </form>
         </div>
         </div>

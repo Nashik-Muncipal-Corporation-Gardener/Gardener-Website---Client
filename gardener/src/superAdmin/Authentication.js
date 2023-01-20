@@ -18,6 +18,7 @@ import {
   MDBRow, MDBCol
 }
 from 'mdb-react-ui-kit';
+
 import "bootstrap/dist/css/bootstrap.css";
 import Navbar from '../Components/NavigationBar';
 import {Container,Row, Col, Form, Button,Toast } from 'react-bootstrap';
@@ -225,7 +226,7 @@ function Authentication(){
                 <a href="!#">Forgot password?</a>
                 </div>
 
-                <MDBBtn className="mb-4 w-100" onClick={handleLogin}>Sign in</MDBBtn>
+                <Button className="mb-4 w-100" onClick={handleLogin}>Sign in</Button>
                 <p className="text-center">Not a member? <a onClick={() => handleJustifyClick('tab2')} >Register</a></p>
 
             </MDBTabsPane>
@@ -255,7 +256,7 @@ function Authentication(){
                 <MDBCheckbox name='flexCheck' id='flexCheckDefaultSuperAdmin' label='I have read and agree to the terms' onChange={checkboxStatus}/>
                 </div>
 
-                <MDBBtn className="mb-4 w-100" onClick={registerSuperAdmin} >Sign up</MDBBtn>
+                <Button className="mb-4 w-100" onClick={registerSuperAdmin} >Sign up</Button>
 
             </MDBTabsPane>
 

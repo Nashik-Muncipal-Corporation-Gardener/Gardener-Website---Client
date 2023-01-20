@@ -42,7 +42,7 @@ function Gardens() {
     return (
         <>
             {/* <!-- Service Start --> */}
-            <div className="container-xxl py-5">
+            <NavigationBar/>
                 <div className="container">
                     <div className=" container text-start ">
                         <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
@@ -146,7 +146,6 @@ function Gardens() {
                         </div>
                     </div>
                 </div>
-            </div>
             {/* <!-- Service End --> */}
         </>
     )

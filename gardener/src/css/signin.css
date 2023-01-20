@@ -82,8 +82,23 @@
     padding: 2% !important;
 
 }
-@media screen and(max-width: 600px) {
+
+
+@media screen and (min-width:320px) and (max-width:480px)
+{
     .signin .container{
-        width: 100%!important;
+        width: 80% !important;
     }
+}
+
+/* ipads and tablets */
+@media screen and (min-width: 481px) and (max-width:768px)
+{
+
+}
+
+/* laplops and small screens */
+@media screen and (min-width: 769px) and (max-width:1024px)
+{
+    
 }

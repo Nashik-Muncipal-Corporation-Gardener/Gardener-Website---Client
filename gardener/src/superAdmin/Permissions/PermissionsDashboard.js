@@ -37,7 +37,7 @@ function PermissionsDashboard(){
             <Card style={{ width: '12rem',marginLeft:'10px' }}>
             <Card.Body>
             <ListGroup onClick={pendingpermissions} variant="flush">
-               <ListGroup.Item><center> <h6>Total Permissions</h6></center></ListGroup.Item>
+               <ListGroup.Item><center> <h6>Pending Permissions</h6></center></ListGroup.Item>
                 <ListGroup.Item><center><h7>12</h7></center></ListGroup.Item>
             </ListGroup>    
             </Card.Body>

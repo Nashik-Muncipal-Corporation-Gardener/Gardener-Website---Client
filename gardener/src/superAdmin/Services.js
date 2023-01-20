@@ -15,6 +15,8 @@ import {
   MDBTextArea
 }
 from 'mdb-react-ui-kit';
+import {Button} from 'react-bootstrap';
+
 import SuperAdminHome from './home/SuperAdminHome';
 function Services() {
   return (
@@ -25,9 +27,9 @@ function Services() {
     <form>
       <MDBInput className='mb-4' type='Service Title' id='form2Example1' placeholder ='Title' />
       <MDBFile style={{marginBottom:20}} label='Add image' id='customFile' />
-      <MDBBtn type='submit' className='mb-4' block>
+      <Button type='submit' className='mb-4' block>
         Add Service
-      </MDBBtn>
+      </Button>
     </form>
     </MDBContainer>
     </div>

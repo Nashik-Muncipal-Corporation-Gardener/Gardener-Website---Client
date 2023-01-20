@@ -18,6 +18,13 @@ const navigate =useNavigate()
     navigate('/userpermissions')
   }
 
+  
+const handleLogout=()=>{
+    localStorage.removeItem("jwtTokenUser");
+    localStorage.setItem("islogin",false)
+    navigate('/')
+  
+  }
 
   return (
     <div className='userprofile'>
@@ -31,11 +38,9 @@ const navigate =useNavigate()
                     <Button onClick={handleShow}>Edit Profile</Button>
                     </Row>
                     <Row>
-                    <Button onClick={userpermissions}>My Permissions</Button>
+                    <Button onClick={handleLogout}>Log Out</Button>
                     </Row>
-                    <Row>
-                    <Button>My Grievances</Button>
-                    </Row>
+                   
                 </Col>
                 <Col md={9}>
 

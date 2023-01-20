@@ -112,7 +112,10 @@ function Permissions() {
           </MDBTabsContent>
         </MDBCol>
       </MDBRow>
-      <div>
+      <div style={{bottom: '0',
+    position: 'absolute',
+    width: '100%'}}>
+       <Footer/>
        </div>
     </div>
   )

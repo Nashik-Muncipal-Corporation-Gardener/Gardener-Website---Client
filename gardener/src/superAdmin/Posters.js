@@ -6,6 +6,7 @@ import {
     MDBContainer
   } from 'mdb-react-ui-kit';
   import Sidebar from "./home/Sidebar/Sidebar";
+  import {Button} from 'react-bootstrap';
 
 function Posters() {
 
