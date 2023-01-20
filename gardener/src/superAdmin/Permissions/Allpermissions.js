@@ -66,14 +66,14 @@ function Allpermissions() {
 
   function handleAdvertisementUpload(id){
     // e.preventDefault();
-    setAdvertisementfile(document.getElementById("advertisementfile").files[0])
+    setAdvertisementfile(document.getElementById("advertisementfile"+id).files[0])
     console.log("file: "+advertisementfile)  
     if (advertisementfile === null) {
         alert("Select File");
         return;
     }else{
       var formData = new FormData();
-      formData.append("file",advertisementfile);
+      formData.append("file",document.getElementById("advertisementfile"+id).files[0]);
       formData.append("id",id);
 
       console.log("form data: "+formData)
@@ -100,14 +100,14 @@ function Allpermissions() {
   
   function handlePanchamaUpload(id){
     // e.preventDefault();
-    setPanchanamafile(document.getElementById("panchanamafile").files[0])
-    console.log("file: "+panchanamafile)  
+    // setPanchanamafile(document.getElementById("panchanamafile").files[0])
+    console.log("file: "+document.getElementById(id).files[0])
     if (panchanamafile === null) {
         alert("Select File");
         return;
     }else{
       var formData = new FormData();
-      formData.append("file",panchanamafile);
+      formData.append("file",document.getElementById(id).files[0]);
       formData.append("id",id);
 
       console.log("form data: "+formData)
@@ -115,6 +115,7 @@ function Allpermissions() {
       axios.post(url+"/permission-form/upload-panchama",formData,{
         headers: {
           "Content-Type": "multipart/form-data",
+          // "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhQGIuYyIsImV4cCI6MTY3NDMzNDMzMywiaWF0IjoxNjc0MjM0MzMzfQ.542tIhS6p837nKyhhiv-lMk69F_8hA0Lm-hyQxl4_YY"
           'Authorization': 'Bearer '+localStorage.getItem("jwtTokenSuperAdmin")
         }
       }).then(function(response){
@@ -212,7 +213,7 @@ function Allpermissions() {
             <tbody>
 
               {
-              permissiondata.map(permission => {
+              permissiondata.map((permission,pos) => {
                 return (
                 <tr>
                   <td>{permission.id}</td>
@@ -225,7 +226,7 @@ function Allpermissions() {
 
                       <>
                         <td>
-                          <MDBFile  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id='panchanamafile'  />
+                          <input  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id={permission.id}  />
                           <Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm" onClick={()=>handlePanchamaUpload(permission.id)} >Upload</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} />
                         </td>
                       </>
@@ -252,7 +253,7 @@ function Allpermissions() {
 
                       <>
                         <td>
-                        <MDBFile  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id='advertisementfile'  />
+                        <MDBFile  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id={"advertisementfile"+permission.id}  />
             
                           <Button style={{ backgroundColor: 'success', width: '50%' }} onClick={()=>handleAdvertisementUpload(permission.id)} variant="success" size="sm">Upload</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
                         {/* <td><p style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td> */}
