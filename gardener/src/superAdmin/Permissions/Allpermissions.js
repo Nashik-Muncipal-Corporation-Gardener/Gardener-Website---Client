@@ -15,20 +15,18 @@ import SuperAdminHome from '../home/SuperAdminHome';
 function Allpermissions() {
 
 
-  const [showPanchanamaForm, setShowPanchanamaForm] = useState(false);
-  const [showAdvertisementForm, setShowAdvertisementForm] = useState(false);
+ 
 
 
   const [alert, setAlert] = useState(false);
-  const [show, setShow] = useState(false);
-  const [showform, setShowForm] = useState(false);
-  const [fullscreen, setFullscreen] = useState(true);
   const [permissiondata, setPermissionData] = useState();
   const [isPermissionsFetched, setIsPermissionsFetched] = useState();
   const [panchanamafile, setPanchanamafile] = useState();
   const [advertisementfile, setAdvertisementfile] = useState();
 
   const navigate = useNavigate();
+
+  const handleClose = () => setAlert(false);
 
   console.log("token: "+localStorage.getItem("jwtTokenSuperAdmin"))
   useEffect(() => {
@@ -49,26 +47,18 @@ function Allpermissions() {
     }
   });
 
-  function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
+  function handleShow (id)  {
+    localStorage.setItem("currentID",id)
+    setAlert(true)
+
   }
+
   function handleShowForm(permission) {
-    // console.log(breakpoint);
-    // setFullscreen(breakpoint);
-    // setShowForm(true);
     localStorage.setItem("permission", JSON.stringify(permission));
     navigate("/super-admin/appliedpermission");
   }
-  const handleClose = () => setAlert(false);
-  const handleAlert = () => setAlert(true);
   if (isPermissionsFetched) {
     console.log(permissiondata);
-  }
-
-  function handlePanchanamaFile(e){
-    setPanchanamafile(e.target.files[0])
-    console.log(panchanamafile)
   }
 
   function updateStatus(status){
@@ -164,6 +154,37 @@ function Allpermissions() {
     // }
   }
 
+  function declinePermission(){
+    // e.preventDefault();
+   const id= localStorage.getItem("currentID")
+    // alert("Are you sure you want to decline the permission")
+    
+      var formData = new FormData();
+      formData.append("id",id);
+
+      console.log("form data: "+formData)
+       
+      axios.post(url+"/permission-form/declineApproval",formData,{
+        headers: {
+          "Content-Type": "multipart/form-data",
+          'Authorization': 'Bearer '+localStorage.getItem("jwtTokenSuperAdmin")
+        }
+      }).then(function(response){
+        if(response.status==200){
+          console.log("Permission declined successfully")
+          window.location.reload();
+        }else{
+          console.log("Something went wrong")
+          console.log(response)
+        }
+      }).catch(function(error){
+        console.log(error)
+        console.log("Something went wrong")
+      })
+
+      setAlert(false)
+    }
+  
 
     // console.log("Token: "+ localStorage.getItem("jwtTokenSuperAdmin"))
     // const[permissions,setPermissions] = useState([]);
@@ -264,9 +285,9 @@ function Allpermissions() {
 
                   }
 
-                  <td><p style={{ backgroundColor: 'success', width: '100%' }} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td>
+                  <td><p style={{ backgroundColor: 'success', width: '100%' }} variant="success" size="sm">{permission.status}</p></td>
 
-                  <td><Button style={{ backgroundColor: 'success', width: '100%' }} variant="danger" size="sm" onClick={handleAlert}>Decline</Button></td>
+                  <td><Button style={{ backgroundColor: 'success', width: '100%' }} variant="danger" size="sm" onClick={()=>handleShow(permission.id)}>Decline</Button></td>
 
                 </tr>
                 )
@@ -274,7 +295,20 @@ function Allpermissions() {
             </tbody>}
         </Table>
 
-
+        <Modal show={alert} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={declinePermission}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   )
 }
