@@ -31,10 +31,9 @@ const NavigationBar = () => {
   }
 
   return (
-    // <div className='Nav_bar'>
     <div className="Nav_bar sticky-top">
       {/* <!-- Topbar Start --> */}
-      <div className="container-fluid bg-top  pe-0 " style={{backgroundColor:'#207FB0'}}>
+      <div className="container-fluid bg-top  pe-0 ">
         <div className="row gx-0">
           <div className="col-md-6 text-center text-lg-start mt-2 mb-lg-0">
             <div class="d-inline-flex align-items-center">
@@ -90,7 +89,8 @@ const NavigationBar = () => {
                   <NavLink className="nav-link" to="/gardens">Gardens</NavLink>
                   {/* <NavLink to="/#/contactus">Contact Us</NavLink>  */}
                   <NavLink className="nav-link" to="/news">News</NavLink>
-                  <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                  <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
+
 
                   {
                     

@@ -1,0 +1,99 @@
+
+/* Gallery section */
+
+.icon {
+    width: 4rem !important;
+    height: 4rem !important;
+    font-size: 4rem !important;
+  }
+  
+  .galleryWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  
+  .galleryWrap .single {
+    width: 250px;
+    cursor: pointer;
+  }
+  
+  .galleryWrap .single img {
+    max-width: 100%;
+  }
+  
+  .galleryWrap .single img:hover {
+    transform: scale(1.02);
+    box-shadow:  rgba(0, .0, .0, 0.8);;
+  }
+  
+  .sliderWrap {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0, .0, .0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .sliderWrap .btnclose,
+  .sliderWrap .btnright,
+  .sliderWrap .btnleft {
+    position: fixed;
+    cursor: pointer;
+    opacity: 0.6;
+    color: #fff;
+    font-size: 2rem;
+    z-index: 9999;
+  
+  }
+  
+  .btnright:hover,
+  .btnright:hover,
+  .btnclose:hover {
+    opacity: 1;
+  }
+  
+  .sliderWrap .btnclose {
+    top: 160px;
+    right: 40px;
+  }
+  
+  .sliderWrap .btnleft {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40px;
+  }
+  
+  .sliderWrap .btnright {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+  }
+  
+  .fullScreenImage img {
+    margin-top: 5rem;
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: none;
+    user-select: none;
+  
+  }
+  
+  .fullScreenImage {
+    width: calc(100% - 40%);
+    height: calc(100% - 40%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

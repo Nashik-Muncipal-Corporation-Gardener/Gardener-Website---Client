@@ -66,30 +66,27 @@ function Services() {
             {/* <!-- About Start --> */}
             <Container className='middle_sec'>
                 <div className="row ">
-                    <div className="col-lg-3 col-md-5 " >
-                        <img className="img-fluid rounded" src="/images/75.jfif" />
+                    <div className=" col-md-3" >
+                        <img className="img-fluid rounded" src="/images/75.jpg" />
                     </div>
-                    <div className="col-lg-5 col-md-7 ">
+                    <div className=" col-md-5">
                         <h1 className="display-1 ">75</h1>
                         <p className="  text-center">Year of Freedom</p>
                         <h1 className="display-5">Azadi Ka Amrit Mahotsav</h1>
                         <p className="mb-4">75 years of Indian Independence celebrated Azadi ka Amrit Mahotsav.There are five themes of the 'Azadi Ka Amrit Mahotsav</p>
                     </div>
 
-                    <div className="col-lg-4 col-md-12 " data-wow-delay="0.5s">
-                        <div className="col-12 col-sm-6 col-lg-12">
+                    <div className="col-md-4" data-wow-delay="0.5s">
+                        <div className="col-md-12">
                             <div className="border-start ps-4">
                                 <video className='img-fluid ' width="890" height="400" controls>
                                     <source src="/images/front_video.mp4" type="video/mp4" />
                                 </video>
                             </div>
-                            <div className="col-12 col-sm-6 col-lg-12">
-                                <div className="border-start ps-4">
-                                    <video className='img-fluid ' width="890" height="400" controls>
-                                        <source src="/images/front_video.mp4" type="video/mp4" />
-                                    </video>
-
-                                </div>
+                            <div className="border-start ps-4">
+                                <video className='img-fluid ' width="890" height="400" controls>
+                                    <source src="/images/front_video.mp4" type="video/mp4" />
+                                </video>
                             </div>
                         </div>
                     </div>

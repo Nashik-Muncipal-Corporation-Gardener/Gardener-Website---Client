@@ -3,6 +3,7 @@ import { Icon } from '@iconify/react';
 import "bootstrap/dist/css/bootstrap.css";
 import { Row, Col, ListGroup } from 'react-bootstrap';
 import '../css/footer.css'
+import { Divider } from '@mui/material';
 function Footer() {
   return (
     <div className='footer'>
@@ -31,9 +32,10 @@ function Footer() {
         <Col md={3}>
           <h6>Follow Us</h6>
           <div className="align-items-center justify-content-center">
-            <a className="btn border-success m-1 btn-circle border-5 rounded-circle me-2 bg-white" href="https://twitter.com/venkateshawara" target="__green"><i className="fab fa-twitter  "></i></a><br />
-            <a className="btn border-success m-1 btn-circle border-5 rounded-circle me-2 bg-white" href="https://www.instagram.com/venkateshwaraagro/" target="__green"><i className="fab fa-facebook "></i></a><br />            <a className="btn border-success m-1 btn-circle border-5 rounded-circle me-2 bg-white" href="https://www.youtube.com/channel/UCoivbxyv8RbYQv-yi9A9ojQ" target="__green"><i className="fab fa-youtube "></i></a><br />
-            <a className="btn border-success m-1 btn-circle border-5 rounded-circle me-2 bg-white" href="https://www.instagram.com/venkateshwaraagro/" target="__green"><i className="fab fa-instagram "></i></a><br />
+            <a className="btn border-success m-1 btn-circle border-5 rounded-0 me-2 bg-white" href="https://twitter.com/venkateshawara" target="__green"><i className="fab fa-twitter  "></i></a><br />
+            <a className="btn border-success m-1 btn-circle border-5 rounded-0 me-2 bg-white" href="https://www.instagram.com/venkateshwaraagro/" target="__green"><i className="fab fa-facebook "></i></a><br />            
+            <a className="btn border-success m-1 btn-circle border-5 rounded-0 me-2 bg-white" href="https://www.youtube.com/channel/UCoivbxyv8RbYQv-yi9A9ojQ" target="__green"><i className="fab fa-youtube "></i></a><br />
+            <a className="btn border-success m-1 btn-circle border-5 rounded-0 me-2 bg-white" href="https://www.instagram.com/venkateshwaraagro/" target="__green"><i className="fab fa-instagram "></i></a><br />
           </div>
         </Col>
         <Col md={3}>

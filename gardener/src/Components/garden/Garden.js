@@ -1,7 +1,5 @@
 import React from 'react'
-import Garden_data from './GardenData'
 import NavigationBar from '../NavigationBar'
-import Footer from '../footer'
 
 const Garden = () => {
 
@@ -121,7 +119,6 @@ const Garden = () => {
             </div>
 
         </div>
-        <Footer/>
         </>
     )
 

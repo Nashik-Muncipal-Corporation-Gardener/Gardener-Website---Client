@@ -1,17 +1,19 @@
 .slider img {
     height: 400px;
 }
-
+.slider_btn{
+    background-color: #207fb0!important;
+}
 
 
 .carousel-item {
-    height: 400px !important;
+    height: 480px !important;
 }
 
 @media (max-width: 768px) {
     .carousel-item {
         position: relative;
-        min-height: 450px;
+        min-height: 500px;
     }
 
     .carousel-item img {

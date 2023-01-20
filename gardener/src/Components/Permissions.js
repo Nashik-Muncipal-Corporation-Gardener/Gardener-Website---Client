@@ -18,7 +18,7 @@ import {
     MDBCol
   } from 'mdb-react-ui-kit';
 
-import Footer from './footer';
+import Footer from './Footer';
 function Permissions() {
 
     const [verticalActive, setVerticalActive] = useState('tab1');
@@ -67,7 +67,6 @@ function Permissions() {
 
   return (
     <div className='permissions'>
-        <NavigationBar/>
         <MDBRow>
         <MDBCol size='3'>
           <MDBTabs className='flex-column text-center'>
