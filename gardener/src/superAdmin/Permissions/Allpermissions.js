@@ -226,7 +226,7 @@ function Allpermissions() {
 
                       <>
                         <td>
-                          <input  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id={permission.id}  />
+                          <MDBFile  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id={permission.id}  />
                           <Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm" onClick={()=>handlePanchamaUpload(permission.id)} >Upload</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} />
                         </td>
                       </>
@@ -234,7 +234,7 @@ function Allpermissions() {
                     ) : (
 
                       <>
-                        <td><Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
+                        <td><Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm" >View</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
                         {/* <td><p style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td> */}
                       </>
                     )
@@ -243,7 +243,7 @@ function Allpermissions() {
                   }
 
                   {
-                    (permission.status == "Panchama processed") ? (
+                    (permission.status == "Waiting for Payment") ? (
 
                       <>
                         <td><Button style={{ backgroundColor: 'success', width: '50%' }} variant="success" size="sm">View</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
@@ -253,7 +253,7 @@ function Allpermissions() {
 
                       <>
                         <td>
-                        <MDBFile  type="file" style={{ marginBottom: 20 }} label='Add panchanama pdf' accept="application/pdf" id={"advertisementfile"+permission.id}  />
+                        <MDBFile  type="file" style={{ marginBottom: 20 }} label='Add advertisement pdf' accept="application/pdf" id={"advertisementfile"+permission.id}  />
             
                           <Button style={{ backgroundColor: 'success', width: '50%' }} onClick={()=>handleAdvertisementUpload(permission.id)} variant="success" size="sm">Upload</Button><Icon icon="ri:information-fill" style={{ color: "#51907b", width: "30", height: "100%", marginLeft: '10px' }} /></td>
                         {/* <td><p style={{backgroundColor:'success',width:'100%'}} variant="success" size="sm" onClick={handleShow}>{permission.status}</p></td> */}
