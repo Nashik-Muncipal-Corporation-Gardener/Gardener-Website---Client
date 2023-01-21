@@ -3,8 +3,7 @@ import React from 'react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import NavigationBar from './NavigationBar';
-import Footer from './Footer';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,9 +12,6 @@ import 'swiper/css/scrollbar';
 
 const About = () => {
   return (
-    <>
-    <NavigationBar/>
-    
     <div>
 
       {/* <!-- About Start --> */}
@@ -53,13 +49,18 @@ const About = () => {
 
 
       <div className="container text-start ">
-        <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
-          Testimonials
-        </p>
+        <ul className="nav nav-tabs col-md-3" role="tablist">
+          <li className="nav-item">
+            <a className="nav-link active" id="home-tab" data-toggle="tab" href="" role="tab" aria-controls="home" aria-selected="home" >Testimonials</a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="profile">Videos</a>
+          </li>
+        </ul>
         <hr className='text-danger fw-bold' />
       </div>
       {/* <!-- Testimonial section start --> */}
-      <div className='container-fluid p-3 bg-light'>
+      <div className='container-fluid p-3 bg-light' aria-labelledby="home-tab">
         <div className="row py-2 mt-3">
           <div className="col px-5">
 
@@ -90,7 +91,27 @@ const About = () => {
                     <div className="card-body p-4" >
                       <img src="https://pmsvanidhi.mohua.gov.in/Akam/images/testimonial-img.svg" height="40" width="40" />
                       <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" className="">Read More</a><br/>
+                      <a href="#" className="">Read More</a><br />
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjYq2o4ni8kldXDc5-92sqJd0Wqm-fnDvT5H5-Io&s" height="80" width="80" className=' text-center position-relative mt-3' />
+                    </div>
+
+                    <div className='bg-dark p-5 text-white'>
+                      <p>Mr Dinesh Zatke (Aurangabad)</p>
+                    </div>
+
+                  </div>
+
+
+                </div>
+              </SwiperSlide>
+              <SwiperSlide >
+                <div style={{ height: "500px" }}>
+                  <div className="card text-center shadow  justify-content-center "   >
+
+                    <div className="card-body p-4" >
+                      <img src="https://pmsvanidhi.mohua.gov.in/Akam/images/testimonial-img.svg" height="40" width="40" />
+                      <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" className="">Read More</a><br />
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjYq2o4ni8kldXDc5-92sqJd0Wqm-fnDvT5H5-Io&s" height="80" width="80" className=' text-center position-relative mt-3' />
                     </div>
 
@@ -100,14 +121,14 @@ const About = () => {
                   </div>
                 </div>
               </SwiperSlide>
-             <SwiperSlide >
+              <SwiperSlide >
                 <div style={{ height: "500px" }}>
                   <div className="card text-center shadow  justify-content-center "   >
 
                     <div className="card-body p-4" >
                       <img src="https://pmsvanidhi.mohua.gov.in/Akam/images/testimonial-img.svg" height="40" width="40" />
                       <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" className="">Read More</a><br/>
+                      <a href="#" className="">Read More</a><br />
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjYq2o4ni8kldXDc5-92sqJd0Wqm-fnDvT5H5-Io&s" height="80" width="80" className=' text-center position-relative mt-3' />
                     </div>
 
@@ -117,14 +138,14 @@ const About = () => {
                   </div>
                 </div>
               </SwiperSlide>
-             <SwiperSlide >
+              <SwiperSlide >
                 <div style={{ height: "500px" }}>
                   <div className="card text-center shadow  justify-content-center "   >
 
                     <div className="card-body p-4" >
                       <img src="https://pmsvanidhi.mohua.gov.in/Akam/images/testimonial-img.svg" height="40" width="40" />
                       <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" className="">Read More</a><br/>
+                      <a href="#" className="">Read More</a><br />
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjYq2o4ni8kldXDc5-92sqJd0Wqm-fnDvT5H5-Io&s" height="80" width="80" className=' text-center position-relative mt-3' />
                     </div>
 
@@ -134,31 +155,14 @@ const About = () => {
                   </div>
                 </div>
               </SwiperSlide>
-             <SwiperSlide >
+              <SwiperSlide >
                 <div style={{ height: "500px" }}>
                   <div className="card text-center shadow  justify-content-center "   >
 
                     <div className="card-body p-4" >
                       <img src="https://pmsvanidhi.mohua.gov.in/Akam/images/testimonial-img.svg" height="40" width="40" />
                       <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" className="">Read More</a><br/>
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjYq2o4ni8kldXDc5-92sqJd0Wqm-fnDvT5H5-Io&s" height="80" width="80" className=' text-center position-relative mt-3' />
-                    </div>
-
-                    <div className='bg-dark p-5 text-white'>
-                      <p>Mr Dinesh Zatke (Aurangabad)</p>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-             <SwiperSlide >
-                <div style={{ height: "500px" }}>
-                  <div className="card text-center shadow  justify-content-center "   >
-
-                    <div className="card-body p-4" >
-                      <img src="https://pmsvanidhi.mohua.gov.in/Akam/images/testimonial-img.svg" height="40" width="40" />
-                      <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" className="">Read More</a><br/>
+                      <a href="#" className="">Read More</a><br />
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQjYq2o4ni8kldXDc5-92sqJd0Wqm-fnDvT5H5-Io&s" height="80" width="80" className=' text-center position-relative mt-3' />
                     </div>
 
@@ -204,8 +208,6 @@ const About = () => {
 
 
     </div>
-    <Footer/>
-    </>
   )
 }
 

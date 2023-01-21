@@ -1,7 +1,7 @@
 import React from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col ,Card,ListGroup} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import '../css/services.css'
 function Services() {
 
@@ -16,55 +16,66 @@ function Services() {
     }
     return (
         <>
- <div className=' container-fluid bg-secondary text-white p-1'>
-                <marquee>
-                    <p>t was the great apostle of peace Mahatma Gandhi, who gave a clarion call of ‘Be the change’. Today, when the world is besieged by war and civil strife</p>
-                </marquee>
+            <div className=' container-fluid bg-secondary text-white p-1'>
+                <div className='row'>
+                    <div className='col-md-2 text-center fw-bold text-white'>
+                        <p>Announcements</p>
+                    </div>
+                    <div className='col-md-8'>
+                        <marquee>
+                            <p>t was the great apostle of peace Mahatma Gandhi, who gave a clarion call of ‘Be the change’. Today, when the world is besieged by war and civil strife</p>
+                        </marquee>
+                    </div>
+                    <div className='col-md-2'>
+                        {/* <button className='btn text-white bg-top'>Gardens</button> */}
+                    </div>
+                </div>
+
             </div>
-            <Container className='middle_sec'>
-        <Row >
-        <Col xs={6} md={8} >
-        <Card style={{height:'100%'}}>
-        <ListGroup variant="flush">
-        <ListGroup.Item>Announcements</ListGroup.Item>
-            <ListGroup.Item>
-            <ul >
-                <marquee  direction="up"  scrollamount="2">
-                    <li>Announcement 2</li>
-                    <li>Announcement 3</li>
-                    <li>Announcement 4</li>
-                    <li>Announcement 5</li>
 
-                </marquee>
-            </ul>
-            </ListGroup.Item>   
-        </ListGroup>
-        </Card>   
-        </Col>
+            <div className='container-fluid mt-4 justify-content-center text-center'>
+                <div className='row  text-start'>
+                    <div className='col-md-3 border border-secondary'>
+                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'> NEWS AND ANNOUNCEMENTS</p>
+                        <div className='py-2 overflow-auto'>
+                            {/* Scrolling Announcements */}
+                            <ul className=' mt-3' list-style="">
+                                <marquee width="60%" direction="up" height="100px" scrollamount="2">
+                                    <li>Announcement 2</li>
+                                    <li>Announcement 3</li>
+                                    <li>Announcement 4</li>
+                                    <li>Announcement 5</li>
+                                </marquee>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-md-auto ">
+                    </div>
 
-        <Col xs={6} md={4} >
-        <Card >
-      <ListGroup variant="flush">
-        <ListGroup.Item>Commissioner</ListGroup.Item>
-        <ListGroup.Item><img src='https://nmc.gov.in/assets/img/commi_cpulkundvar.jpg' thumbnail style={{height:'200px'}} />
-                        
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                        <p className='text-center'>डॉ. चंद्रकांत पुलकुंडवार, भा. प्र. से.<br></br>
-                        आयुक्त तथा प्रशासक</p>
-                        </ListGroup.Item>
-        
-      </ListGroup>
-    </Card>
-        </Col>
-        
-      </Row>
-      </Container>
+                    <div className="col-md-5 about  border border-secondary text-dark  rounded-4">
+                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'>ABOUT NMC</p>
 
-            
+                        <div className='  px-4 mb-4 mt-4'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
+                            point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as oposed to using 'Content here,
+                            content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem
+                            Ipsum as their default model text,
+                        </div>
+                    </div>
+                    <div className="col-md-auto ">
+                    </div>
+
+                    <div className="col-md-3  border border-secondary rounded-4">
+                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'>Commissioner</p>
+                        <img src='https://nmc.gov.in/assets/img/commi_cpulkundvar.jpg' className='img-fluid' />
+                        <p className='text-center'>डॉ. चंद्रकांत पुलकुंडवार, भा. प्र. से.</p >
+                        <p className='text-center'>आयुक्त तथा प्रशासक</p>
+                    </div>
+                </div>
+            </div>
+
 
             {/* <!-- About Start --> */}
-            <Container className='middle_sec'>
+            <Container className='middle_sec mt-4'>
                 <div className="row ">
                     <div className=" col-md-3" >
                         <img className="img-fluid rounded" src="/images/75.jpg" />
@@ -83,7 +94,7 @@ function Services() {
                                     <source src="/images/front_video.mp4" type="video/mp4" />
                                 </video>
                             </div>
-                            <div className="border-start ps-4">
+                            <div className="border-start ps-4 mt-2">
                                 <video className='img-fluid ' width="890" height="400" controls>
                                     <source src="/images/front_video.mp4" type="video/mp4" />
                                 </video>
@@ -94,6 +105,7 @@ function Services() {
             </Container>
             <hr></hr>
             {/* <!-- About End --> */}
+
             <div className='Services'>
                 {/* <!--Icons section--> */}
                 <div className="container-fluid  text-center pl-5 my-5 ">
@@ -102,28 +114,28 @@ function Services() {
                             {/* <h1 className="display-5 mb-5 text-success">Citizens Services</h1> */}
                         </div>
                         <Col className=' p-2 citizen_icon'>
-                            <img style={{cursor:'pointer'}} src="/images/1.png" width="100" height="100" alt="" />
-                            <p style={{cursor:'pointer'}} className="text-dark text-center">Achievement</p>
+                            <img src="/images/1.png" width="100" height="100" alt="" />
+                            <p className="text-dark text-center">Achievement</p>
                         </Col>
                         <Col onClick={grievance} className="col-md-3 col-lg-2 text-white p-2 citizen_icon">
-                            <img style={{cursor:'pointer'}} src="/images/Grievance.png" width="100" height="100" alt="" />
-                            <p style={{cursor:'pointer'}} className="text-dark text-center">Greviance</p>
+                            <img src="/images/Grievance.png" width="100" height="100" alt="" />
+                            <p className="text-dark text-center">Greviance</p>
                         </Col>
                         <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
-                            <img style={{cursor:'pointer'}} src="/images/permission.png" width="100" height="100" alt="" />
-                            <p style={{cursor:'pointer'}} className="text-dark text-center">Permission</p>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3I2yi1g6DJgjuDUkwtwH2Hr0boSpDEsvuUA&usqp=CAU" width="100" height="100" alt="" />
+                            <p className="text-dark text-center">Permission</p>
                         </Col>
                         <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
-                            <img style={{cursor:'pointer'}} src="/images/6.png" width="100" height="100" alt="" />
-                            <p style={{cursor:'pointer'}} className="text-dark text-center">Waste Collection</p>
+                            <img src="/images/6.png" width="100" height="100" alt="" />
+                            <p className="text-dark text-center">Waste Collection</p>
                         </Col>
                         <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img style={{cursor:'pointer'}} src="/images/volunteer.png" width="100" height="100" alt="" />
-                            <p style={{cursor:'pointer'}} className="text-dark text-center">Volunteers</p>
+                            <img src="https://www.pngitem.com/pimgs/m/320-3204940_volunteer-icon-png-transparent-png.png" width="100" height="100" alt="" />
+                            <p className="text-dark text-center">Volunteers</p>
                         </Col>
                         <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img style={{cursor:'pointer'}} src="/images/4.png" width="100" height="100" alt="" />
-                            <p style={{cursor:'pointer'}} className="text-dark text-center">Gallery</p>
+                            <img src="/images/4.png" width="100" height="100" alt="" />
+                            <p className="text-dark text-center">Gallery</p>
                         </Col>
                     </div>
 
@@ -154,7 +166,8 @@ function Services() {
 
 
                     {/* <!-- Service Start --> */}
-                    < Container className='middle_sec'>
+                    <div className="container-xxl py-5">
+                        <div className="container">
                             <div className="text-center mx-auto" style={{ maxWidth: "300px;" }}>
                                 <h1 className="display-5 mb-5 text-success">Our Gardens</h1>
                             </div>
@@ -248,7 +261,8 @@ function Services() {
                                     </div>
                                 </div>
                             </div>
-                    </Container>
+                        </div>
+                    </div>
                     {/* <!-- Service End --> */}
                 </div>
             </div>

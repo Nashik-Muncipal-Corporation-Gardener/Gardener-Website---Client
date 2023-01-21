@@ -9,7 +9,7 @@ const Contact = () => {
     }
     return (
         <div>
-            <div className=" container  py-5">
+            <div className=" container  py-5 vh-50">
                 <div className="text-start ">
                     <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
                         Contact Us
