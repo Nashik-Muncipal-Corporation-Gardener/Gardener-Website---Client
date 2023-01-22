@@ -18,6 +18,7 @@ import axios from "axios";
 import url from "../Uri";
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
+import {Pagination} from "rsuite";
 
 function Gardendetals() {
   const [verticalActive, setVerticalActive] = useState('tab1');
@@ -35,6 +36,10 @@ function Gardendetals() {
 
   const [searchResults, setSearchResults] = useState([]);
   const [isSearchResultsFetched, setIsSearchResultsFetched] = useState(false);
+  const [nosPages,setPages] = useState(1);
+
+  const [gardens,setGardens] = useState([]);
+  const [isGardenFetched,setIsGardenFetched] = useState(false);
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -42,6 +47,10 @@ function Gardendetals() {
 
     if (!isSearchResultsFetched) {
       getSearchResults()
+    }
+
+    if(!isGardenFetched){
+      upadteTableData(1);
     }
 
   })
@@ -52,6 +61,8 @@ function Gardendetals() {
         console.log(response.data)
         setSearchResults(response.data)
         setIsSearchResultsFetched(true)
+        setPages(Math.ceil(response.data.length/25))
+        console.log("Nos Of Pages",nosPages)
       }).catch(function (error) {
         console.log(error)
       })
@@ -59,6 +70,7 @@ function Gardendetals() {
   }
 
   function handleSearchQuery(){
+    // console.log("pages",pages) 
     searchResults.map((item)=>{
       if(item===searchQuery){
         // console.log("found")
@@ -68,6 +80,30 @@ function Gardendetals() {
     })
 
     console.log("not found")
+  }
+
+  function upadteTableData(page){
+    localStorage.setItem("page",page)
+
+    // var form_data = new FormData();
+
+    // form_data.append("pageNumber",parseInt(""+page))
+    // form_data.append("pageSize",parseInt("25"))
+
+    axios.get(url+"/gardens/25/"+page).then(function(response){
+      if(response.status==200){ 
+        console.log(response.data.content)
+        setGardens([...response.data.content])
+        setIsGardenFetched(true)
+      }else{
+        console.log(response.data)
+      }
+
+    }).catch(function(error){
+      console.log(error)
+    })
+
+    console.log("page",page)
   }
 
 
@@ -97,6 +133,7 @@ function Gardendetals() {
             <MDBTabsPane show={verticalActive === 'tab1'}>
 
               <Container style={{ padding: '2%' }}>
+
                 <center><h6>All Gardens</h6></center>
                 <Row>
                   <Col>
@@ -126,7 +163,80 @@ function Gardendetals() {
                   </Col>
                 </Row>
 
+                <br></br>
 
+                <Table striped bordered hover size="sm">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>Type</th>
+                      <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {
+                      gardens.map((item,index)=>{
+                        return(
+                          <tr>
+                            <td>{index+25*(parseInt(localStorage.getItem("page"))-1)+1}</td>
+                            <td>{item.name}</td>
+                            <td>{item.address}</td>
+                            <td>{item.type}</td>
+                            <td>🗑️</td>
+                          </tr>
+                        )
+                      })
+                    }
+                    {/* <tr>
+                      <td>1</td>
+                      <td>garden1</td>
+                      <td>address1</td>
+                      <td>type1</td>
+                      <td>🗑️</td>
+                    </tr>
+                    <tr>  
+                      <td>2</td>
+                      <td>garden2</td>
+                      <td>address2</td>
+                      <td>type2</td>
+                      <td>🗑️</td>
+                    </tr> */}
+                    </tbody>
+                </Table>
+                
+                <br></br>
+                
+                <Pagination
+                  prev
+                  last
+                  next
+                  first
+                  size="md"
+                  pages={nosPages}
+                  activePage={1}
+                  onChangePage={(page) => upadteTableData(page)}
+                  // onSelect={()=> {console.log("Selected!")}}
+                />
+              
+
+                
+                  {/* <Pagination.First />
+                  <Pagination.Prev />
+                  <Pagination.Item active>{1}</Pagination.Item>
+                  <Pagination.Ellipsis />
+
+                  <Pagination.Item>{10}</Pagination.Item>
+                  <Pagination.Item>{11}</Pagination.Item>
+                  <Pagination.Item>{12}</Pagination.Item>
+                  <Pagination.Item>{13}</Pagination.Item>
+                  <Pagination.Item>{14}</Pagination.Item>
+
+                  <Pagination.Ellipsis />
+                  <Pagination.Item>{20}</Pagination.Item>
+                  <Pagination.Next />
+                  <Pagination.Last /> */}
               </Container>
             </MDBTabsPane>
             <MDBTabsPane show={verticalActive === 'tab2'}><Addgardens /></MDBTabsPane>
