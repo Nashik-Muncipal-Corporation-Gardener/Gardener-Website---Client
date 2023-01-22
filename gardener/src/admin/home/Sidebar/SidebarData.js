@@ -11,12 +11,7 @@ import * as BiIcons from 'react-icons/bi';
 import * as FcIcons from 'react-icons/fc';
 
 export const SidebarData = [
-    {
-        title: 'Employees',
-        path:'/admin/employees',
-        icon: <BsIcons.BsFillPersonLinesFill/>,
-        cName: 'nav-text'
-    },
+    
 
     {
         title: 'Organization Structure',
