@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Form, ListGroup, Row, Table } from "react-bootstrap";
 import AdminHome from "../../admin/home/AdminHome";
 import url from "../../Uri";
+import SuperAdminHome from "../home/SuperAdminHome";
 
 
 function Employee() {
@@ -184,7 +185,7 @@ function Employee() {
 
     return (
         <div>
-            <AdminHome />
+            <SuperAdminHome />
             <MDBRow>
                 <MDBCol size='3'>
                     <MDBTabs className='flex-column text-center'>
@@ -255,7 +256,7 @@ function Employee() {
                                             </MDBRow>
                                             <MDBRow>
                                                 <MDBCol>
-                                                    <MDBInput wrapperClass='mb-4' placeholder='Contact' id='form1' type='number' omChange={handleContactChange} />
+                                                    <MDBInput wrapperClass='mb-4' placeholder='Contact' id='form1' type='text' omChange={handleContactChange} />
                                                 </MDBCol>
                                                 <MDBCol >
                                                     <MDBInput wrapperClass='mb-4' placeholder='Address Line 1' id='form1' type='text' onChange={handleAddressChange} />
