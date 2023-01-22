@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react';
 
 import {
@@ -6,64 +6,105 @@ import {
     MDBBtn,
     MDBRow, MDBCol,
     MDBContainer
-  } from 'mdb-react-ui-kit';
-  import Sidebar from "./home/Sidebar/Sidebar";
-  import { Container,Table,Button, Modal,Alert} from 'react-bootstrap';
+} from 'mdb-react-ui-kit';
+import Sidebar from "./home/Sidebar/Sidebar";
+import { Container, Table, Button, Modal, Alert } from 'react-bootstrap';
+import axios from 'axios';
+import url from '../Uri';
 
 function Announcements() {
 
-  const [announcements,setAnnouncements]=useState(["ABc", "XYZ"])
-  const [new_a,setNew]=useState('')
+    const [announcements, setAnnouncements] = useState([])
+    const [isAnnouncementsFetched, setIsAnnouncementsFetched] = useState(false)
 
-  function new_announcement(e){
-        setNew(e.target.value)
-  }
+    const [newAnnouncement, setNewAnnouncement] = useState('')
 
-    
-  function add_new_announcement(){
+    function handleAnnouncementChange(e) {
+        setNewAnnouncement(e.target.value)
+    }
 
-    announcements.push(new_a)
-    var arr=[]
-    arr=announcements
-    console.log('arr...'+arr)
-    setAnnouncements(arr)
-  }
+    useEffect(()=>{
 
-  return (
-    <div>
-        <Sidebar/>
-        <MDBContainer style={{padding:'2%'}}>
-            <MDBRow>
-                <MDBCol>
-                    <label>Add New Announcement</label>
-                <MDBInput wrapperClass='mb-4'  onChange={new_announcement} id='form1' type='text'/>
-             
-                <button onClick={add_new_announcement}>Add</button>
-                </MDBCol>
-                <MDBCol>
-                    <h4>Announcements</h4>
-                    <Table striped bordered hover size="sm">
-                    <tbody>
-                       
-                            {
-                                announcements.map(a=>{
-                                    return(
-                                        <tr>
-                                            <td style={{width:'100%'}}>{a}</td>
-                                            <td><Icon icon="material-symbols:delete" color='Red' /></td>
-                                        </tr> 
-                                    )
-                                })
-                            }
-                        
-                    </tbody>
-                    </Table>
-                </MDBCol>
-            </MDBRow>
-        </MDBContainer>
+        if(!isAnnouncementsFetched){
+            fetchAnnouncements()
+        }
+        
+    })
 
-    </div>
-  )
+    function fetchAnnouncements(){
+        axios.get(url + "/announcements")
+            .then(function (response) {
+                // console.log(response.data)
+                setAnnouncements([...response.data].reverse())
+                
+                setIsAnnouncementsFetched(true)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+    function add_new_announcement(){
+        axios.post(url + "/announcements", {"title": newAnnouncement},{
+            headers: {
+                "Content-Type": "multipart/form-data",
+                "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
+            }
+        }).then(function (response) {
+            alert("Announcement Added")
+            console.log(response.data)
+            fetchAnnouncements()
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    return (
+        <div>
+            <Sidebar />
+            <MDBContainer style={{ padding: '2%' }}>
+                <MDBRow>
+                    <MDBCol>
+                        <label>Add New Announcement</label>
+                        <MDBInput wrapperClass='mb-4' onChange={handleAnnouncementChange} id='form1' type='text' />
+
+                        <button onClick={add_new_announcement}>Add</button>
+                    </MDBCol>
+                    <MDBCol>
+                        <h4>Announcements</h4>
+                        <Table striped bordered hover size="sm">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {
+                                    announcements.map(a => {
+                                        return (
+                                            <tr>
+                                                <td>{a.title}</td>
+                                                <td>{a.createdAt}</td>
+                                                <td>{a.updatedAt}</td>
+                                                <td><Icon icon="material-symbols:delete" color='Red' /></td>
+                                            </tr>
+                                        )
+                                    })
+                                }
+
+                            </tbody>
+                        </Table>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
+
+        </div>
+    )
 }
 
 export default Announcements
