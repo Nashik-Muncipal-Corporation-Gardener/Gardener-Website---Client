@@ -13,7 +13,7 @@ import * as FcIcons from 'react-icons/fc';
 export const SidebarData = [
     {
         title: 'Employees',
-        path:'/super-admin/employees',
+        path:'/super-admin/employee',
         icon: <BsIcons.BsFillPersonLinesFill/>,
         cName: 'nav-text'
     },

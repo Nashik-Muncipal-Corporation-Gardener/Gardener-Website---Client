@@ -82,6 +82,7 @@ function Authentication() {
                 }
             }).catch(function (error) {
                 console.log("Error", error);
+                alert(error.response.data.message);
             })
 
             // navigate("/super-admin/home")
