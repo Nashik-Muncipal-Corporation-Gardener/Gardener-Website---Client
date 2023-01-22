@@ -44,6 +44,7 @@ import Termsandconditions from './superAdmin/Termsandconditions';
 import Wastecollection from './superAdmin/Wastecollection';
 import ScrollToTop from './Components/scrollToTop';
 import AppliedPermissionForm from './superAdmin/Permissions/AppliedPermissionForm';
+import GardenInfo from './superAdmin/GardenInfo';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -81,6 +82,7 @@ root.render(
         <Route exact path='/super-admin/appliedpermission' element={<AppliedPermissionForm/>}></Route>
         <Route exact path='/super-admin/pendingpermissions' element={<Pendingpermissions/>}></Route>
         <Route exact path='/super-admin/gardendetails' element={<Gardendetails/>}></Route>
+        <Route exact path='/super-admin/garden/:name' element={<GardenInfo/>}></Route>
         <Route exact path='/super-admin/acheivements' element={<Acheivements/>}></Route>
         <Route exact path='/super-admin/termsandconditions' element={<Termsandconditions/>}></Route>
         <Route exact path='/super-admin/wastecollection' element={<Wastecollection/>}></Route>
