@@ -34,7 +34,7 @@ function Announcements() {
     function fetchAnnouncements(){
         axios.get(url + "/announcements")
             .then(function (response) {
-                // console.log(response.data)
+                console.log(response.data)
                 setAnnouncements([...response.data].reverse())
                 
                 setIsAnnouncementsFetched(true)
@@ -61,16 +61,25 @@ function Announcements() {
     }
 
     function delete_announcement(announcement){
+
+        var form_data_body = new FormData();
+        form_data_body.append("title", announcement);
+
         console.log("Token: "+localStorage.getItem("jwtTokenSuperAdmin"))
-        axios.delete(url + "/announcements",{ params:{"title": announcement}},{
+        axios.delete(url + "/announcements/"+announcement,{
             headers: {
-                "Content-Type": "multipart/form-data",
                 "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
             }
         }).then(function (response) {
-            alert("Announcement Deleted")
-            console.log(response.data)
-            fetchAnnouncements()
+            if(response.status==200){
+                alert("Announcement Deleted")
+                console.log(response.data)
+                window.location.reload();
+            }else{
+                console.log("response",response.data);
+            }
+            
+            
         })
         .catch(function (error) {
             console.log(error);

@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import url from '../../Uri'
 import { Col, Row, Table } from 'react-bootstrap'
+import SuperAdminHome from '../home/SuperAdminHome';
 function Logs() {
 
     // const [logdata,setLogdata] = useState([])
@@ -55,6 +56,8 @@ function Logs() {
 
     return (
         <div>
+            <SuperAdminHome/>
+            <hr/>
             <Row>
                 <Col md={4}>
                     <Table striped bordered hover>
@@ -96,7 +99,7 @@ function Logs() {
                     <Table striped bordered hover>
                         <thead>
                             <tr>
-                                <th>Superadmin Logs</th>
+                                <th>Super Admin Logs</th>
                             </tr>
                         </thead>
                         <tbody>
