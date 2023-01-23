@@ -1,4 +1,6 @@
-import {React, useState} from "react";
+import {React, useState, useEffect} from "react";
+import { Icon } from '@iconify/react';
+
 import {
   MDBTabs,
   MDBTabsItem,
@@ -11,7 +13,8 @@ import {
   MDBInput,
   MDBFile
 } from 'mdb-react-ui-kit';
-
+import axios from "axios";
+import url from "../Uri";
 import { Container, Table , Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
@@ -20,6 +23,14 @@ import Sidebar from "./home/Sidebar/Sidebar";
 function Acheivements() {
     const [verticalActive, setVerticalActive] = useState('tab1');
 
+    const [acheivements,setAcheivements] = useState([])
+    const [isAcheivementFetched,setIsAcheivementFetched] = useState(false)
+
+    const [imageFile, setImageFile] = useState('');
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+
+    
     function handleVerticalClick(value) {
       if (value === verticalActive) {
         return;
@@ -27,6 +38,79 @@ function Acheivements() {
   
       setVerticalActive(value);
     }
+
+    useEffect(()=>{
+
+      if(!isAcheivementFetched){
+          fetchAcheivements()
+      }
+      
+    })
+
+    function fetchAcheivements()
+    {
+      axios.get(url + "/acheivements")
+        .then(function (response) {
+
+            setAcheivements(response.data)       
+            setIsAcheivementFetched(true)
+            
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    function handleTitle(e){
+      setTitle(e.target.value)
+
+    }
+
+    function handleDescription(e){
+      setDescription(e.target.value)
+    }
+
+    function addAcheivement(){
+      var formData = new FormData();
+      formData.append("description",description)      
+      formData.append("image", document.getElementById("imagefile").files[0]);
+      formData.append("title", title);
+
+    axios.post(url + "/acheivements", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        'Authorization': 'Bearer ' + localStorage.getItem("jwtTokenSuperAdmin")
+      }
+    }).then(function (response) {
+      if (response.status == 200) {
+        alert("Acheivement Uploaded successfully")
+        window.location.reload();
+      } else {
+        console.log("Something went wrong")
+        console.log(response)
+      }
+    }).catch(function (error) {
+      console.log(error)
+      console.log("Something went wrong")
+    })
+    }
+
+    function deleteAcheivement(announcement){
+      console.log("Token: "+localStorage.getItem("jwtTokenSuperAdmin"))
+      axios.delete(url + "/acheivements",{ "title": announcement},{
+          headers: {
+              "Content-Type": "multipart/form-data",
+              "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
+          }
+      }).then(function (response) {
+          alert("Acheivement Deleted")
+          console.log(response.data)
+          fetchAcheivements()
+      })
+      .catch(function (error) {
+          console.log(error);
+      });
+  }
   return (
     <div className='grievance'>
     <Sidebar/>
@@ -64,13 +148,20 @@ function Acheivements() {
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>ABc</td>
-      <td>hsbfjdb</td>
-      <td></td>
-      <td><Button variant='danger'> Delete</Button></td>
-      
-    </tr> 
+    {
+      acheivements.map(a=>{
+        return(
+        <tr>
+              <td>{a.title}</td>
+              <td>{a.description}</td>
+              <td><img src={a.image} /></td>
+              <td><Icon onClick={()=>deleteAcheivement(a.title)} icon="material-symbols:delete" color='Red' /></td>
+              
+            </tr> 
+        )
+      })
+    }
+    
   </tbody>
 </Table>
 </Container>
@@ -81,10 +172,10 @@ function Acheivements() {
         <div className='addgarden_container'>
         <h1 style={{fontSize:30}}>Add Garden</h1>
         <form >
-          <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' />
-          <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Description' />
-          <MDBFile style={{marginBottom:20}} label='Add Image' id='customFile' />
-          <Button type='submit' className='mb-4' block>
+          <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' onChange={handleTitle} />
+          <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Description' onChange={handleDescription} />
+          <MDBFile style={{marginBottom:20}} label='Add Image' id='imagefile' accept="image/*"  />
+          <Button type='submit' className='mb-4' block onClick={addAcheivement}>
             Submit
           </Button> 
         </form>
