@@ -46,6 +46,7 @@ import ScrollToTop from './Components/scrollToTop';
 import AppliedPermissionForm from './superAdmin/Permissions/AppliedPermissionForm';
 import GardenInfo from './superAdmin/GardenInfo';
 import Employee from './superAdmin/Employees/Employee';
+import Logs from './superAdmin/logs/Logs'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -88,6 +89,8 @@ root.render(
         <Route exact path='/super-admin/termsandconditions' element={<Termsandconditions/>}></Route>
         <Route exact path='/super-admin/wastecollection' element={<Wastecollection/>}></Route>
         <Route exact path='/super-admin/employee' element={<Employee/>}></Route>
+        <Route exact path='/super-admin/logreport' element={<Logs/>}></Route>
+        
 
 
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
