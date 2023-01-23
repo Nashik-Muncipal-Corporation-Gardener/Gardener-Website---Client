@@ -162,7 +162,7 @@ function Employee() {
         }else{
             axios.post(url+"/admin/register",form_data_body)
             .then(function(response){
-                if(response.status==200){
+                if(response.status==201){
                     alert("Employee added successfully");
                     window.location.reload();
                     // getEmployees();
