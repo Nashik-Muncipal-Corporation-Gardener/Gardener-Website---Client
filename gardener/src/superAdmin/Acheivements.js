@@ -52,7 +52,7 @@ function Acheivements() {
       axios.get(url + "/acheivements")
         .then(function (response) {
 
-            setAcheivements(response.data)       
+            setAcheivements([...response.data].reverse())       
             setIsAcheivementFetched(true)
             
         })
@@ -95,11 +95,10 @@ function Acheivements() {
     })
     }
 
-    function deleteAcheivement(announcement){
+    function deleteAcheivement(acheivement){
       console.log("Token: "+localStorage.getItem("jwtTokenSuperAdmin"))
-      axios.delete(url + "/acheivements",{ "title": announcement},{
+      axios.delete(url + "/acheivements/"+acheivement,{
           headers: {
-              "Content-Type": "multipart/form-data",
               "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
           }
       }).then(function (response) {
@@ -170,7 +169,7 @@ function Acheivements() {
 
       <div className='signin' style={{padding:'2%'}}>
         <div className='addgarden_container'>
-        <h1 style={{fontSize:30}}>Add Garden</h1>
+        <h1 style={{fontSize:30}}>Add Acheivement</h1>
         <form >
           <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' onChange={handleTitle} />
           <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Description' onChange={handleDescription} />
