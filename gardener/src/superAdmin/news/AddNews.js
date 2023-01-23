@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {
   MDBContainer,
   MDBTabs,
@@ -15,15 +15,40 @@ import {
   MDBTextArea
 }
 from 'mdb-react-ui-kit';
-import {Button} from 'react-bootstrap';
+import {Button, Table} from 'react-bootstrap';
 import SuperAdminHome from '../home/SuperAdminHome'
 import axios from 'axios';
 import url from '../../Uri'
+import { useNavigate } from "react-router-dom";
+
 function AddNews() {
+
+  const navigate = useNavigate()
 
   const [title,setTitle]=useState('')
   const [file,setNewsFile]=useState()
   const [fileDescription,setFileDescription]=useState('')
+  const [isNewsFetched, setIsNewsFetched] = useState(false)
+  const [news,setNews]=useState([])
+
+  useEffect(()=>{
+
+    if(!isNewsFetched){
+        fetchNews()
+    }
+    
+  })
+  function fetchNews(){
+    axios.get(url + "/news")
+        .then(function (response) {
+            setNews([...response.data].reverse())       
+            setIsNewsFetched(true)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+  }
+
 
   const handleTitle=(e)=>{
     setTitle(e.target.value)
@@ -58,6 +83,11 @@ function AddNews() {
       console.log("Something went wrong")
     })
   }
+
+  function viewPDF(pdf){
+    console.log("Viewing pdf")
+    navigate('/pdfreader', {state:{pdf}})
+  }
     
 
   return (
@@ -75,8 +105,29 @@ function AddNews() {
       </Button>
 
     </form>
+   
     </MDBContainer>
+<div style={{paddingLeft:'10%',paddingRight:'10%'}}>
     <h1>Previous News</h1>
+<center>
+    <Table striped bordered hover>
+    <tbody>
+    {
+      news.map(n=>{
+        console.log(n)
+        return(
+          <tr>
+            <td>{n.title}</td>
+            <td>{n.description}</td>
+            <td><Button onClick={()=>viewPDF(n.document)} style={{width:'25%',height:'30px ',fontSize:'12px'}} variant="primary" size="sm">View</Button></td>
+          </tr>
+        )
+      })
+    }
+    </tbody>
+      </Table>
+      </center>
+      </div>
     </div>
   )
 }
