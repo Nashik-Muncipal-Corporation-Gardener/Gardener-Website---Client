@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
   MDBContainer,
   MDBTabs,
@@ -17,21 +17,60 @@ import {
 from 'mdb-react-ui-kit';
 import {Button} from 'react-bootstrap';
 import SuperAdminHome from '../home/SuperAdminHome'
-
-
+import axios from 'axios';
+import url from '../../Uri'
 function AddNews() {
+
+  const [title,setTitle]=useState('')
+  const [file,setNewsFile]=useState()
+  const [fileDescription,setFileDescription]=useState('')
+
+  const handleTitle=(e)=>{
+    setTitle(e.target.value)
+  }
+
+  const handleFileDescription=(e)=>{
+    setFileDescription(e.target.value)
+  }
+
+  function addNews(){
+    // setNewsFile(document.getElementById('newsFile'))
+    var formData = new FormData();
+    formData.append("description",fileDescription)      
+    formData.append("file", document.getElementById("newsFile").files[0]);
+    formData.append("title", title);
+
+    axios.post(url + "/news", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        'Authorization': 'Bearer ' + localStorage.getItem("jwtTokenSuperAdmin")
+      }
+    }).then(function (response) {
+      if (response.status == 200) {
+        console.log("News Uploaded successfully")
+        // window.location.reload();
+      } else {
+        console.log("Something went wrong")
+        console.log(response)
+      }
+    }).catch(function (error) {
+      console.log(error)
+      console.log("Something went wrong")
+    })
+  }
     
+
   return (
     <div className='signin'>
     <SuperAdminHome/>
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
     <h1 style={{fontSize:30}}>Add News</h1>
     <form>
-      <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' />
-      <MDBTextArea style={{marginBottom:20}} placeholder='Description' rows={4} />
-      <MDBFile style={{marginBottom:20}} label='Add news pdf' id='customFile' />
+      <MDBInput onClick={handleTitle} className='mb-4' type='Text' id='form2Example1' placeholder ='Title' />
+      <MDBTextArea onClick={handleFileDescription} style={{marginBottom:20}} placeholder='Description' rows={4} />
+      <MDBFile style={{marginBottom:20}} label='Add news pdf' id='newsFile' />
 
-      <Button type='submit' className='mb-4' block>
+      <Button type='submit' className='mb-4' block onClick={addNews}>
         Add News
       </Button>
 

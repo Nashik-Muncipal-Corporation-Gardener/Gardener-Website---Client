@@ -60,6 +60,23 @@ function Announcements() {
         });
     }
 
+    function delete_announcement(announcement){
+        console.log("Token: "+localStorage.getItem("jwtTokenSuperAdmin"))
+        axios.delete(url + "/announcements",{ params:{"title": announcement}},{
+            headers: {
+                "Content-Type": "multipart/form-data",
+                "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
+            }
+        }).then(function (response) {
+            alert("Announcement Deleted")
+            console.log(response.data)
+            fetchAnnouncements()
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+    }
+
     return (
         <div>
             <Sidebar />
@@ -91,7 +108,7 @@ function Announcements() {
                                                 <td>{a.title}</td>
                                                 <td>{a.createdAt}</td>
                                                 <td>{a.updatedAt}</td>
-                                                <td><Icon icon="material-symbols:delete" color='Red' /></td>
+                                                <td><Icon onClick={()=>delete_announcement(a.title)} icon="material-symbols:delete" color='Red' /></td>
                                             </tr>
                                         )
                                     })
