@@ -52,7 +52,7 @@ function Acheivements() {
       axios.get(url + "/acheivements")
         .then(function (response) {
 
-            setAcheivements(response.data)       
+            setAcheivements([...response.data].reverse())       
             setIsAcheivementFetched(true)
             
         })
@@ -95,11 +95,10 @@ function Acheivements() {
     })
     }
 
-    function deleteAcheivement(announcement){
+    function deleteAcheivement(acheivement){
       console.log("Token: "+localStorage.getItem("jwtTokenSuperAdmin"))
-      axios.delete(url + "/acheivements",{ "title": announcement},{
+      axios.delete(url + "/acheivements/"+acheivement,{
           headers: {
-              "Content-Type": "multipart/form-data",
               "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
           }
       }).then(function (response) {
