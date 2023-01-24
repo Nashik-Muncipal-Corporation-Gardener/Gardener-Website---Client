@@ -32,18 +32,8 @@ export const SidebarData = [
         icon: <GrIcons.GrAnnounce/>,
         cName: 'nav-text'
     },
-    {
-        title: 'Posters',
-        path: '/admin/posters',
-        icon: <TbIcons.TbSlideshow />,
-        cName: 'nav-text'
-    },
-    {
-        title: 'Inquiries',
-        path: '/admin/inquries',
-        icon: <MdIcons.MdReportProblem />,
-        cName: 'nav-text'
-    },
+    
+   
 
     {
         title: 'Permissions',
@@ -58,24 +48,14 @@ export const SidebarData = [
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
-    {
-        title: 'Citizen Services',
-        path: '/admin/citizenservices',
-        icon: <FaIcons.FaWpforms />,
-        cName: 'nav-text'
-    },
+    
     {
         title: 'Garden Details',
         path: '/admin/gardendetails',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
-    {
-        title: 'Waste Collection',
-        path: '/admin/wastecollection',
-        icon: <FaIcons.FaWpforms />,
-        cName: 'nav-text'
-    },
+    
     {
         title: 'Acheivements',
         path: '/admin/acheivements',

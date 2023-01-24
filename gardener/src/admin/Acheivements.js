@@ -18,8 +18,7 @@ import url from "../Uri";
 import { Container, Table , Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import Addgardens from "./Addgardens";
-import Sidebar from "./home/Sidebar/Sidebar";
+import AdminHome from "./home/AdminHome";
 function Acheivements() {
     const [verticalActive, setVerticalActive] = useState('tab1');
 
@@ -113,7 +112,7 @@ function Acheivements() {
   }
   return (
     <div className='grievance'>
-    <Sidebar/>
+    <AdminHome/>
 
   {/* <Container> */}
   <MDBRow>
