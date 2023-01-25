@@ -47,6 +47,17 @@ import AppliedPermissionForm from './superAdmin/Permissions/AppliedPermissionFor
 import GardenInfo from './superAdmin/GardenInfo';
 import Employee from './superAdmin/Employees/Employee';
 import Logs from './superAdmin/logs/Logs'
+
+//admin
+import AdminNews from './admin/News';
+import AdminAnnouncements from './admin/Announcements';
+import AdminPermissions from './admin/Permissions/AdminPermissions';
+import AdminAllpermissions from './admin/Permissions/Allpermissions';
+import AdminPendingpermissions from './admin/Permissions/Pendingpermissions';
+import AdminAppliedPermissionForm from './admin/Permissions/AppliedPermissionForm';
+import AdminGardendetails from './admin/Gardendetails';
+import AdminAcheivements from './admin/Acheivements';
+import AdminTermsandconditions from './admin/Termsandconditions';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -94,6 +105,16 @@ root.render(
 
 
         <Route exact path='/admin/home' element={<AdminHome/>}></Route>
+        <Route exact path='/admin/addnews' element={<AdminNews/>}></Route>
+        <Route exact path='/admin/announcements' element={<AdminAnnouncements/>}></Route>
+        <Route exact path='/admin/permissions' element={<AdminPermissions/>}></Route>
+        <Route exact path='/admin/allpermissions' element={<AdminAllpermissions/>}></Route>
+        <Route exact path='/admin/pendingpermissions' element={<AdminPendingpermissions/>}></Route>
+        <Route exact path='/admin/appliedpermission' element={<AdminAppliedPermissionForm/>}></Route>
+        <Route exact path='/admin/gardendetails' element={<AdminGardendetails/>}></Route>
+        <Route exact path='/admin/acheivements' element={<AdminAcheivements/>}></Route>
+        <Route exact path='/admin/termsandconditions' element={<AdminTermsandconditions/>}></Route>
+
         <Route exact path='/admin/grievances' element={<GrievanceDashboardAdmin/>}></Route>
         <Route exact path='/admin' element={<AdminAuthentication/>}></Route>
 

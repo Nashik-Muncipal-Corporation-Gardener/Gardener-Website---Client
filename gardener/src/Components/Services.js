@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState ,useEffect} from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col } from 'react-bootstrap';
 import '../css/services.css'
+import axios from 'axios';
+import url from '../Uri';
+
 function Services() {
+
+    const [isAnnouncementFetched,setIsAnnouncementsFetched]=useState(false)
+    
+    const [announcements, setAnnouncements] = useState([])
 
     const navigate = useNavigate()
 
@@ -14,6 +21,28 @@ function Services() {
     const permissions = () => {
         navigate('/permissions')
     }
+
+    useEffect(()=>{
+
+        if(!isAnnouncementFetched){
+            fetchAnnouncements()
+        }
+        
+      })
+
+      function fetchAnnouncements(){
+        axios.get(url + "/announcements")
+            .then(function (response) {
+                // console.log(response.data)
+                setAnnouncements([...response.data].reverse()) 
+                setIsAnnouncementsFetched(true)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+
+     
     return (
         <>
             <div className=' container-fluid bg-secondary text-white p-1'>
@@ -40,11 +69,15 @@ function Services() {
                         <div className='py-2 overflow-auto'>
                             {/* Scrolling Announcements */}
                             <ul className=' mt-3' list-style="">
-                                <marquee width="60%" direction="up" height="100px" scrollamount="2">
-                                    <li>Announcement 2</li>
-                                    <li>Announcement 3</li>
-                                    <li>Announcement 4</li>
-                                    <li>Announcement 5</li>
+                                <marquee width="100%" direction="up" height="100px" scrollamount="2">
+                                    {
+                                        announcements.map(a=>{
+                                            return(
+                                                <li>{a.title}</li>
+                                            )
+                                        })
+                                    }
+                                    
                                 </marquee>
                             </ul>
                         </div>

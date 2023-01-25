@@ -18,8 +18,7 @@ import url from "../Uri";
 import { Container, Table , Button} from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import Addgardens from "./Addgardens";
-import Sidebar from "./home/Sidebar/Sidebar";
+import AdminHome from "./home/AdminHome";
 function Acheivements() {
     const [verticalActive, setVerticalActive] = useState('tab1');
 
@@ -52,7 +51,7 @@ function Acheivements() {
       axios.get(url + "/acheivements")
         .then(function (response) {
 
-            setAcheivements([...response.data].reverse())       
+            setAcheivements(response.data)       
             setIsAcheivementFetched(true)
             
         })
@@ -95,10 +94,11 @@ function Acheivements() {
     })
     }
 
-    function deleteAcheivement(acheivement){
+    function deleteAcheivement(announcement){
       console.log("Token: "+localStorage.getItem("jwtTokenSuperAdmin"))
-      axios.delete(url + "/acheivements/"+acheivement,{
+      axios.delete(url + "/acheivements",{ "title": announcement},{
           headers: {
+              "Content-Type": "multipart/form-data",
               "Authorization": "Bearer " + localStorage.getItem("jwtTokenSuperAdmin")
           }
       }).then(function (response) {
@@ -112,7 +112,7 @@ function Acheivements() {
   }
   return (
     <div className='grievance'>
-    <Sidebar/>
+    <AdminHome/>
 
   {/* <Container> */}
   <MDBRow>

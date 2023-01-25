@@ -1,24 +1,37 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Container, Modal, Button, Row, Col } from 'react-bootstrap';
 import '../css/news.css'
 import Footer from './Footer';
-// Core viewer
-
-// Plugins
-
-// Import styles
-
+import axios from 'axios';
+import url from '../Uri';
 function News() {
 
   const navigate = useNavigate()
-  const gardens = [1, 2, 3, 4]
+  const [isNewsFetched, setIsNewsFetched]=useState(false)
 
+  const [news,setNews]=useState([])
+  useEffect(()=>{
 
-  const readpdf = () => {
-    return (
-      navigate('/pdfreader')
-    )
+    if(!isNewsFetched){
+        fetchNews()
+    }
+    
+  })
+
+  function fetchNews(){
+    axios.get(url + "/news")
+        .then(function (response) {
+            setNews([...response.data].reverse())       
+            setIsNewsFetched(true)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+  }
+  function viewPDF(pdf){
+    console.log("Viewing pdf")
+    navigate('/pdfreader', {state:{pdf}})
   }
   return (
     <div className='news'>
@@ -30,13 +43,13 @@ function News() {
         <hr className='text-danger fw-bold' />
         <Container >
           {
-            gardens.map(g => {
+            news.map(n=> {
               return (
                 <Row className='newsrow'>
                   <Col style={{ padding: '1%' }} sm={10}>
-                    <h3>Indonesia president supports plan to scale back</h3>
-                    <h6>Description</h6>
-                    <Button onClick={readpdf} style={{ marginTop: '1%' }} lg='sm' variant='outline-success'>Read More</Button>
+                    <h3>{n.title}</h3>
+                    <h6>{n.description}</h6>
+                    <Button onClick={()=>viewPDF(n.document)} style={{ marginTop: '1%' }} lg='sm' variant='outline-success'>Read More</Button>
                   </Col>
                 </Row>
 

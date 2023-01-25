@@ -15,9 +15,10 @@ import { Navbar } from "react-bootstrap";
 import AddPermissions from "./AddPermissions";
 import ViewUpdatePermissions from "./ViewUpdatePermissions";
 import PermissionsDashboard from "./PermissionsDashboard";
-import AdminHome from "../../admin/home/AdminHome";
+import url from "../../Uri";
+import AdminHome from "../home/AdminHome";
 
-function SuperAdminPermissions(){
+function AdminPermissions(){
 
     // const navigate = useNavigate();
 
@@ -79,4 +80,4 @@ function SuperAdminPermissions(){
 
 }
 
-export default SuperAdminPermissions;
+export default AdminPermissions;
