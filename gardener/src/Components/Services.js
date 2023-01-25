@@ -15,7 +15,12 @@ function Services() {
     const navigate = useNavigate()
 
     const grievance = () => {
-        navigate('/usergrievance')
+        // console.log(localStorage.getItem("jwtTokenUser"))
+        if(localStorage.getItem("jwtTokenUser")===null){
+            navigate('/signin')
+        }else{
+            navigate('/usergrievance')
+        }
     }
 
     const permissions = () => {

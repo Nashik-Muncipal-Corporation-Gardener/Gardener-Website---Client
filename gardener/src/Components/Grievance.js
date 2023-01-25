@@ -11,8 +11,6 @@ import {
 } from 'mdb-react-ui-kit';
 
 import "bootstrap/dist/css/bootstrap.css";
-import { useNavigate } from "react-router-dom";
-import {Container, Tab, Tabs} from 'react-bootstrap';
 import Mygrievance from './Grievance/Mygrievance';
 import Registergrievance from './Grievance/Registergrievance';
 import Trackgrievance from './Grievance/Trackgrievance';
