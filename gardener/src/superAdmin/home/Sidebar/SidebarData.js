@@ -18,12 +18,12 @@ export const SidebarData = [
         cName: 'nav-text'
     },
 
-    {
-        title: 'Organization Structure',
-        path:'/super-admin/organization-structure',
-        icon: <GiIcons.GiOrganigram/>,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Organization Structure',
+    //     path:'/super-admin/organization-structure',
+    //     icon: <GiIcons.GiOrganigram/>,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'News',
         path: '/super-admin/addnews',
@@ -43,12 +43,12 @@ export const SidebarData = [
         icon: <TbIcons.TbSlideshow />,
         cName: 'nav-text'
     },
-    {
-        title: 'Inquiries',
-        path: '/super-admin/inquries',
-        icon: <MdIcons.MdReportProblem />,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Inquiries',
+    //     path: '/super-admin/inquries',
+    //     icon: <MdIcons.MdReportProblem />,
+    //     cName: 'nav-text'
+    // },
 
     {
         title: 'Permissions',
@@ -63,12 +63,12 @@ export const SidebarData = [
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'
     },
-    {
-        title: 'Citizen Services',
-        path: '/super-admin/citizenservices',
-        icon: <FaIcons.FaWpforms />,
-        cName: 'nav-text'
-    },
+    // {
+    //     title: 'Citizen Services',
+    //     path: '/super-admin/citizenservices',
+    //     icon: <FaIcons.FaWpforms />,
+    //     cName: 'nav-text'
+    // },
     {
         title: 'Garden Details',
         path: '/super-admin/gardendetails',
@@ -76,7 +76,7 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Waste Collection',
+        title: 'Waste Collection (🔜)',
         path: '/super-admin/wastecollection',
         icon: <FaIcons.FaWpforms />,
         cName: 'nav-text'

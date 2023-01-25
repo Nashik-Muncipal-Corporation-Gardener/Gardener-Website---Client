@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
 function Addgrievancetype() {
 
     const [title,setTitle]=useState('')
-    const [image,setImage]=useState([])
+    // const [image,setImage]=useState([])
 
     const token=localStorage.getItem("jwtTokenSuperAdmin")
     console.log(token)
@@ -31,26 +31,26 @@ function Addgrievancetype() {
     
         if(title==="" ){
             alert("Please enter title")
-        }else if(image===""){
-            alert("Please select image")
         }else{
             var form_data_body = {
-                "Authorization":token,
                 "name":title,
-                "icon":image,
+                "icon":document.getElementById("grievancelogo").files[0],
                 "department":"Garden Department"      
             }
         axios.post(url+"/grievance",form_data_body,{
             headers:{
                 "Content-Type":"multipart/form-data",
+                "Authorization":"Bearer "+token
             },
         }).then(function(response){
-            if(response.status==201){
+            if(response.status==200){
                 console.log("Grievance Type Added")
-                localStorage.setItem("jwtTokenSuperAdmin",response.data.token);
+                // localStorage.setItem("jwtTokenSuperAdmin",response.data.token);
                 alert("Grievance Type Added successfully!!");
+                window.location.reload();
             }else{
-                alert("Inside else")
+                // alert("Inside else")
+                console.log("Error",response);
             }
         }).catch(function(error){
             console.log("Error",error);
@@ -62,9 +62,9 @@ function Addgrievancetype() {
     const handleTitle = (event)=>{
         setTitle(event.target.value);
     }
-    const handleImage = (event)=>{
-        setImage(event.target.value);
-    }
+    // const handleImage = (event)=>{
+    //     setImage(event.target.value);
+    // }
 
   return (
     <div className='signin'>
@@ -72,9 +72,9 @@ function Addgrievancetype() {
     <h1 style={{fontSize:30}}>Add Grievance Type</h1>
     <form>
       <MDBInput className='mb-4' type='Text' id='form2Example1' placeholder ='Title' onChange={handleTitle}/>
-      <MDBFile style={{marginBottom:20}} label='Add Icon Image' accept="image/*" id='customFile'  onChange={handleImage} />
+      <MDBFile style={{marginBottom:20}} label='Add Icon Image' accept="image/*" id='grievancelogo'   />
       <MDBBtn type='submit' className='mb-4' block onClick={addgrievancetype}>
-        Add News
+        Add Grievance
       </MDBBtn>
 
     </form>
