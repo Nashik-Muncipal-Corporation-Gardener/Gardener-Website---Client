@@ -98,7 +98,9 @@ function AdminAuthentication(){
 
                 <Button className="mb-4 w-100" onClick={handleLogin}>Sign in</Button>
                 {/* <p className="text-center">Not a member? <a onClick={() => handleJustifyClick('tab2')} >Register</a></p> */}
-
+                <div className="d-flex justify-content-between mx-4 mb-4">
+                     <a href="!#">Forgot password?</a>
+                </div>
             </Container>
 
         </div>

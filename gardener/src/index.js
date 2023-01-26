@@ -47,7 +47,7 @@ import AppliedPermissionForm from './superAdmin/Permissions/AppliedPermissionFor
 import GardenInfo from './superAdmin/GardenInfo';
 import Employee from './superAdmin/Employees/Employee';
 import Logs from './superAdmin/logs/Logs'
-
+import UserSideTermsandConditions from './Components/TermsandConditions';
 //admin
 import AdminNews from './admin/News';
 import AdminAnnouncements from './admin/Announcements';
@@ -58,6 +58,7 @@ import AdminAppliedPermissionForm from './admin/Permissions/AppliedPermissionFor
 import AdminGardendetails from './admin/Gardendetails';
 import AdminAcheivements from './admin/Acheivements';
 import AdminTermsandconditions from './admin/Termsandconditions';
+import UsersideAcheivements from './Components/Acheivements';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HashRouter>
@@ -81,6 +82,10 @@ root.render(
       <Route exact path='/permissionform/:title' element={< Permissionform />}></Route>
       <Route exact path='/userpermissions' element={< Userpermissions />}></Route>
       <Route exact path='/pdfreader' element={< Pdfreader />}></Route>
+      <Route exact path='/acheivements' element={< UsersideAcheivements />}></Route>
+      <Route exact path='/termsandconditions' element={< UserSideTermsandConditions />}></Route>
+
+
 
         <Route exact path='/super-admin' element={<Authentication/>}></Route>
         <Route exact path='/super-admin/home' element={<SuperAdminHome/>}></Route>

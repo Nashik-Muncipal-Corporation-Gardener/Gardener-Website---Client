@@ -148,33 +148,23 @@ function Services() {
                 {/* <!--Icons section--> */}
                 <div className="container-fluid  text-center pl-5 my-5 ">
                     <div className="row  border-bottom border-2">
-                        <div className="text-center " style={{ maxWidth: "300px;" }}>
-                            {/* <h1 className="display-5 mb-5 text-success">Citizens Services</h1> */}
-                        </div>
-                        <Col className=' p-2 citizen_icon'>
+                        <Col className=' p-2 citizen_icon' onClick={()=>navigate('/acheivements')} >
                             <img src="/images/1.png" width="100" height="100" alt="" />
                             <p className="text-dark text-center">Achievement</p>
                         </Col>
-                        <Col onClick={grievance} className="col-md-3 col-lg-2 text-white p-2 citizen_icon">
+                        <Col onClick={grievance} className=' p-2 citizen_icon' >
                             <img src="/images/Grievance.png" width="100" height="100" alt="" />
                             <p className="text-dark text-center">Greviance</p>
                         </Col>
-                        <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
+                        <Col onClick={permissions} className=' p-2 citizen_icon' >
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3I2yi1g6DJgjuDUkwtwH2Hr0boSpDEsvuUA&usqp=CAU" width="100" height="100" alt="" />
                             <p className="text-dark text-center">Permission</p>
                         </Col>
-                        <Col onClick={permissions} className="col-md-3 col-lg-2  p-2 citizen_icon text-white">
+                        <Col className=' p-2 citizen_icon' >
                             <img src="/images/6.png" width="100" height="100" alt="" />
                             <p className="text-dark text-center">Waste Collection</p>
                         </Col>
-                        <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img src="https://www.pngitem.com/pimgs/m/320-3204940_volunteer-icon-png-transparent-png.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Volunteers</p>
-                        </Col>
-                        <Col className="col-md-3 col-lg-2  text-white  p-2 citizen_icon">
-                            <img src="/images/4.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Gallery</p>
-                        </Col>
+                       
                     </div>
 
                     {/* <!-- Facts Start --> */}

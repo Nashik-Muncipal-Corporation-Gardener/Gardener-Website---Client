@@ -1,9 +1,90 @@
-import React from 'react'
+import { React, useEffect, useState } from "react";
 import '../css/gardens.css'
 import NavigationBar from './NavigationBar';
 import Footer from './Footer';
-import { Container } from 'react-bootstrap';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import {Card, Container, Table, Button, Modal, Row, Col } from "react-bootstrap";
+import url from "../Uri";
+import TextField from '@material-ui/core/TextField';
+import {Pagination} from "rsuite";
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
 function Gardens() {
+
+    const navigate = useNavigate();
+
+    const [searchResults, setSearchResults] = useState([]);
+    const [isSearchResultsFetched, setIsSearchResultsFetched] = useState(false);
+    const [nosPages,setPages] = useState(1);
+  
+    const [gardens,setGardens] = useState([]);
+    const [isGardenFetched,setIsGardenFetched] = useState(false);
+  
+    const [searchQuery, setSearchQuery] = useState("");
+  
+    useEffect(() => {
+  
+      if (!isSearchResultsFetched) {
+        getSearchResults()
+      }
+  
+      if(!isGardenFetched){
+        upadteTableData(1);
+      }
+  
+    })
+
+    function getSearchResults() {
+        axios.get(url + "/gardens/search")
+          .then(function (response) {
+            console.log(response.data)
+            setSearchResults(response.data)
+            setIsSearchResultsFetched(true)
+            setPages(Math.ceil(response.data.length/25))
+            console.log("Nos Of Pages",nosPages)
+          }).catch(function (error) {
+            console.log(error)
+          })
+    
+      }
+    
+      function handleSearchQuery(){
+        // console.log("pages",pages) 
+        searchResults.map((item)=>{
+          if(item===searchQuery){
+            // console.log("found")
+            localStorage.setItem("gardenId",item)
+            navigate("/super-admin/garden/"+item)
+          }
+        })
+    
+        console.log("not found")
+      }
+    
+      function upadteTableData(page){
+        localStorage.setItem("page",page)
+    
+        // var form_data = new FormData();
+    
+        // form_data.append("pageNumber",parseInt(""+page))
+        // form_data.append("pageSize",parseInt("25"))
+    
+        axios.get(url+"/gardens/25/"+page).then(function(response){
+          if(response.status==200){ 
+            console.log(response.data.content)
+            setGardens([...response.data.content])
+            setIsGardenFetched(true)
+          }else{
+            console.log(response.data)
+          }
+    
+        }).catch(function(error){
+          console.log(error)
+        })
+    
+        console.log("page",page)
+      }
 
     //     const gardens=[1,2,3,4]
     //   return (
@@ -44,110 +125,119 @@ function Gardens() {
         <>
             {/* <!-- Service Start --> */}
             <NavigationBar/>
-                <div className="container" style={{padding:'2%'}}>
-                    <div className=" container text-start ">
-                        <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
-                            Our Gardens
-                        </p>
-                        <hr className='text-danger fw-bold' />
-                        <div className="row g-4">
-                            <div className="col-lg-4 col-md-6 wow fadeInUp" >
-                                <div className="service-item  d-flex h-100">
-                                    <div className="service-img ">
-                                        <img className="img-fluid" src="/images/carousel1.jpg" alt="" />
-                                    </div>
-                                    <div className="service-text rounded p-5">
-                                        <div className="btn-square rounded-circle mx-auto mb-3">
-                                            <img className="img-fluid bg-white rounded-circle p-2" src="/images/icon/icon-1.png" alt="Icon" />
-                                        </div>
-                                        <h4 className="mb-3">Nashik East</h4>
-                                        <p className="mb-4">2Q3J+JXF, Gole Colony, Nashik, Maharashtra 422002.</p>
-                                        <a className="btn btn-sm bg-light" href="/#/garden"><i className="fa fa-plus text-success me-2"></i>Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 wow fadeInUp" >
-                                <div className="service-item rounded d-flex h-100">
-                                    <div className="service-img ">
-                                        <img className="img-fluid" src="/images/carousel1.jpg" alt="" />
-                                    </div>
-                                    <div className="service-text  p-5">
-                                        <div className="btn-square  mx-auto mb-3">
-                                            <img className="img-fluid bg-white rounded-circle p-2" src="/images/icon/icon-2.png" alt="Icon" />
-                                        </div>
-                                        <h4 className="mb-3">Cidco</h4>
-                                        <p className="mb-4">WRXP+HX9, Mahatma Gandhi Rd, Rajwada Nagar, Deolali Gaon, Nashik, Maharashtra 422214.</p>
-                                        <a className="btn btn-sm bg-light" href="/#/garden"><i className="fa fa-plus text-success me-2"></i>Read More</a>
+            <Container style={{ padding: '2%' }}>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 wow fadeInUp" >
-                                <div className="service-item rounded d-flex h-100">
-                                    <div className="service-img ">
-                                        <img className="img-fluid " src="/images/carousel1.jpg" alt="" />
-                                    </div>
-                                    <div className="service-text rounded p-5">
-                                        <div className="btn-square  mx-auto mb-3">
-                                            <img className="img-fluid bg-white rounded-circle p-2" src="/images/icon/icon-3.png" alt="Icon" />
-                                        </div>
-                                        <h4 className="mb-3">Panchvati</h4>
-                                        <p className="mb-4">PWD Nashik New Building, 422010, Untwadi Rd, Patrakar Colony, Parijat Nagar, Nashik, Maharashtra 422009</p>
-                                        <a className="btn btn-sm bg-light" href="/#/garden"><i className="fa fa-plus text-success me-2"></i>Read More</a>
+<Row>
+  <Col>
+    <Autocomplete
+      style={{ width: 500 }}
+      freeSolo
+      autoComplete
+      autoHighlight
+      options={searchResults}
+      renderInput={(params) => (
+        <TextField {...params}
+          onSelect={(e) => {
+            console.log(e.target.value)
+            setSearchQuery(e.target.value)
+            // navigate('/super-admin/garden/'+e.target.value)
+          }}
+          variant="outlined"
+          label="Search Gardens"
+          placeholder="Enter Name of Garden"
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 wow fadeInUp" >
-                                <div className="service-item rounded d-flex h-100">
-                                    <div className="service-img ">
-                                        <img className="img-fluid" src="/images/carousel1.jpg" alt="" />
-                                    </div>
-                                    <div className="service-text rounded p-5">
-                                        <div className="btn-square  mx-auto mb-3">
-                                            <img className="img-fluid bg-white rounded-circle p-2" src="/images/icon/icon-4.png" alt="Icon" />
-                                        </div>
-                                        <h4 className="mb-3">Nashik West</h4>
-                                        <p className="mb-4">2Q3J+JXF, Gole Colony, Nashik, Maharashtra 422002.</p>
-                                        <a className="btn btn-sm bg-light" href="/#/garden"><i className="fa fa-plus text-success me-2"></i>Read More</a>
+        />
+      )}
+    />
+  </Col>
+  <Col>
+    <Button onClick={handleSearchQuery}>Search</Button>
+  </Col>
+</Row>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 wow fadeInUp" >
-                                <div className="service-item rounded d-flex h-100">
-                                    <div className="service-img ">
-                                        <img className="img-fluid" src="/images/carousel1.jpg" alt="" />                                    </div>
-                                    <div className="service-text  p-5">
-                                        <div className="btn-square  mx-auto mb-3">
-                                            <img className="img-fluid bg-white rounded-circle p-2" src="/images/icon/icon-5.png" alt="Icon" />
-                                        </div>
-                                        <h4 className="mb-3">Satpur</h4>
-                                        <p className="mb-4">XPRP+9VQ, Trimbak Rd, MIDC Area, MIDC, Satpur, Nashik, Maharashtra 422007.</p>
-                                        <a className="btn btn-sm bg-light" href="/#/garden"><i className="fa fa-plus text-success me-2"></i>Read More</a>
+<br></br>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 wow fadeInUp" >
-                                <div className="service-item rounded d-flex h-100">
-                                    <div className="service-img ">
-                                        <img className="img-fluid" src="/images/carousel1.jpg" alt="" />                                    </div>
-                                    <div className="service-text rounded p-5">
-                                        <div className="btn-square  mx-auto mb-3">
-                                            <img className="img-fluid bg-white rounded-circle p-2" src="/images/icon/icon-6.png" alt="Icon" />
-                                        </div>
-                                        <h4 className="mb-3">Cidco</h4>
-                                        <p className="mb-4">PWD Nashik New Building, 422010, Untwadi Rd, Patrakar Colony, Parijat Nagar, Nashik, Maharashtra 422009.</p>
-                                        <a className="btn btn-sm bg-light" href="/#/garden"><i className="fa fa-plus text-success me-2"></i>Read More</a>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {/* <!-- Service End --> */}
+  {/* <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Address</th>
+    </tr>
+    </thead> */}
+
+    {
+      gardens.map((item,index)=>{
+        return(
+            <>
+            <Card>
+                <Row>
+                    <Col style={{padding:'2%'}} sm={4}>
+                    <img style={{height:'100%',width:'100%'}} src="https://images.pexels.com/photos/158028/bellingrath-gardens-alabama-landscape-scenic-158028.jpeg?cs=srgb&dl=pexels-pixabay-158028.jpg&fm=jpg"/>
+                    </Col>
+                    <Col style={{padding:'2%'}} sm={8}>
+                    <Table  bordered  size="sm">
+                                <tbody>
+                                    <tr>
+                                        <td>Name</td>
+                                        <td>{item.name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td>{item.address}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gate No.</td>
+                                        <td>{item.gateNo}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Facilities</td>
+                                        <td>{item.facilities}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Open Area</td>
+                                        <td>{item.openArea}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Other Area</td>
+                                        <td>{item.otherArea}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>{item.location}</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                    </Col>
+                </Row>
+                
+            </Card>
+            <br></br>
+
+            </>
+        )
+      })
+    }
+
+
+<br></br>
+
+<Pagination
+  prev
+  last
+  next
+  first
+  size="md"
+  pages={nosPages}
+  activePage={1}
+  onChangePage={(page) => upadteTableData(page)}
+  // onSelect={()=> {console.log("Selected!")}}
+/>
+
+
+
+  
+</Container>
             <Footer/>
         </>
     )
