@@ -1,11 +1,11 @@
 import React, { useState ,useEffect} from 'react'
 import "bootstrap/dist/css/bootstrap.css";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import '../css/services.css'
 import axios from 'axios';
 import url from '../Uri';
-
+import '../css/services.css'
 function Services() {
 
     const [isAnnouncementFetched,setIsAnnouncementsFetched]=useState(false)
@@ -49,31 +49,30 @@ function Services() {
 
      
     return (
-        <>
-            <div className=' container-fluid bg-secondary text-white p-1'>
-                <div className='row'>
-                    <div className='col-md-2 text-center fw-bold text-white'>
-                        <p>Announcements</p>
-                    </div>
-                    <div className='col-md-8'>
-                        <marquee>
-                            <p>t was the great apostle of peace Mahatma Gandhi, who gave a clarion call of ‘Be the change’. Today, when the world is besieged by war and civil strife</p>
-                        </marquee>
-                    </div>
-                    <div className='col-md-2'>
-                        {/* <button className='btn text-white bg-top'>Gardens</button> */}
-                    </div>
-                </div>
-
-            </div>
-
-            <div className='container-fluid mt-4 justify-content-center text-center'>
-                <div className='row  text-start'>
-                    <div className='col-md-3 border border-secondary'>
-                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'> NEWS AND ANNOUNCEMENTS</p>
-                        <div className='py-2 overflow-auto'>
-                            {/* Scrolling Announcements */}
-                            <ul className=' mt-3' list-style="">
+        <div className='Services'>
+            <Row className="Announcement_bar">
+                
+                <marquee>
+                    {
+                        announcements.map(a=>{
+                            return(
+                                <p>{a.title}</p>
+                            )
+                        })
+                    }
+                </marquee>
+              
+            </Row>
+                    
+                    <Container>
+            <Row >
+                <Col sm={4}>
+                <Card style={{height:'100%'}} >
+                <Card.Body>
+                    <Card.Title>News</Card.Title>
+                    <hr></hr>
+                    <Card.Text>
+                    <ul className=' mt-3' list-style="">
                                 <marquee width="100%" direction="up" height="100px" scrollamount="2">
                                     {
                                         announcements.map(a=>{
@@ -84,89 +83,93 @@ function Services() {
                                     }
                                     
                                 </marquee>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-auto ">
-                    </div>
+                    </ul>
+                    </Card.Text>
+                    
+                </Card.Body>
+                </Card>
+                </Col>
 
-                    <div className="col-md-5 about  border border-secondary text-dark  rounded-4">
-                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'>ABOUT NMC</p>
-
-                        <div className='  px-4 mb-4 mt-4'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
+                <Col sm={4}>
+                <Card style={{height:'100%'}} >
+                <Card.Body>
+                    <Card.Title>About NMC</Card.Title>
+                    <hr></hr>
+                    <Card.Text>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The
                             point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as oposed to using 'Content here,
                             content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem
-                            Ipsum as their default model text,
-                        </div>
-                    </div>
-                    <div className="col-md-auto ">
-                    </div>
-
-                    <div className="col-md-3  border border-secondary rounded-4">
-                        <p className='text-center text-uppercase mt-2 fw-bold  text-danger border-bottom border-secondary py-2 mb-0'>Commissioner</p>
-                        <img src='https://nmc.gov.in/assets/img/commi_cpulkundvar.jpg' className='img-fluid' />
-                        <p className='text-center'>डॉ. चंद्रकांत पुलकुंडवार, भा. प्र. से.</p >
+                            Ipsum as their default model text
+                    </Card.Text>
+                    
+                </Card.Body>
+                </Card>
+                </Col>
+                
+                <Col sm={4}>
+                <Card style={{height:'100%'}} >
+                <Card.Body>
+                    <Card.Title>Commissioner</Card.Title>
+                    <hr></hr>
+                    <Card.Img   src='https://nmc.gov.in/assets/img/commi_cpulkundvar.jpg' />
+                    <Card.Text>
+                        <br></br>
+                    <h5 className='text-center'>डॉ. चंद्रकांत पुलकुंडवार, भा. प्र. से.</h5>
                         <p className='text-center'>आयुक्त तथा प्रशासक</p>
-                    </div>
-                </div>
-            </div>
+                    </Card.Text>
+                    
+                </Card.Body>
+                </Card>
+                </Col>
+            </Row>
 
 
-            {/* <!-- About Start --> */}
-            <Container className='middle_sec mt-4'>
-                <div className="row ">
-                    <div className=" col-md-3" >
-                        <img className="img-fluid rounded" src="/images/75.jpg" />
-                    </div>
-                    <div className=" col-md-5">
-                        <h1 className="display-1 ">75</h1>
+            <Row style={{marginTop:'20px',padding:'2%'}}>
+                <Col sm={4}>
+                <img className="img-fluid rounded" src="/images/75.jpg" />
+                </Col>
+
+                <Col sm={4}>
+                <h1 className="display-1 ">75</h1>
                         <p className="  text-center">Year of Freedom</p>
                         <h1 className="display-5">Azadi Ka Amrit Mahotsav</h1>
                         <p className="mb-4">75 years of Indian Independence celebrated Azadi ka Amrit Mahotsav.There are five themes of the 'Azadi Ka Amrit Mahotsav</p>
-                    </div>
-
-                    <div className="col-md-4" data-wow-delay="0.5s">
-                        <div className="col-md-12">
-                            <div className="border-start ps-4">
-                                <video className='img-fluid ' width="890" height="400" controls>
+                    
+                </Col>
+                
+                <Col sm={4}>
+                <video className='img-fluid ' width="890" height="400" controls>
+                                    <source src="/images/front_video.mp4" type="video/mp4" />
+                 </video>
+                 <video className='img-fluid ' width="890" height="400" controls>
                                     <source src="/images/front_video.mp4" type="video/mp4" />
                                 </video>
-                            </div>
-                            <div className="border-start ps-4 mt-2">
-                                <video className='img-fluid ' width="890" height="400" controls>
-                                    <source src="/images/front_video.mp4" type="video/mp4" />
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Container>
-            <hr></hr>
-            {/* <!-- About End --> */}
+                </Col>
+            </Row>
 
-            <div className='Services'>
-                {/* <!--Icons section--> */}
-                <div className="container-fluid  text-center pl-5 my-5 ">
-                    <div className="row  border-bottom border-2">
-                        <Col className=' p-2 citizen_icon' onClick={()=>navigate('/acheivements')} >
+            <Row style={{marginTop:'20px',padding:'2%'}}>
+                        <Col sm={4}  onClick={()=>navigate('/acheivements')} >
+                            <center>
                             <img src="/images/1.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Achievement</p>
+                            <p >Achievement</p>
+                            </center>
                         </Col>
-                        <Col onClick={grievance} className=' p-2 citizen_icon' >
+                        <Col sm={4} onClick={grievance}  >
+                            <center>
                             <img src="/images/Grievance.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Greviance</p>
+                            <p >Greviance</p>
+                            </center>
                         </Col>
-                        <Col onClick={permissions} className=' p-2 citizen_icon' >
+                        <Col sm={4} onClick={permissions}  >
+                            <center>
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3I2yi1g6DJgjuDUkwtwH2Hr0boSpDEsvuUA&usqp=CAU" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Permission</p>
-                        </Col>
-                        <Col className=' p-2 citizen_icon' >
-                            <img src="/images/6.png" width="100" height="100" alt="" />
-                            <p className="text-dark text-center">Waste Collection</p>
+                            <p >Permission</p>
+                            </center>
                         </Col>
                        
-                    </div>
-
+                       
+                        </Row>
+                        </Container>
                     {/* <!-- Facts Start --> */}
                     <div className="container-fluid facts my-5 py-3" data-parallax="scroll" style={{ background: "url('/images/bg.jpg'), rgba(15, 66, 41, .6)", backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
                         <div className=" py-5">
@@ -293,10 +296,9 @@ function Services() {
                     </div>
                     {/* <!-- Service End --> */}
                 </div>
-            </div>
+         
 
 
-        </>
 
 
     )

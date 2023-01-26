@@ -96,3 +96,33 @@
    border-radius: 2rem;
    
 }
+
+.Services .Announcement_bar{
+    background-color: grey;
+    padding: 1%;
+    margin-bottom: 20px;
+}
+
+.Services .Announcement_bar p{
+    margin-bottom: 0 !important;
+}
+
+
+@media screen and (min-width:320px) and (max-width:480px)
+{
+    .Services .col-sm-4{
+        margin-bottom: 20px;
+    }
+}
+
+/* ipads and tablets */
+@media screen and (min-width: 481px) and (max-width:768px)
+{
+    
+}
+
+/* laplops and small screens */
+@media screen and (min-width: 769px) and (max-width:1024px)
+{
+    
+}

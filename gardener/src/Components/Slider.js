@@ -1,11 +1,17 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { NavLink } from 'react-router-dom'
-
+import {Carousel} from 'react-bootstrap';
 import '../css/slider.css'
 function Slider() {
+
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
   return (
-    <div className="container-fluid p-0">
-      <div id="header-carousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div >
+      {/* <div id="header-carousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
         <div className="carousel-inner">
           <div className="carousel-item active" data-bs-interval="1000">
             <img className="w-100" src="https://img.freepik.com/free-photo/park-with-wooden-pathway-benches_1137-254.jpg?w=996&t=st=1674041612~exp=1674042212~hmac=932e92e0c3c86c43ef02031a910055898970d10fc4281c1d9332a66ee9f2cba9" alt="Image" />
@@ -79,9 +85,49 @@ function Slider() {
           <span className="carousel-control-next-icon  bg-success rounded-circle m-2" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
-      </div>
-    </div>
+      </div> */}
+   
 
+    <div className='slider'>
+       <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://img.freepik.com/free-photo/park-with-wooden-pathway-benches_1137-254.jpg?w=996&t=st=1674041612~exp=1674042212~hmac=932e92e0c3c86c43ef02031a910055898970d10fc4281c1d9332a66ee9f2cba9"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3>Garden a way to feel happy</h3>
+          
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://img.freepik.com/free-photo/park-with-wooden-pathway-benches_1137-254.jpg?w=996&t=st=1674041612~exp=1674042212~hmac=932e92e0c3c86c43ef02031a910055898970d10fc4281c1d9332a66ee9f2cba9"
+          alt="Second slide"
+        />
+
+        <Carousel.Caption>
+        <h3>Garden a way to feel happy</h3>
+          
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://img.freepik.com/free-photo/park-with-wooden-pathway-benches_1137-254.jpg?w=996&t=st=1674041612~exp=1674042212~hmac=932e92e0c3c86c43ef02031a910055898970d10fc4281c1d9332a66ee9f2cba9"
+          alt="Third slide"
+        />
+
+        <Carousel.Caption>
+        <h3>Garden a way to feel happy</h3>
+      
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+    </div>
+    </div>
   )
 }
 

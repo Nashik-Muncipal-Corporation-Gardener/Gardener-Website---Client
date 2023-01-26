@@ -31,41 +31,41 @@ const NavigationBar = () => {
   }
 
   return (
-    <div className="Nav_bar sticky-top">
-      {/* <!-- Topbar Start --> */}
-      <div className="container-fluid bg-top  pe-0 ">
-        <div className="row gx-0">
-          <div className="col-md-6 text-center text-lg-start mt-2 mb-lg-0">
-            <div class="d-inline-flex align-items-center">
-              <a class="text-white px-3" href="">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a class="text-white px-3" href="">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a class="text-white px-3" href="">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a class="text-white px-3" href="">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a class="text-white px-3" href="">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-          <div className="col-md-6 text-end  text-lg-end">
-            <div className="position-relative d-inline-flex align-items-center bg-top text-white top-shape px-2">
-              <div className="me-3 pe-3 border-end py-2">
-                <p className="m-0"><i className="fa fa-envelope-open me-2"></i>info@example.com</p>
-              </div>
-              <div className="py-2">
-                <p className="m-0"><i className="fa fa-phone-alt me-2"></i>+012345 6789</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className='Nav_bar'>
+    {/* // <div className="Nav_bar sticky-top">
+    //   <div className="container-fluid bg-top  pe-0 ">
+    //     <div className="row gx-0">
+    //       <div className="col-md-6 text-center text-lg-start mt-2 mb-lg-0">
+    //         <div class="d-inline-flex align-items-center">
+    //           <a class="text-white px-3" href="">
+    //             <i class="fab fa-facebook-f"></i>
+    //           </a>
+    //           <a class="text-white px-3" href="">
+    //             <i class="fab fa-twitter"></i>
+    //           </a>
+    //           <a class="text-white px-3" href="">
+    //             <i class="fab fa-linkedin-in"></i>
+    //           </a>
+    //           <a class="text-white px-3" href="">
+    //             <i class="fab fa-instagram"></i>
+    //           </a>
+    //           <a class="text-white px-3" href="">
+    //             <i class="fab fa-youtube"></i>
+    //           </a>
+    //         </div>
+    //       </div>
+    //       <div className="col-md-6 text-end  text-lg-end">
+    //         <div className="position-relative d-inline-flex align-items-center bg-top text-white top-shape px-2">
+    //           <div className="me-3 pe-3 border-end py-2">
+    //             <p className="m-0"><i className="fa fa-envelope-open me-2"></i>info@example.com</p>
+    //           </div>
+    //           <div className="py-2">
+    //             <p className="m-0"><i className="fa fa-phone-alt me-2"></i>+012345 6789</p>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div> */}
       {/* <!-- Topbar End --> */}
       {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="mb-3">
@@ -103,6 +103,7 @@ const NavigationBar = () => {
           </Container>
         </Navbar>
       ))}
+    {/* </div> */}
     </div>
   );
 }
