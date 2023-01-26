@@ -34,16 +34,7 @@ const handleLogout=()=>{
         
         <Container>
             <Row className='profilesection'>
-                <Col md={3}>
-                    
-                    <Row>
-                    <Button onClick={handleShow}>Edit Profile</Button>
-                    </Row>
-                    <Row>
-                    <Button onClick={handleLogout}>Log Out</Button>
-                    </Row>
-                   
-                </Col>
+                
                 <Col md={9}>
 
                     <table>
@@ -66,6 +57,16 @@ const handleLogout=()=>{
                         </tr>
                     </table>
                     
+                </Col>
+                <Col md={3}>
+                    
+                    <Row>
+                    <Button onClick={handleShow}>Edit Profile</Button>
+                    </Row>
+                    <Row>
+                    <Button onClick={handleLogout}>Log Out</Button>
+                    </Row>
+                   
                 </Col>
             </Row>
         </Container>

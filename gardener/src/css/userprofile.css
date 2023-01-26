@@ -30,7 +30,7 @@
 }
 
 .userprofile td{
-    padding-left: 20px;
+    padding-left: 20px !important;
     background-color: #FDFFC2;
 }
 
@@ -54,4 +54,26 @@
 
 .userprofile tr{
     height: 70px;
+}
+
+@media screen and (min-width:320px) and (max-width:480px)
+{
+    .userprofile .container {
+        margin: auto;
+        width: 100%;
+    }
+    
+   
+}
+
+/* ipads and tablets */
+@media screen and (min-width: 481px) and (max-width:768px)
+{
+    
+}
+
+/* laplops and small screens */
+@media screen and (min-width: 769px) and (max-width:1024px)
+{
+    
 }
