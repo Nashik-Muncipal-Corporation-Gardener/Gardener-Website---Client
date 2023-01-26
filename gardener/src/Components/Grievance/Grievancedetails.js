@@ -7,8 +7,8 @@ function Grievancedetails({ id }) {
 
   console.log("Id", id);
 
-  const [grievanceForm,setGrievanceForm] = useState([]);
-  const [isGrievanceFormFetched,setIsGrievanceFormFetched] = useState(false);
+  const [grievanceForm, setGrievanceForm] = useState([]);
+  const [isGrievanceFormFetched, setIsGrievanceFormFetched] = useState(false);
 
   function fetchGrievance() {
     axios.get(url + "/grievance-form/" + id).then(function (response) {
@@ -26,8 +26,8 @@ function Grievancedetails({ id }) {
   }
 
 
-  useEffect(()=>{
-    if(!isGrievanceFormFetched){
+  useEffect(() => {
+    if (!isGrievanceFormFetched) {
       fetchGrievance()
     }
   })
