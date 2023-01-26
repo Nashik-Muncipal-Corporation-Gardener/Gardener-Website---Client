@@ -69,3 +69,74 @@
 .registergrievance .form-control{
     border-color: #207fb0;
 }
+
+.grievance .desktop_view{
+
+}
+
+.grievance .mobile_view{
+    display: none;
+}
+@media screen and (min-width:320px) and (max-width:480px)
+{
+    .grievance .desktop_view{
+        display: none;
+
+    }
+    
+    .grievance .mobile_view{
+        display: contents;
+    }
+
+    .grievance .nav-tabs {
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .grievance .nav-item {
+        width: 50%;
+        font-size: 12px;
+
+    }
+
+    .registergrievance{
+        display: flex;
+        justify-content: center;
+    }
+    .registergrievance .card{
+        padding: 2%;
+    }
+
+    .mygrievances th, td{
+        font-size: 11px;
+    }
+
+    .mygrievances .container {
+        padding: 0 !important; 
+       
+    }
+
+    .registergrievance .list-group-item{
+        display: contents;
+      
+    }
+
+    .grievance .container .row .col{ 
+       display: flex;
+       justify-content: center;
+    }
+    
+}
+
+/* ipads and tablets */
+@media screen and (min-width: 481px) and (max-width:768px)
+{
+    
+}
+
+/* laplops and small screens */
+@media screen and (min-width: 769px) and (max-width:1024px)
+{
+    
+}

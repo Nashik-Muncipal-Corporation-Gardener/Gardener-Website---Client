@@ -5,6 +5,8 @@ import '../css/news.css'
 import Footer from './Footer';
 import axios from 'axios';
 import url from '../Uri';
+import NavigationBar from './NavigationBar';
+
 function News() {
 
   const navigate = useNavigate()
@@ -35,8 +37,8 @@ function News() {
   }
   return (
     <div className='news'>
-
-      <div className=" container text-start py-5">
+<NavigationBar/>
+      <div className="container text-start py-5">
         <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
           News
         </p>
@@ -60,6 +62,7 @@ function News() {
         </Container>
 
       </div>
+      <Footer/>
     </div>
   )
 }

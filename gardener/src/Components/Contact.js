@@ -1,15 +1,17 @@
 import React from 'react'
 import "../css/contact.css"
 import { TextField, Button } from '@mui/material'
-
-
+import NavigationBar from './NavigationBar'
+import { Container } from 'react-bootstrap'
 const Contact = () => {
     const submit = () => {
         alert("Message Sent Successfully")
     }
     return (
         <div>
-            <div className=" container  py-5 vh-50">
+            <NavigationBar/>
+            <Container>
+            <div style={{padding:'0 !important'}}>
                 <div className="text-start ">
                     <p className="d-inline-block  text-uppercase  fw-bold fs-5 mb-0">
                         Contact Us
@@ -41,6 +43,7 @@ const Contact = () => {
 
                 </div>
             </div>
+            </Container>
         </div>
     )
 }

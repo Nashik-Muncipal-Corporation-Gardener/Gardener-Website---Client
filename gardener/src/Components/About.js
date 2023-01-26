@@ -3,7 +3,8 @@ import React from 'react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import NavigationBar from './NavigationBar.js';
+import Footer from './Footer';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -13,7 +14,7 @@ import 'swiper/css/scrollbar';
 const About = () => {
   return (
     <div>
-
+      <NavigationBar/>
       {/* <!-- About Start --> */}
       <div className="container-xxl py-5">
         <div className="container">
@@ -206,6 +207,7 @@ const About = () => {
         </div>
       </div> */}
 
+      <Footer/>
 
     </div>
   )
