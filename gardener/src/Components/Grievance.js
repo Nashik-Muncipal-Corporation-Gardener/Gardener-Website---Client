@@ -16,6 +16,8 @@ import Registergrievance from './Grievance/Registergrievance';
 import Trackgrievance from './Grievance/Trackgrievance';
 import GrievanceDashboard from './Grievance/GrievanceDashboard';
 import NavigationBar from './NavigationBar';
+
+
 function Grievance() {
   const [verticalActive, setVerticalActive] = useState('tab1');
 

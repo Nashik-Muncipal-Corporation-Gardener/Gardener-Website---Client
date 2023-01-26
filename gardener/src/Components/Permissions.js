@@ -19,6 +19,7 @@ import {
   } from 'mdb-react-ui-kit';
 
 import Footer from './Footer';
+import '../css/grievances.css'
 function Permissions() {
 
     const [verticalActive, setVerticalActive] = useState('tab1');
@@ -30,6 +31,16 @@ function Permissions() {
 
     setVerticalActive(value);
   }
+
+  const [basicActive, setBasicActive] = useState('tab1');
+
+  const handleBasicClick = (value) => {
+    if (value === basicActive) {
+      return;
+    }
+
+    setBasicActive(value);
+  };
 
     const navigate = useNavigate()
 
@@ -69,7 +80,7 @@ function Permissions() {
     <div className='permissions'>
     <NavigationBar/>
 
-        <MDBRow>
+        <MDBRow className="desktop_view">
         <MDBCol size='3'>
           <MDBTabs className='flex-column text-center'>
             <MDBTabsItem>
@@ -116,11 +127,58 @@ function Permissions() {
           </MDBTabsContent>
         </MDBCol>
       </MDBRow>
-      <div style={{bottom: '0',
+
+      <MDBRow className="mobile_view">
+        
+          <MDBTabs className='mb-3'>
+            <MDBTabsItem>
+              <MDBTabsLink onClick={() => handleBasicClick('tab1')} active={basicActive === 'tab1'}>
+              Apply Permission
+                
+              </MDBTabsLink>
+            </MDBTabsItem>
+            <MDBTabsItem>
+              <MDBTabsLink onClick={() => handleBasicClick('tab2')} active={basicActive === 'tab2'}>
+               My Permissions
+                
+              </MDBTabsLink>
+            </MDBTabsItem>
+           
+            
+          </MDBTabs>
+      
+          <MDBTabsContent>
+            <MDBTabsPane show={basicActive === 'tab1'}>
+            <Container>
+        {
+            permission.map((item)=>{
+                return(
+                    <Card>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>
+                        <Icon icon="mdi:pine-tree" style={{color: "#51907b", width:"100", height:"100"}} />
+                        <a>{item.title}</a>
+                            
+                        </ListGroup.Item>
+                        <ListGroup.Item style={{padding:'0'}}><Button className='applybtn' onClick={()=>permissionform(item)} >Apply Now <Icon icon="ri:external-link-line"  style={{color:'aliceblue'}} /></Button></ListGroup.Item>
+                    </ListGroup>
+                    </Card>
+                );
+            
+            })
+        }
+    
+        </Container>
+            </MDBTabsPane>
+            <MDBTabsPane show={basicActive === 'tab2'}><Userpermissions/></MDBTabsPane>
+          </MDBTabsContent>
+   
+      </MDBRow>
+      {/* <div style={{bottom: '0',
     position: 'absolute',
     width: '100%'}}>
-       <Footer/>
-       </div>
+       <Footer/> */}
+       {/* </div> */}
     </div>
   )
 }
